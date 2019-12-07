@@ -1,5 +1,6 @@
-@extends('book/layout')
+@extends('project/layout')
 @section('content')
+<div id="app">
 <div class="container ops-main">
 <div class="row">
   <div class="col-md-12">
@@ -7,7 +8,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-11 col-md-offset-1">
+  <div class="col-md-9 col-md-offset-1" style="margin-right:30px;">
     <table class="table text-center">
       <tr>
         <th class="text-center">ID</th>
@@ -17,9 +18,11 @@
       @foreach($projects as $project)
       <tr>
         <td>
-          <a href="/project/{{ $project->id }}/edit">{{ $project->id }}</a>
+          <a href="/projects/{{ $project->id }}/edit">{{ $project->id }}</a>
         </td>
-        <td>{{ $project->name }}</td>
+        <td>
+          <a href="/projects/{{ $project->id }}/">{{ $project->name }}</a>
+        </td>
         <td>
           <form action="/project/{{ $project->id }}" method="post">
             <input type="hidden" name="_method" value="DELETE">
@@ -32,5 +35,11 @@
     </table>
     <div><a href="/project/create" class="btn btn-default">新規作成</a></div>
   </div>
+  <div class="col-md-2 col-md-offset-1">
+  <calendar-component></calendar-component>
+  </div>
 </div>
+<example-component></example-component>
+</div>
+<script src="{{ asset('/js/app.js') }}"></script>
 @endsection
