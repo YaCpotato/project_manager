@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Task;
 
 class Project extends Model
 {
-    //
+    
 }

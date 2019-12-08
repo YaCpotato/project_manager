@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Project;
+use App\Task;
 
 class ProjectController extends Controller
 {
@@ -49,7 +50,10 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::find($id);
-        return view('project/detail', compact('project'));
+        $data = Task::query();
+        $data->where('project_id',$id);
+        $tasks = $data->get();
+        return view('project/detail', compact('project','tasks'));
     }
 
     /**
