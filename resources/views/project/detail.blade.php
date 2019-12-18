@@ -7,7 +7,9 @@
   </div>
 </div>
 <div class="row">
-@foreach($tasks as $task)
+  <div class="col-md-12">
+    <table class="table text-center">
+    @foreach($tasks as $task)
       <tr>
         <td>
           <a href="/tasks/{{ $task->id }}/edit">{{ $task->id }}</a>
@@ -16,8 +18,11 @@
           <a href="/tasks/{{ $task->id }}/">{{ $task->name }}</a>
         </td>
       </tr>
-@endforeach
-</div>
-<p>プロジェクト個別画面です</p>
+    @endforeach
+    </table>
+  </div>
+  <div class="col-md-12">
+    <gantt-chart-component></gantt-chart-component>
+  </div>
 </div>
 @endsection
