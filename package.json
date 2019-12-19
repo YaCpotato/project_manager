@@ -22,6 +22,7 @@
     "dependencies": {
         "frappe-gantt": "^0.3.0",
         "moment": "^2.24.0",
+        "require": "^2.4.20",
         "v-calendar": "^1.0.0-beta.22"
     }
 }

@@ -7,6 +7,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel='stylesheet' href='https://unpkg.com/v-calendar/lib/v-calendar.min.css'>
 <script src='https://unpkg.com/v-calendar'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/15.0.0/vuedraggable.min.js"></script>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:30px;">
   <a class="navbar-brand" href="#">Project</a>
