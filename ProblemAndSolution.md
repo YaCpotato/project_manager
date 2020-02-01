@@ -16,5 +16,26 @@ https://reffect.co.jp/laravel/google-calendar-operate-by-laravel#spatielaravel-g
 
 こっちもいずれ見たい  
 https://blog.capilano-fw.com/?p=5365#i-4  
+### 4. migrationファイルは単数形で書いているのにデータベースのテーブル名が勝手に複数形になった！
+https://teratail.com/questions/51008  
+ここ参考に。make Modelで作成したModel/(外部キーのhasManyでも書いてた)の中の該当のソースファイルに`protected $table = 'schedule';`みたいにかけば解決した。
+```php=
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Schedule extends Model
+{
+    protected $table = 'schedule';
+
+    public function assignees()
+    {
+        return $this->hasMany('App\User');
+    }
+}
+
+```
 
 
