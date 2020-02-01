@@ -19,7 +19,7 @@ class CreateScheduleTable extends Migration
             $table->string('summary');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->bigInteger('assignee')->unsigned();
+            $table->bigInteger('assignee')->unsigned()->nullable();
             $table->foreign('assignee')
             ->references('id')->on('users')
             ->onDelete('cascade')
