@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/import','GoogleCalendarController@import')->name('import');
 
 Route::resource('projects', 'ProjectController');
 Route::resource('tasks', 'TaskController');

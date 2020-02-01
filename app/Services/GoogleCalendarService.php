@@ -6,7 +6,7 @@ use App\Schedule;
 
 class GoogleCalendarService
 {
-    public function importEventsFromGoogleCalendarService($summary,$startDate,$endDate)
+    public function import($summary,$startDate,$endDate)
     {
         $schedule = new Schedule;
         $schedule->summary = $summary;

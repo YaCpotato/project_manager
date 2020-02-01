@@ -14,20 +14,22 @@ class GoogleCalendarController extends Controller
         $this->GoogleCalendarService = new GoogleCalendarService();
     }
 
-    public function index(){
+    public function index()
+    {
+        $event = new Event;
+        $events = Event::get();
+        foreach($events as $event){
+            $this->GoogleCalendarService::import($event->name,$event->startDateTime,$event->endDateTime);
+        }
+    }
 
-      $event = new Event;
-
-      $events = Event::get();
-      //exit(var_dump($events));
-
-      foreach($events as $event){
-        echo $event->name.'\n';
-        echo $event->location.'\n';
-        echo $event->startDateTime.'\n';
-        echo $event->endDateTime.'\n';
-      }  
-
+    public function import()
+    {
+        $event = new Event;
+        $events = Event::get();
+        foreach($events as $event){
+            $this->GoogleCalendarService::import($event->name,$event->startDateTime,$event->endDateTime);
+        }
     }
     
 }
