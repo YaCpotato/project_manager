@@ -19,7 +19,7 @@ https://blog.capilano-fw.com/?p=5365#i-4
 ### 4. migrationファイルは単数形で書いているのにデータベースのテーブル名が勝手に複数形になった！
 https://teratail.com/questions/51008  
 ここ参考に。make Modelで作成したModel/(外部キーのhasManyでも書いてた)の中の該当のソースファイルに`protected $table = 'schedule';`みたいにかけば解決した。
-```php=
+```php
 <?php
 
 namespace App;
