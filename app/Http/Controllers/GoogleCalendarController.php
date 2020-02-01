@@ -12,9 +12,13 @@ class GoogleCalendarController extends Controller
       $event = new Event;
 
       $events = Event::get();
+      //exit(var_dump($events));
 
       foreach($events as $event){
-        echo $event->name.'';
+        echo $event->name.'\n';
+        echo $event->location.'\n';
+        echo $event->startDateTime.'\n';
+        echo $event->endDateTime.'\n';
       }  
 
     }
