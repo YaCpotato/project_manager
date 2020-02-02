@@ -27,7 +27,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('project/create');
     }
 
     /**
@@ -38,7 +38,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = new Project;
+        $project->name = $request->name;
+        $project->save();
+        return redirect('project/'.$project->id);
     }
 
     /**
@@ -75,9 +78,12 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $project->name = $request->new_name;
+        $project->save();
+        $projects = Project::all();
+        return view('project/index',compact('projects'));
     }
 
     /**
@@ -88,6 +94,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        $project->delete();
+        $projects = Project::all();
+        return view('project/index',compact('projects'));
     }
 }

@@ -1,6 +1,5 @@
 @extends('project/layout')
 @section('content')
-<div id="app">
 <div class="container ops-main">
 <div class="row">
   <div class="col-md-12">
@@ -18,10 +17,10 @@
       @foreach($projects as $project)
       <tr>
         <td>
-          <a href="/projects/{{ $project->id }}/edit">{{ $project->id }}</a>
+          <a href="/project/{{ $project->id }}/edit">{{ $project->id }}</a>
         </td>
         <td>
-          <a href="/projects/{{ $project->id }}/">{{ $project->name }}</a>
+          <a href="/project/{{ $project->id }}/">{{ $project->name }}</a>
         </td>
         <td>
           <form action="/project/{{ $project->id }}" method="post">
@@ -35,10 +34,5 @@
     </table>
     <div><a href="/project/create" class="btn btn-default">新規作成</a></div>
   </div>
-  <div class="col-md-2 col-md-offset-1">
-  <calendar-component></calendar-component>
-  </div>
 </div>
-</div>
-<script src="{{ asset('/js/app.js') }}"></script>
 @endsection
