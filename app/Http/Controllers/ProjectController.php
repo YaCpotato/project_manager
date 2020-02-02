@@ -41,7 +41,7 @@ class ProjectController extends Controller
         $project = new Project;
         $project->name = $request->name;
         $project->save();
-        return redirect('projects/'.$project->id);
+        return redirect('project/'.$project->id);
     }
 
     /**
@@ -78,9 +78,12 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $project->name = $request->new_name;
+        $project->save();
+        $projects = Project::all();
+        return view('project/index',compact('projects'));
     }
 
     /**
