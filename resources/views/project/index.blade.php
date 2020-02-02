@@ -1,6 +1,5 @@
 @extends('project/layout')
 @section('content')
-<div id="app">
 <div class="container ops-main">
 <div class="row">
   <div class="col-md-12">
@@ -33,12 +32,7 @@
       </tr>
       @endforeach
     </table>
-    <div><a href="/project/create" class="btn btn-default">新規作成</a></div>
-  </div>
-  <div class="col-md-2 col-md-offset-1">
-  <calendar-component></calendar-component>
+    <div><a href="/projects/create" class="btn btn-default">新規作成</a></div>
   </div>
 </div>
-</div>
-<script src="{{ asset('/js/app.js') }}"></script>
 @endsection
