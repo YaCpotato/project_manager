@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <h1>プロジェクト新規作成</h1>
-    <form action="{{ url('projects') }}" method="post">
+    <form action="{{ url('project') }}" method="post">
         @csrf
         @method('POST')
         <div class="form-group">

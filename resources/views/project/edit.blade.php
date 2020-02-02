@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <h1>{{ $project->name }}</h1>
-    <form action="{{ url('projects/'.$project->id) }}" method="post">
+    <form action="{{ url('project/'.$project->id) }}" method="post">
         @csrf
         @method('PUT')
         <div class="form-group">

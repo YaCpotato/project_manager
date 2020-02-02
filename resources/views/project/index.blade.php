@@ -17,10 +17,10 @@
       @foreach($projects as $project)
       <tr>
         <td>
-          <a href="/projects/{{ $project->id }}/edit">{{ $project->id }}</a>
+          <a href="/project/{{ $project->id }}/edit">{{ $project->id }}</a>
         </td>
         <td>
-          <a href="/projects/{{ $project->id }}/">{{ $project->name }}</a>
+          <a href="/project/{{ $project->id }}/">{{ $project->name }}</a>
         </td>
         <td>
           <form action="/project/{{ $project->id }}" method="post">
@@ -32,7 +32,7 @@
       </tr>
       @endforeach
     </table>
-    <div><a href="/projects/create" class="btn btn-default">新規作成</a></div>
+    <div><a href="/project/create" class="btn btn-default">新規作成</a></div>
   </div>
 </div>
 @endsection
