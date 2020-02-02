@@ -8,7 +8,6 @@
 * Googleアカウントでのログイン実装
 
 ### API
-* ProjectController.php CRUD実装
 * TaskController.php CRUD実装
 
 ### View
