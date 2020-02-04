@@ -8,7 +8,7 @@
 * Googleアカウントでのログイン実装
 
 ### API
-* TaskController.php CRUD実装
+
 
 ### View
 * 共有カレンダーテンプレートの実装
