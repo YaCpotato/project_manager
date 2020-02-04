@@ -38,4 +38,14 @@ class Schedule extends Model
 
 ```
 
+### 4. dotenvのFailedエラー
+```
+php artisan make:controller OAuthLoginController
+```
 
+出力
+```
+The environment file is invalid!
+Failed to parse dotenv file due to an invalid name. Failed at [GOOGLE_CLIENT_ID　].
+```
+`結論：GOOGLE_CLIENT_IDの後ろに全角スペースが存在した`
