@@ -11,7 +11,7 @@
     <table class="table text-center">
       <tr>
         <th class="text-center">ID</th>
-        <th class="text-center">プロジェクト名</th>
+        <th class="text-center">タスク名</th>
         <th class="text-center">完了日</th>
         <th class="text-center">開始日</th>
         <th class="text-center">削除</th>
