@@ -22,4 +22,4 @@ Route::get('/import','GoogleCalendarController@import')->name('import');
 
 Route::resource('project', 'ProjectController');
 Route::resource('task', 'TaskController');
-Route::resource('/calendar', 'GoogleCalendarController');
+Route::resource('calendar', 'GoogleCalendarController');
