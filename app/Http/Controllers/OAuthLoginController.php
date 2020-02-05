@@ -28,6 +28,6 @@ class OAuthLoginController extends Controller
             $user->save();
         }
         Auth::login($user);
-        return redirect()->route('top');
+        return redirect()->route('home');
     }
 }
