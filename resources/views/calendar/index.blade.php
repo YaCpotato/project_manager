@@ -1,6 +1,6 @@
 @extends('calendar/layout')
 @section('content')
-<div class="container ops-main">
+<div class="container ops-main" id="app">
 <div class="row">
   <div class="col-md-12">
     <h3 class="ops-title">イベントボード</h3>
@@ -43,5 +43,6 @@
     <div><a href="/event/create" class="btn btn-default">新規作成</a></div>
   </div>
   <single-calendar></single-calendar>
+  <script src="{{ asset('/js/app.js') }}"></script>
 </div>
 @endsection
