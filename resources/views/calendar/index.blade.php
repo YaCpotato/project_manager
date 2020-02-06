@@ -42,5 +42,6 @@
     </table>
     <div><a href="/event/create" class="btn btn-default">新規作成</a></div>
   </div>
+  <single-calendar></single-calendar>
 </div>
 @endsection
