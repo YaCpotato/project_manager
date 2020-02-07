@@ -13,11 +13,11 @@ export default {
                 {
                 key: 'today',
                 highlight: {
-                    backgroundColor: '#ff8080',
+                    backgroundColor: '#ff5580',
                 },
                 dates: new Date(),
                 popover: {
-                    label: 'メッセージを表示できます',
+                    label: 'これは今日です',
                 },
                 },
             ],
@@ -25,7 +25,6 @@ export default {
     },
     mounted:function(){
         axios.get('/api/events').then((res)=>{
-            console.log(res.data)
                     for(let i=0;i<res.data.length;i++){
                         this.attrs.push({
                             key:res.data[i].googleEvent.id,
@@ -38,7 +37,6 @@ export default {
                             },
                         })
                     }
-                    console.log(this.attrs)
                 })
                     .catch(error => console.log(error))
     }
