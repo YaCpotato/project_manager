@@ -1,16 +1,15 @@
 @extends('calendar/layout')
 @section('content')
-<div class="container ops-main">
+<div class="container-sm ops-main" id="app">
 <div class="row">
   <div class="col-md-12">
     <h3 class="ops-title">イベントボード</h3>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-9 col-md-offset-1" style="margin-right:30px;">
+  <div class="col-md-5" style="margin-right:30px;">
     <table class="table text-center">
       <tr>
-        <th class="text-center">ID</th>
         <th class="text-center">イベント名</th>
         <th class="text-center">開始日</th>
         <th class="text-center">終了日</th>
@@ -18,9 +17,6 @@
       </tr>
       @foreach($events as $event)
       <tr>
-        <td>
-          <a href="/event/{{ $event->id }}/edit">{{ $event->id }}</a>
-        </td>
         <td>
           <a href="/event/{{ $event->id }}/">{{ $event->name }}</a>
         </td>
@@ -42,5 +38,9 @@
     </table>
     <div><a href="/event/create" class="btn btn-default">新規作成</a></div>
   </div>
+  <div class="col-md-5" style="margin-right:30px;">
+    <single-calendar></single-calendar>
+  </div>
+  <script src="{{ asset('/js/app.js') }}"></script>
 </div>
 @endsection

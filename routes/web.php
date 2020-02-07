@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/import','GoogleCalendarController@import')->name('import');
-
+Route::prefix('api')->group(function() {
+    Route::get('/events','GoogleCalendarController@getEvents');
+});
 Route::resource('project', 'ProjectController');
 Route::resource('task', 'TaskController');
 Route::resource('calendar', 'GoogleCalendarController');
