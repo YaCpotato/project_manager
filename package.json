@@ -17,6 +17,7 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
+        "vue": "^2.6.10",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
@@ -26,6 +27,7 @@
         "moment": "^2.24.0",
         "require": "^2.4.20",
         "v-calendar": "^1.0.0-beta.23",
-        "vue": "^2.6.11"
+        "vue": "^2.6.10",
+        "vue-template-compiler": "^2.6.10"
     }
 }

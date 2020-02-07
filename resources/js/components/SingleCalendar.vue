@@ -7,6 +7,9 @@
 import VCalendar from 'v-calendar';
 
 export default {
+    props:{
+        events: Object
+    },
     data(){
         return{ 
             attrs: [
@@ -19,8 +22,28 @@ export default {
                 popover: {
                     label: 'メッセージを表示できます',
                 },
-                }
+                },
             ],
+        }
+    },
+    mounted:function(){
+        console.log(this.events)
+        alert('s')
+        for(let event=0;event<this.events.length;event++){
+            this.attrs.push({
+                key: event.key,
+                bar: {
+                    height: '3px',
+                    backgroundColor: 'red',
+                    borderColor: null,
+                    borderWidth: '1px',
+                    borderStyle:'solid',
+                    opacity: 1
+                },
+                dates: {
+                    start: event.startDateTime
+                }
+            })
         }
     }
 }

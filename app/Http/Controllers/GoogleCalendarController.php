@@ -17,6 +17,15 @@ class GoogleCalendarController extends Controller
     public function index()
     {
         $events = Event::get();
+        // //exit(var_dump($event_data));
+        // $events = [];
+
+        // foreach ($totalEvents as $key => $event) {
+        //     $events->key = $event->key;
+        //     $events->name = $event->summary;
+        //     $events->startDateTime = $event->startDateTime;
+        //     $events->endDateTime = $event->endDateTime;
+        // }
         return view('calendar/index', compact('events'));
     }
 
