@@ -1922,11 +1922,11 @@ __webpack_require__.r(__webpack_exports__);
       attrs: [{
         key: 'today',
         highlight: {
-          backgroundColor: '#ff8080'
+          backgroundColor: '#ff5580'
         },
         dates: new Date(),
         popover: {
-          label: 'メッセージを表示できます'
+          label: 'これは今日です'
         }
       }]
     };
@@ -1935,8 +1935,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/api/events').then(function (res) {
-      console.log(res.data);
-
       for (var i = 0; i < res.data.length; i++) {
         _this.attrs.push({
           key: res.data[i].googleEvent.id,
@@ -1949,8 +1947,6 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       }
-
-      console.log(_this.attrs);
     })["catch"](function (error) {
       return console.log(error);
     });

@@ -44,3 +44,8 @@
   <script src="{{ asset('/js/app.js') }}"></script>
 </div>
 @endsection
+@section('style')
+<style lang="stylus">
+
+</style>
+@endsection
