@@ -39,7 +39,7 @@
     <div><a href="/event/create" class="btn btn-default">新規作成</a></div>
   </div>
   <div class="col-md-5" style="margin-right:30px;">
-    <single-calendar events="{{ $events }}"></single-calendar>
+    <single-calendar></single-calendar>
   </div>
   <script src="{{ asset('/js/app.js') }}"></script>
 </div>
