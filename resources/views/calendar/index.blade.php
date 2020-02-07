@@ -18,7 +18,7 @@
       @foreach($events as $event)
       <tr>
         <td>
-          <a href="/event/{{ $event->id }}/">{{ $event->name }}</a>
+          <span>{{ $event->name }}</span>
         </td>
         <td>
           <span>{{ $event->startDateTime }}</span>
@@ -30,22 +30,24 @@
           <form action="/event/{{ $event->id }}" method="post">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button type="submit" class="btn btn-xs btn-danger" aria-label="Left Align"><span class="glyphicon glyphicon-trash"></span></button>
+            <button type="submit" class="btn btn-xs btn-danger" disabled aria-label="Left Align"><span class="glyphicon glyphicon-trash"></span></button>
           </form>
         </td>
       </tr>
       @endforeach
     </table>
-    <div><a href="/event/create" class="btn btn-default">新規作成</a></div>
   </div>
-  <div class="col-md-5" style="margin-right:30px;">
+  <div class="col-md-6" style="margin-right:10px;">
     <single-calendar></single-calendar>
   </div>
   <script src="{{ asset('/js/app.js') }}"></script>
 </div>
 @endsection
 @section('style')
-<style lang="stylus">
-
+<style>
+single-calendar{
+    width:60vw;
+    height:auto;
+}
 </style>
 @endsection
