@@ -12,8 +12,8 @@ $factory->define(Task::class, function (Faker $faker) {
             return factory(Project::class)->create()->id;
         },
         'name' => $faker->name,
-        'completed_at' => $faker->completed_at,
-        'started_at' => $faker->started_at,
-        'deadline' => $faker->deadline
+        'completed_at' => $faker->dateTime,
+        'started_at' => $faker->dateTime,
+        'deadline' => $faker->dateTime
     ];
 });
