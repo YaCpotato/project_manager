@@ -38,7 +38,7 @@ class TaskController extends Controller
     {
         $task = new Task;
         $task->name = $request->name;
-        $task->started_at = $request->started_at;
+        $task->deadline = $request->deadline;
         $task->project_id = 0;
         $task->save();
         $tasks = Task::all();
@@ -80,6 +80,7 @@ class TaskController extends Controller
     {
         $task = Task::findOrFail($id);
         $task->name = $request->new_name;
+        $task->deadline = $request->new_deadline;
         $task->save();
         $tasks = Task::all();
         return view('task/index',compact('tasks'));

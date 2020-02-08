@@ -8,6 +8,8 @@
         <div class="form-group">
             <label for="title">{{ __('Title') }}</label>
             <input id="title" type="text" class="form-control" name="new_name" value="{{ $task->name }}" required autofocus>
+            <label for="body">{{ __('Deadline') }}</label>
+            <input id="start" type="date" class="form-control" name="new_deadline" required>
         </div>
         <button type="submit" name="submit" class="btn btn-primary">{{ __('Submit') }}</button>
     </form>

@@ -13,8 +13,8 @@
       <tr>
         <th class="text-center">ID</th>
         <th class="text-center">タスク名</th>
-        <th class="text-center">完了日</th>
         <th class="text-center">開始日</th>
+        <th class="text-center">期限日</th>
         <th class="text-center"></th>
         <th class="text-center"></th>
       </tr>
@@ -27,10 +27,10 @@
           <a href="/task/{{ $task->id }}/">{{ $task->name }}</a>
         </td>
         <td>
-          <a href="/task/{{ $task->id }}/">{{ $task->completed_at }}</a>
+          <a href="/task/{{ $task->id }}/">{{ $task->created_at }}</a>
         </td>
         <td>
-          <a href="/task/{{ $task->id }}/">{{ $task->started_at }}</a>
+          <a href="/task/{{ $task->id }}/">{{ $task->deadline }}</a>
         </td>
         <td>
           <form action="/task/{{ $task->id }}/edit" method="get">
