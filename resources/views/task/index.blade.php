@@ -26,7 +26,7 @@
           <a href="/task/{{ $task->id }}/">{{ $task->name }}</a>
         </td>
         <td>
-          <a href="/task/{{ $task->id }}/">{{ $task->created_at }}</a>
+          <a href="/task/{{ $task->id }}/">{{ $task->created_at->format('Y/m/d') }}</a>
         </td>
         <td>
           <a href="/task/{{ $task->id }}/">{{ $task->deadline }}</a>
