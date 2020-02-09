@@ -31,10 +31,10 @@
           <a href="/task/{{ $task->id }}/">{{ $task->name }}</a>
         </td>
         <td>
-          <a href="/task/{{ $task->id }}/">{{ $task->created_at->format('Y/m/d') }}</a>
+          <span>{{ $task->created_at->format('Y/m/d') }}</span>
         </td>
         <td>
-          <a href="/task/{{ $task->id }}/">{{ $task->deadline }}</a>
+          <span>{{ $task->deadline }}</span>
         </td>
         <td>
           <form action="/task/{{ $task->id }}/edit" method="get">
