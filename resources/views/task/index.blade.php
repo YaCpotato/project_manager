@@ -4,7 +4,6 @@
 <div class="row">
   <div class="col-md-12">
     <h3 class="ops-title">全タスクリスト</h3>
-    <div style="margin:10px;"><a href="/task/create" class="btn btn-primary">新規作成</a></div>
   </div>
 </div>
 <div class="row">

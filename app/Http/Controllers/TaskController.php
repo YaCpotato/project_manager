@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use App\Project;
 
 class TaskController extends Controller
 {
@@ -23,9 +24,10 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('task/create');
+        $project = Project::findOrFail($request->project_id);
+        return view('task/create',compact('project'));
     }
 
     /**
@@ -39,10 +41,15 @@ class TaskController extends Controller
         $task = new Task;
         $task->name = $request->name;
         $task->deadline = $request->deadline;
-        $task->project_id = 0;
+        $task->project_id = $request->project_id;
         $task->save();
-        $tasks = Task::all();
-        return view('task/index', compact('tasks'));
+
+        $project = Project::find($request->project_id);
+        $data = Task::query();
+        $data->where('project_id',$request->project_id);
+        $tasks = $data->get();
+
+        return view('project/detail', compact('project','tasks'));
     }
 
     /**
