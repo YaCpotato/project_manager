@@ -19,11 +19,6 @@
         <a class="nav-link" href="/project">Project <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/task" role="button" aria-haspopup="true" aria-expanded="false">
-          Task
-        </a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="/calendar" role="button" aria-haspopup="true" aria-expanded="false">
           Calendar
         </a>

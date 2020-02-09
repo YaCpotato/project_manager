@@ -13,17 +13,46 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <table class="table text-center">
-    @foreach($tasks as $task)
+  <table class="table text-center">
+      <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">タスク名</th>
+        <th class="text-center">登録日</th>
+        <th class="text-center">期限日</th>
+        <th class="text-center"></th>
+        <th class="text-center"></th>
+      </tr>
+      @foreach($tasks as $task)
       <tr>
         <td>
-          <a href="/tasks/{{ $task->id }}/edit">{{ $task->id }}</a>
+          <span>{{ $task->id }}</span>
         </td>
         <td>
-          <a href="/tasks/{{ $task->id }}/">{{ $task->name }}</a>
+          <a href="/task/{{ $task->id }}/">{{ $task->name }}</a>
+        </td>
+        <td>
+          <span>{{ $task->created_at->format('Y/m/d') }}</span>
+        </td>
+        <td>
+          <span>{{ $task->deadline }}</span>
+        </td>
+        <td>
+          <form action="/task/{{ $task->id }}/edit" method="get">
+            <input type="hidden" name="project_id" value="{{ $project->id }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-xs btn-success" aria-label="Left Align"><i class="far fa-edit"></i></button>
+          </form>
+        </td>
+        <td>
+          <form action="/task/{{ $task->id }}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="project_id" value="{{ $project->id }}">
+            <button type="submit" class="btn btn-xs btn-danger" aria-label="Left Align"><i class="far fa-trash-alt"></i></button>
+          </form>
         </td>
       </tr>
-    @endforeach
+      @endforeach
     </table>
   </div>
 </div>

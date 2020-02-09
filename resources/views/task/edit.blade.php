@@ -6,6 +6,7 @@
         @csrf
         @method('PUT')
         <div class="form-group">
+            <input type="hidden" name="project_id" value="{{ $project->id }}">
             <label for="title">{{ __('Title') }}</label>
             <input id="title" type="text" class="form-control" name="new_name" value="{{ $task->name }}" required autofocus>
             <label for="body">{{ __('Deadline') }}</label>

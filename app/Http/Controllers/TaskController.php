@@ -70,10 +70,11 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        $project = Project::find($request->project_id);
         $task = Task::findOrFail($id);
-        return view('task/edit', compact('task'));
+        return view('task/edit', compact('task','project'));
     }
 
     /**
@@ -85,12 +86,13 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $project = Project::find($request->project_id);
         $task = Task::findOrFail($id);
         $task->name = $request->new_name;
         $task->deadline = $request->new_deadline;
         $task->save();
         $tasks = Task::all();
-        return view('task/index',compact('tasks'));
+        return view('project/detail',compact('tasks','project'));
     }
 
     /**
@@ -99,11 +101,15 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         $task = Task::findOrFail($id);
         $task->delete();
-        $tasks = Task::all();
-        return view('task/index',compact('tasks'));
+
+        $project = Project::find($request->project_id);
+        $data = Task::query();
+        $data->where('project_id',$request->project_id);
+        $tasks = $data->get();
+        return view('project/detail', compact('project','tasks'));
     }
 }
