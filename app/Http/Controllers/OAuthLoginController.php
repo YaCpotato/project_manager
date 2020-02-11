@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Socialite;
 use Auth;
+use App\Project;
 
 class OAuthLoginController extends Controller
 {
@@ -16,18 +17,18 @@ class OAuthLoginController extends Controller
 
     public function authGoogleCallback()
     {
-        exit(var_dump('dd'));
-        $googleUser = Socialite::driver('google')->user();
+        $googleUser = Socialite::driver('google')->stateless()->user();
         $user = User::firstOrNew(['email' => $googleUser->email]);
         if (!$user->exists) {
             $user['name'] = $googleUser->getNickname() ?? $googleUser->getName() ?? $googleUser->getNick();
             $user['email'] = $googleUser->email;
-            $user['verified'] = 1;
-            $user['google_id'] = $googleUser->getId();
             $user['google_name'] = $googleUser->getNickname() ?? $googleUser->getName() ?? $googleUser->getNick();
             $user->save();
         }
         Auth::login($user);
-        return redirect()->route('home');
+
+        $projects = Project::all();
+        $user = Auth::user();
+        return view('project/index', compact('projects','user'));
     }
 }
