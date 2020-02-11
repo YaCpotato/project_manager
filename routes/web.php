@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/import','GoogleCalendarController@import')->name('import');
+Route::get('/auth/{service}', 'OAuthLoginController@getGoogleAuth')->where('service', 'google');
+Route::get('/auth/callback/google', 'OAuthLoginController@authGoogleCallback');
+
 Route::prefix('api')->group(function() {
     Route::get('/events','GoogleCalendarController@getEvents');
 });
