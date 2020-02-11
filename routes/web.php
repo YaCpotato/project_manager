@@ -22,6 +22,9 @@ Route::get('/import','GoogleCalendarController@import')->name('import');
 Route::get('/auth/{service}', 'OAuthLoginController@getGoogleAuth')->where('service', 'google');
 Route::get('/auth/callback/google', 'OAuthLoginController@authGoogleCallback');
 
+Route::prefix('api')->group(function() {
+    Route::get('/events','GoogleCalendarController@getEvents');
+});
 Route::resource('project', 'ProjectController');
 Route::resource('task', 'TaskController');
-Route::resource('/calendar', 'GoogleCalendarController');
+Route::resource('calendar', 'GoogleCalendarController');

@@ -17,7 +17,6 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 50);
             $table->date('completed_at')->nullable();
-            $table->date('started_at')->nullable();
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <div class="task-title">{{ $task->started_at }}</div>
+    <div class="task-title">{{ $task->deadline }}</div>
   </div>
 </div>
 @endsection
