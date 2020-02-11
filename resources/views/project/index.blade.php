@@ -3,7 +3,7 @@
 <div class="container ops-main">
 <div class="row">
   <div class="col-md-12">
-    <h3 class="ops-title">ダッシュボード</h3>
+    <h3 class="ops-title">ようこそ{{ $user->google_name }}さん</h3>
     <div style="margin:10px;"><a href="/project/create" class="btn btn-primary">新規作成</a></div>
   </div>
 </div>
