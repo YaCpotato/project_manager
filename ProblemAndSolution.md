@@ -49,3 +49,9 @@ The environment file is invalid!
 Failed to parse dotenv file due to an invalid name. Failed at [GOOGLE_CLIENT_ID　].
 ```
 `結論：GOOGLE_CLIENT_IDの後ろに全角スペースが存在した`
+
+### 5. SocialiteのGoogle OAuth2.0にだいぶ詰まった。
+参考サイトは以下
+* https://qiita.com/hikarizm/items/44c1e9ff34726c9260d3
+* https://qiita.com/KeisukeKudo/items/18dd8a342a4bdd43913c
+* https://tech.bita.jp/article/28
