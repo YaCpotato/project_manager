@@ -1899,6 +1899,70 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GanttChart.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GanttChart.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var frappe_gantt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! frappe-gantt */ "./node_modules/frappe-gantt/src/index.js");
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      tasks: [{
+        id: 'Task 1',
+        name: 'Redesign website',
+        start: '2016-12-28',
+        end: '2016-12-31',
+        progress: 20
+      }, {
+        id: 'Task 2',
+        name: 'Redesign website',
+        start: '2016-12-28',
+        end: '2016-12-31',
+        progress: 20
+      }, {
+        id: 'Task 3',
+        name: 'Redesign website',
+        start: '2016-12-28',
+        end: '2016-12-31',
+        progress: 20
+      }],
+      gantt: {}
+    };
+  },
+  mounted: function mounted() {
+    // axios.get('/api/tasks').then((res)=>{
+    //             for(let i=0;i<res.data.length;i++){
+    //                 this.tasks.push({
+    //                     id:res.data[i].id,
+    //                     name:red.data[i].name,
+    //                     created_at:res.data[i].created_at,
+    //                     deadline:red.data[i].deadline,
+    //                     completed_at:red.data[i].completed_at,
+    //                 })
+    //             }
+    //         })
+    //             .catch(error => console.log(error))
+    this.gantt = new frappe_gantt__WEBPACK_IMPORTED_MODULE_1__["default"]('#gantt', this.tasks);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SingleCalendar.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SingleCalendar.vue?vue&type=script&lang=js& ***!
@@ -1910,14 +1974,11 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var v_calendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! v-calendar */ "./node_modules/v-calendar/lib/v-calendar.umd.min.js");
 /* harmony import */ var v_calendar__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(v_calendar__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
 //
 //
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1955,6 +2016,2129 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/frappe-gantt/src/gantt.scss":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/frappe-gantt/src/gantt.scss ***!
+  \*************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".gantt .grid-background {\n  fill: none;\n}\n.gantt .grid-header {\n  fill: #ffffff;\n  stroke: #e0e0e0;\n  stroke-width: 1.4;\n}\n.gantt .grid-row {\n  fill: #ffffff;\n}\n.gantt .grid-row:nth-child(even) {\n  fill: #f5f5f5;\n}\n.gantt .row-line {\n  stroke: #ebeff2;\n}\n.gantt .tick {\n  stroke: #e0e0e0;\n  stroke-width: 0.2;\n}\n.gantt .tick.thick {\n  stroke-width: 0.4;\n}\n.gantt .today-highlight {\n  fill: #fcf8e3;\n  opacity: 0.5;\n}\n.gantt .arrow {\n  fill: none;\n  stroke: #666;\n  stroke-width: 1.4;\n}\n.gantt .bar {\n  fill: #b8c2cc;\n  stroke: #8D99A6;\n  stroke-width: 0;\n  -webkit-transition: stroke-width 0.3s ease;\n  transition: stroke-width 0.3s ease;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.gantt .bar-progress {\n  fill: #a3a3ff;\n}\n.gantt .bar-invalid {\n  fill: transparent;\n  stroke: #8D99A6;\n  stroke-width: 1;\n  stroke-dasharray: 5;\n}\n.gantt .bar-invalid ~ .bar-label {\n  fill: #555;\n}\n.gantt .bar-label {\n  fill: #fff;\n  dominant-baseline: central;\n  text-anchor: middle;\n  font-size: 12px;\n  font-weight: lighter;\n}\n.gantt .bar-label.big {\n  fill: #555;\n  text-anchor: start;\n}\n.gantt .handle {\n  fill: #ddd;\n  cursor: ew-resize;\n  opacity: 0;\n  visibility: hidden;\n  -webkit-transition: opacity 0.3s ease;\n  transition: opacity 0.3s ease;\n}\n.gantt .bar-wrapper {\n  cursor: pointer;\n  outline: none;\n}\n.gantt .bar-wrapper:hover .bar {\n  fill: #a9b5c1;\n}\n.gantt .bar-wrapper:hover .bar-progress {\n  fill: #8a8aff;\n}\n.gantt .bar-wrapper:hover .handle {\n  visibility: visible;\n  opacity: 1;\n}\n.gantt .bar-wrapper.active .bar {\n  fill: #a9b5c1;\n}\n.gantt .bar-wrapper.active .bar-progress {\n  fill: #8a8aff;\n}\n.gantt .lower-text, .gantt .upper-text {\n  font-size: 12px;\n  text-anchor: middle;\n}\n.gantt .upper-text {\n  fill: #555;\n}\n.gantt .lower-text {\n  fill: #333;\n}\n.gantt .hide {\n  display: none;\n}\n\n.gantt-container {\n  position: relative;\n  overflow: auto;\n  font-size: 12px;\n}\n.gantt-container .popup-wrapper {\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.8);\n  padding: 0;\n  color: #959da5;\n  border-radius: 3px;\n}\n.gantt-container .popup-wrapper .title {\n  border-bottom: 3px solid #a3a3ff;\n  padding: 10px;\n}\n.gantt-container .popup-wrapper .subtitle {\n  padding: 10px;\n  color: #dfe2e5;\n}\n.gantt-container .popup-wrapper .pointer {\n  position: absolute;\n  height: 5px;\n  margin: 0 0 0 -5px;\n  border: 5px solid transparent;\n  border-top-color: rgba(0, 0, 0, 0.8);\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/arrow.js":
+/*!************************************************!*\
+  !*** ./node_modules/frappe-gantt/src/arrow.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Arrow; });
+/* harmony import */ var _svg_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./svg_utils */ "./node_modules/frappe-gantt/src/svg_utils.js");
+
+
+class Arrow {
+    constructor(gantt, from_task, to_task) {
+        this.gantt = gantt;
+        this.from_task = from_task;
+        this.to_task = to_task;
+
+        this.calculate_path();
+        this.draw();
+    }
+
+    calculate_path() {
+        let start_x =
+            this.from_task.$bar.getX() + this.from_task.$bar.getWidth() / 2;
+
+        const condition = () =>
+            this.to_task.$bar.getX() < start_x + this.gantt.options.padding &&
+            start_x > this.from_task.$bar.getX() + this.gantt.options.padding;
+
+        while (condition()) {
+            start_x -= 10;
+        }
+
+        const start_y =
+            this.gantt.options.header_height +
+            this.gantt.options.bar_height +
+            (this.gantt.options.padding + this.gantt.options.bar_height) *
+                this.from_task.task._index +
+            this.gantt.options.padding;
+
+        const end_x = this.to_task.$bar.getX() - this.gantt.options.padding / 2;
+        const end_y =
+            this.gantt.options.header_height +
+            this.gantt.options.bar_height / 2 +
+            (this.gantt.options.padding + this.gantt.options.bar_height) *
+                this.to_task.task._index +
+            this.gantt.options.padding;
+
+        const from_is_below_to =
+            this.from_task.task._index > this.to_task.task._index;
+        const curve = this.gantt.options.arrow_curve;
+        const clockwise = from_is_below_to ? 1 : 0;
+        const curve_y = from_is_below_to ? -curve : curve;
+        const offset = from_is_below_to
+            ? end_y + this.gantt.options.arrow_curve
+            : end_y - this.gantt.options.arrow_curve;
+
+        this.path = `
+            M ${start_x} ${start_y}
+            V ${offset}
+            a ${curve} ${curve} 0 0 ${clockwise} ${curve} ${curve_y}
+            L ${end_x} ${end_y}
+            m -5 -5
+            l 5 5
+            l -5 5`;
+
+        if (
+            this.to_task.$bar.getX() <
+            this.from_task.$bar.getX() + this.gantt.options.padding
+        ) {
+            const down_1 = this.gantt.options.padding / 2 - curve;
+            const down_2 =
+                this.to_task.$bar.getY() +
+                this.to_task.$bar.getHeight() / 2 -
+                curve_y;
+            const left = this.to_task.$bar.getX() - this.gantt.options.padding;
+
+            this.path = `
+                M ${start_x} ${start_y}
+                v ${down_1}
+                a ${curve} ${curve} 0 0 1 -${curve} ${curve}
+                H ${left}
+                a ${curve} ${curve} 0 0 ${clockwise} -${curve} ${curve_y}
+                V ${down_2}
+                a ${curve} ${curve} 0 0 ${clockwise} ${curve} ${curve_y}
+                L ${end_x} ${end_y}
+                m -5 -5
+                l 5 5
+                l -5 5`;
+        }
+    }
+
+    draw() {
+        this.element = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_0__["createSVG"])('path', {
+            d: this.path,
+            'data-from': this.from_task.task.id,
+            'data-to': this.to_task.task.id
+        });
+    }
+
+    update() {
+        this.calculate_path();
+        this.element.setAttribute('d', this.path);
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/bar.js":
+/*!**********************************************!*\
+  !*** ./node_modules/frappe-gantt/src/bar.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Bar; });
+/* harmony import */ var _date_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./date_utils */ "./node_modules/frappe-gantt/src/date_utils.js");
+/* harmony import */ var _svg_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svg_utils */ "./node_modules/frappe-gantt/src/svg_utils.js");
+
+
+
+class Bar {
+    constructor(gantt, task) {
+        this.set_defaults(gantt, task);
+        this.prepare();
+        this.draw();
+        this.bind();
+    }
+
+    set_defaults(gantt, task) {
+        this.action_completed = false;
+        this.gantt = gantt;
+        this.task = task;
+    }
+
+    prepare() {
+        this.prepare_values();
+        this.prepare_helpers();
+    }
+
+    prepare_values() {
+        this.invalid = this.task.invalid;
+        this.height = this.gantt.options.bar_height;
+        this.x = this.compute_x();
+        this.y = this.compute_y();
+        this.corner_radius = this.gantt.options.bar_corner_radius;
+        this.duration =
+            _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].diff(this.task._end, this.task._start, 'hour') /
+            this.gantt.options.step;
+        this.width = this.gantt.options.column_width * this.duration;
+        this.progress_width =
+            this.gantt.options.column_width *
+                this.duration *
+                (this.task.progress / 100) || 0;
+        this.group = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('g', {
+            class: 'bar-wrapper ' + (this.task.custom_class || ''),
+            'data-id': this.task.id
+        });
+        this.bar_group = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('g', {
+            class: 'bar-group',
+            append_to: this.group
+        });
+        this.handle_group = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('g', {
+            class: 'handle-group',
+            append_to: this.group
+        });
+    }
+
+    prepare_helpers() {
+        SVGElement.prototype.getX = function() {
+            return +this.getAttribute('x');
+        };
+        SVGElement.prototype.getY = function() {
+            return +this.getAttribute('y');
+        };
+        SVGElement.prototype.getWidth = function() {
+            return +this.getAttribute('width');
+        };
+        SVGElement.prototype.getHeight = function() {
+            return +this.getAttribute('height');
+        };
+        SVGElement.prototype.getEndX = function() {
+            return this.getX() + this.getWidth();
+        };
+    }
+
+    draw() {
+        this.draw_bar();
+        this.draw_progress_bar();
+        this.draw_label();
+        this.draw_resize_handles();
+    }
+
+    draw_bar() {
+        this.$bar = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+            x: this.x,
+            y: this.y,
+            width: this.width,
+            height: this.height,
+            rx: this.corner_radius,
+            ry: this.corner_radius,
+            class: 'bar',
+            append_to: this.bar_group
+        });
+
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["animateSVG"])(this.$bar, 'width', 0, this.width);
+
+        if (this.invalid) {
+            this.$bar.classList.add('bar-invalid');
+        }
+    }
+
+    draw_progress_bar() {
+        if (this.invalid) return;
+        this.$bar_progress = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+            x: this.x,
+            y: this.y,
+            width: this.progress_width,
+            height: this.height,
+            rx: this.corner_radius,
+            ry: this.corner_radius,
+            class: 'bar-progress',
+            append_to: this.bar_group
+        });
+
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["animateSVG"])(this.$bar_progress, 'width', 0, this.progress_width);
+    }
+
+    draw_label() {
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('text', {
+            x: this.x + this.width / 2,
+            y: this.y + this.height / 2,
+            innerHTML: this.task.name,
+            class: 'bar-label',
+            append_to: this.bar_group
+        });
+        // labels get BBox in the next tick
+        requestAnimationFrame(() => this.update_label_position());
+    }
+
+    draw_resize_handles() {
+        if (this.invalid) return;
+
+        const bar = this.$bar;
+        const handle_width = 8;
+
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+            x: bar.getX() + bar.getWidth() - 9,
+            y: bar.getY() + 1,
+            width: handle_width,
+            height: this.height - 2,
+            rx: this.corner_radius,
+            ry: this.corner_radius,
+            class: 'handle right',
+            append_to: this.handle_group
+        });
+
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+            x: bar.getX() + 1,
+            y: bar.getY() + 1,
+            width: handle_width,
+            height: this.height - 2,
+            rx: this.corner_radius,
+            ry: this.corner_radius,
+            class: 'handle left',
+            append_to: this.handle_group
+        });
+
+        if (this.task.progress && this.task.progress < 100) {
+            this.$handle_progress = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('polygon', {
+                points: this.get_progress_polygon_points().join(','),
+                class: 'handle progress',
+                append_to: this.handle_group
+            });
+        }
+    }
+
+    get_progress_polygon_points() {
+        const bar_progress = this.$bar_progress;
+        return [
+            bar_progress.getEndX() - 5,
+            bar_progress.getY() + bar_progress.getHeight(),
+            bar_progress.getEndX() + 5,
+            bar_progress.getY() + bar_progress.getHeight(),
+            bar_progress.getEndX(),
+            bar_progress.getY() + bar_progress.getHeight() - 8.66
+        ];
+    }
+
+    bind() {
+        if (this.invalid) return;
+        this.setup_click_event();
+    }
+
+    setup_click_event() {
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.group, 'focus ' + this.gantt.options.popup_trigger, e => {
+            if (this.action_completed) {
+                // just finished a move action, wait for a few seconds
+                return;
+            }
+
+            if (e.type === 'click') {
+                this.gantt.trigger_event('click', [this.task]);
+            }
+
+            this.gantt.unselect_all();
+            this.group.classList.toggle('active');
+
+            this.show_popup();
+        });
+    }
+
+    show_popup() {
+        if (this.gantt.bar_being_dragged) return;
+
+        const start_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(this.task._start, 'MMM D');
+        const end_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(
+            _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.task._end, -1, 'second'),
+            'MMM D'
+        );
+        const subtitle = start_date + ' - ' + end_date;
+
+        this.gantt.show_popup({
+            target_element: this.$bar,
+            title: this.task.name,
+            subtitle: subtitle,
+            task: this.task
+        });
+    }
+
+    update_bar_position({ x = null, width = null }) {
+        const bar = this.$bar;
+        if (x) {
+            // get all x values of parent task
+            const xs = this.task.dependencies.map(dep => {
+                return this.gantt.get_bar(dep).$bar.getX();
+            });
+            // child task must not go before parent
+            const valid_x = xs.reduce((prev, curr) => {
+                return x >= curr;
+            }, x);
+            if (!valid_x) {
+                width = null;
+                return;
+            }
+            this.update_attr(bar, 'x', x);
+        }
+        if (width && width >= this.gantt.options.column_width) {
+            this.update_attr(bar, 'width', width);
+        }
+        this.update_label_position();
+        this.update_handle_position();
+        this.update_progressbar_position();
+        this.update_arrow_position();
+    }
+
+    date_changed() {
+        let changed = false;
+        const { new_start_date, new_end_date } = this.compute_start_end_date();
+
+        if (Number(this.task._start) !== Number(new_start_date)) {
+            changed = true;
+            this.task._start = new_start_date;
+        }
+
+        if (Number(this.task._end) !== Number(new_end_date)) {
+            changed = true;
+            this.task._end = new_end_date;
+        }
+
+        if (!changed) return;
+
+        this.gantt.trigger_event('date_change', [
+            this.task,
+            new_start_date,
+            _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(new_end_date, -1, 'second')
+        ]);
+    }
+
+    progress_changed() {
+        const new_progress = this.compute_progress();
+        this.task.progress = new_progress;
+        this.gantt.trigger_event('progress_change', [this.task, new_progress]);
+    }
+
+    set_action_completed() {
+        this.action_completed = true;
+        setTimeout(() => (this.action_completed = false), 1000);
+    }
+
+    compute_start_end_date() {
+        const bar = this.$bar;
+        const x_in_units = bar.getX() / this.gantt.options.column_width;
+        const new_start_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(
+            this.gantt.gantt_start,
+            x_in_units * this.gantt.options.step,
+            'hour'
+        );
+        const width_in_units = bar.getWidth() / this.gantt.options.column_width;
+        const new_end_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(
+            new_start_date,
+            width_in_units * this.gantt.options.step,
+            'hour'
+        );
+
+        return { new_start_date, new_end_date };
+    }
+
+    compute_progress() {
+        const progress =
+            this.$bar_progress.getWidth() / this.$bar.getWidth() * 100;
+        return parseInt(progress, 10);
+    }
+
+    compute_x() {
+        const { step, column_width } = this.gantt.options;
+        const task_start = this.task._start;
+        const gantt_start = this.gantt.gantt_start;
+
+        const diff = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].diff(task_start, gantt_start, 'hour');
+        let x = diff / step * column_width;
+
+        if (this.gantt.view_is('Month')) {
+            const diff = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].diff(task_start, gantt_start, 'day');
+            x = diff * column_width / 30;
+        }
+        return x;
+    }
+
+    compute_y() {
+        return (
+            this.gantt.options.header_height +
+            this.gantt.options.padding +
+            this.task._index * (this.height + this.gantt.options.padding)
+        );
+    }
+
+    get_snap_position(dx) {
+        let odx = dx,
+            rem,
+            position;
+
+        if (this.gantt.view_is('Week')) {
+            rem = dx % (this.gantt.options.column_width / 7);
+            position =
+                odx -
+                rem +
+                (rem < this.gantt.options.column_width / 14
+                    ? 0
+                    : this.gantt.options.column_width / 7);
+        } else if (this.gantt.view_is('Month')) {
+            rem = dx % (this.gantt.options.column_width / 30);
+            position =
+                odx -
+                rem +
+                (rem < this.gantt.options.column_width / 60
+                    ? 0
+                    : this.gantt.options.column_width / 30);
+        } else {
+            rem = dx % this.gantt.options.column_width;
+            position =
+                odx -
+                rem +
+                (rem < this.gantt.options.column_width / 2
+                    ? 0
+                    : this.gantt.options.column_width);
+        }
+        return position;
+    }
+
+    update_attr(element, attr, value) {
+        value = +value;
+        if (!isNaN(value)) {
+            element.setAttribute(attr, value);
+        }
+        return element;
+    }
+
+    update_progressbar_position() {
+        this.$bar_progress.setAttribute('x', this.$bar.getX());
+        this.$bar_progress.setAttribute(
+            'width',
+            this.$bar.getWidth() * (this.task.progress / 100)
+        );
+    }
+
+    update_label_position() {
+        const bar = this.$bar,
+            label = this.group.querySelector('.bar-label');
+
+        if (label.getBBox().width > bar.getWidth()) {
+            label.classList.add('big');
+            label.setAttribute('x', bar.getX() + bar.getWidth() + 5);
+        } else {
+            label.classList.remove('big');
+            label.setAttribute('x', bar.getX() + bar.getWidth() / 2);
+        }
+    }
+
+    update_handle_position() {
+        const bar = this.$bar;
+        this.handle_group
+            .querySelector('.handle.left')
+            .setAttribute('x', bar.getX() + 1);
+        this.handle_group
+            .querySelector('.handle.right')
+            .setAttribute('x', bar.getEndX() - 9);
+        const handle = this.group.querySelector('.handle.progress');
+        handle &&
+            handle.setAttribute('points', this.get_progress_polygon_points());
+    }
+
+    update_arrow_position() {
+        this.arrows = this.arrows || [];
+        for (let arrow of this.arrows) {
+            arrow.update();
+        }
+    }
+}
+
+function isFunction(functionToCheck) {
+    var getType = {};
+    return (
+        functionToCheck &&
+        getType.toString.call(functionToCheck) === '[object Function]'
+    );
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/date_utils.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/frappe-gantt/src/date_utils.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const YEAR = 'year';
+const MONTH = 'month';
+const DAY = 'day';
+const HOUR = 'hour';
+const MINUTE = 'minute';
+const SECOND = 'second';
+const MILLISECOND = 'millisecond';
+
+const month_names = {
+    en: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ],
+    ru: [
+        'Январь',
+        'Февраль',
+        'Март',
+        'Апрель',
+        'Май',
+        'Июнь',
+        'Июль',
+        'Август',
+        'Сентябрь',
+        'Октябрь',
+        'Ноябрь',
+        'Декабрь'
+    ]
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    parse(date, date_separator = '-', time_separator = /[.:]/) {
+        if (date instanceof Date) {
+            return date;
+        }
+        if (typeof date === 'string') {
+            let date_parts, time_parts;
+            const parts = date.split(' ');
+
+            date_parts = parts[0]
+                .split(date_separator)
+                .map(val => parseInt(val, 10));
+            time_parts = parts[1] && parts[1].split(time_separator);
+
+            // month is 0 indexed
+            date_parts[1] = date_parts[1] - 1;
+
+            let vals = date_parts;
+
+            if (time_parts && time_parts.length) {
+                if (time_parts.length == 4) {
+                    time_parts[3] = '0.' + time_parts[3];
+                    time_parts[3] = parseFloat(time_parts[3]) * 1000;
+                }
+                vals = vals.concat(time_parts);
+            }
+
+            return new Date(...vals);
+        }
+    },
+
+    to_string(date, with_time = false) {
+        if (!(date instanceof Date)) {
+            throw new TypeError('Invalid argument type');
+        }
+        const vals = this.get_date_values(date).map((val, i) => {
+            if (i === 1) {
+                // add 1 for month
+                val = val + 1;
+            }
+
+            if (i === 6) {
+                return padStart(val + '', 3, '0');
+            }
+
+            return padStart(val + '', 2, '0');
+        });
+        const date_string = `${vals[0]}-${vals[1]}-${vals[2]}`;
+        const time_string = `${vals[3]}:${vals[4]}:${vals[5]}.${vals[6]}`;
+
+        return date_string + (with_time ? ' ' + time_string : '');
+    },
+
+    format(date, format_string = 'YYYY-MM-DD HH:mm:ss.SSS', lang = 'en') {
+        const values = this.get_date_values(date).map(d => padStart(d, 2, 0));
+        const format_map = {
+            YYYY: values[0],
+            MM: padStart(+values[1] + 1, 2, 0),
+            DD: values[2],
+            HH: values[3],
+            mm: values[4],
+            ss: values[5],
+            SSS:values[6],
+            D: values[2],
+            MMMM: month_names[lang][+values[1]],
+            MMM: month_names[lang][+values[1]]
+        };
+
+        let str = format_string;
+        const formatted_values = [];
+
+        Object.keys(format_map)
+            .sort((a, b) => b.length - a.length) // big string first
+            .forEach(key => {
+                if (str.includes(key)) {
+                    str = str.replace(key, `$${formatted_values.length}`);
+                    formatted_values.push(format_map[key]);
+                }
+            });
+
+        formatted_values.forEach((value, i) => {
+            str = str.replace(`$${i}`, value);
+        });
+
+        return str;
+    },
+
+    diff(date_a, date_b, scale = DAY) {
+        let milliseconds, seconds, hours, minutes, days, months, years;
+
+        milliseconds = date_a - date_b;
+        seconds = milliseconds / 1000;
+        minutes = seconds / 60;
+        hours = minutes / 60;
+        days = hours / 24;
+        months = days / 30;
+        years = months / 12;
+
+        if (!scale.endsWith('s')) {
+            scale += 's';
+        }
+
+        return Math.floor(
+            {
+                milliseconds,
+                seconds,
+                minutes,
+                hours,
+                days,
+                months,
+                years
+            }[scale]
+        );
+    },
+
+    today() {
+        const vals = this.get_date_values(new Date()).slice(0, 3);
+        return new Date(...vals);
+    },
+
+    now() {
+        return new Date();
+    },
+
+    add(date, qty, scale) {
+        qty = parseInt(qty, 10);
+        const vals = [
+            date.getFullYear() + (scale === YEAR ? qty : 0),
+            date.getMonth() + (scale === MONTH ? qty : 0),
+            date.getDate() + (scale === DAY ? qty : 0),
+            date.getHours() + (scale === HOUR ? qty : 0),
+            date.getMinutes() + (scale === MINUTE ? qty : 0),
+            date.getSeconds() + (scale === SECOND ? qty : 0),
+            date.getMilliseconds() + (scale === MILLISECOND ? qty : 0)
+        ];
+        return new Date(...vals);
+    },
+
+    start_of(date, scale) {
+        const scores = {
+            [YEAR]: 6,
+            [MONTH]: 5,
+            [DAY]: 4,
+            [HOUR]: 3,
+            [MINUTE]: 2,
+            [SECOND]: 1,
+            [MILLISECOND]: 0
+        };
+
+        function should_reset(_scale) {
+            const max_score = scores[scale];
+            return scores[_scale] <= max_score;
+        }
+
+        const vals = [
+            date.getFullYear(),
+            should_reset(YEAR) ? 0 : date.getMonth(),
+            should_reset(MONTH) ? 1 : date.getDate(),
+            should_reset(DAY) ? 0 : date.getHours(),
+            should_reset(HOUR) ? 0 : date.getMinutes(),
+            should_reset(MINUTE) ? 0 : date.getSeconds(),
+            should_reset(SECOND) ? 0 : date.getMilliseconds()
+        ];
+
+        return new Date(...vals);
+    },
+
+    clone(date) {
+        return new Date(...this.get_date_values(date));
+    },
+
+    get_date_values(date) {
+        return [
+            date.getFullYear(),
+            date.getMonth(),
+            date.getDate(),
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds(),
+            date.getMilliseconds()
+        ];
+    },
+
+    get_days_in_month(date) {
+        const no_of_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        const month = date.getMonth();
+
+        if (month !== 1) {
+            return no_of_days[month];
+        }
+
+        // Feb
+        const year = date.getFullYear();
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            return 29;
+        }
+        return 28;
+    }
+});
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+function padStart(str, targetLength, padString) {
+    str = str + '';
+    targetLength = targetLength >> 0;
+    padString = String(typeof padString !== 'undefined' ? padString : ' ');
+    if (str.length > targetLength) {
+        return String(str);
+    } else {
+        targetLength = targetLength - str.length;
+        if (targetLength > padString.length) {
+            padString += padString.repeat(targetLength / padString.length);
+        }
+        return padString.slice(0, targetLength) + String(str);
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/gantt.scss":
+/*!**************************************************!*\
+  !*** ./node_modules/frappe-gantt/src/gantt.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader!../../postcss-loader/src??ref--7-2!../../sass-loader/dist/cjs.js??ref--7-3!./gantt.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/frappe-gantt/src/gantt.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/frappe-gantt/src/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Gantt; });
+/* harmony import */ var _date_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./date_utils */ "./node_modules/frappe-gantt/src/date_utils.js");
+/* harmony import */ var _svg_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svg_utils */ "./node_modules/frappe-gantt/src/svg_utils.js");
+/* harmony import */ var _bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bar */ "./node_modules/frappe-gantt/src/bar.js");
+/* harmony import */ var _arrow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./arrow */ "./node_modules/frappe-gantt/src/arrow.js");
+/* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./popup */ "./node_modules/frappe-gantt/src/popup.js");
+/* harmony import */ var _gantt_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./gantt.scss */ "./node_modules/frappe-gantt/src/gantt.scss");
+/* harmony import */ var _gantt_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_gantt_scss__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+class Gantt {
+    constructor(wrapper, tasks, options) {
+        this.setup_wrapper(wrapper);
+        this.setup_options(options);
+        this.setup_tasks(tasks);
+        // initialize with default view mode
+        this.change_view_mode();
+        this.bind_events();
+    }
+
+    setup_wrapper(element) {
+        let svg_element, wrapper_element;
+
+        // CSS Selector is passed
+        if (typeof element === 'string') {
+            element = document.querySelector(element);
+        }
+
+        // get the SVGElement
+        if (element instanceof HTMLElement) {
+            wrapper_element = element;
+            svg_element = element.querySelector('svg');
+        } else if (element instanceof SVGElement) {
+            svg_element = element;
+        } else {
+            throw new TypeError(
+                'Frappé Gantt only supports usage of a string CSS selector,' +
+                    " HTML DOM element or SVG DOM element for the 'element' parameter"
+            );
+        }
+
+        // svg element
+        if (!svg_element) {
+            // create it
+            this.$svg = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('svg', {
+                append_to: wrapper_element,
+                class: 'gantt'
+            });
+        } else {
+            this.$svg = svg_element;
+            this.$svg.classList.add('gantt');
+        }
+
+        // wrapper element
+        this.$container = document.createElement('div');
+        this.$container.classList.add('gantt-container');
+
+        const parent_element = this.$svg.parentElement;
+        parent_element.appendChild(this.$container);
+        this.$container.appendChild(this.$svg);
+
+        // popup wrapper
+        this.popup_wrapper = document.createElement('div');
+        this.popup_wrapper.classList.add('popup-wrapper');
+        this.$container.appendChild(this.popup_wrapper);
+    }
+
+    setup_options(options) {
+        const default_options = {
+            header_height: 50,
+            column_width: 30,
+            step: 24,
+            view_modes: [
+                'Quarter Day',
+                'Half Day',
+                'Day',
+                'Week',
+                'Month',
+                'Year'
+            ],
+            bar_height: 20,
+            bar_corner_radius: 3,
+            arrow_curve: 5,
+            padding: 18,
+            view_mode: 'Day',
+            date_format: 'YYYY-MM-DD',
+            popup_trigger: 'click',
+            custom_popup_html: null,
+            language: 'en'
+        };
+        this.options = Object.assign({}, default_options, options);
+    }
+
+    setup_tasks(tasks) {
+        // prepare tasks
+        this.tasks = tasks.map((task, i) => {
+            // convert to Date objects
+            task._start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].parse(task.start);
+            task._end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].parse(task.end);
+
+            // make task invalid if duration too large
+            if (_date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].diff(task._end, task._start, 'year') > 10) {
+                task.end = null;
+            }
+
+            // cache index
+            task._index = i;
+
+            // invalid dates
+            if (!task.start && !task.end) {
+                const today = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].today();
+                task._start = today;
+                task._end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(today, 2, 'day');
+            }
+
+            if (!task.start && task.end) {
+                task._start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(task._end, -2, 'day');
+            }
+
+            if (task.start && !task.end) {
+                task._end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(task._start, 2, 'day');
+            }
+
+            // if hours is not set, assume the last day is full day
+            // e.g: 2018-09-09 becomes 2018-09-09 23:59:59
+            const task_end_values = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].get_date_values(task._end);
+            if (task_end_values.slice(3).every(d => d === 0)) {
+                task._end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(task._end, 24, 'hour');
+            }
+
+            // invalid flag
+            if (!task.start || !task.end) {
+                task.invalid = true;
+            }
+
+            // dependencies
+            if (typeof task.dependencies === 'string' || !task.dependencies) {
+                let deps = [];
+                if (task.dependencies) {
+                    deps = task.dependencies
+                        .split(',')
+                        .map(d => d.trim())
+                        .filter(d => d);
+                }
+                task.dependencies = deps;
+            }
+
+            // uids
+            if (!task.id) {
+                task.id = generate_id(task);
+            }
+
+            return task;
+        });
+
+        this.setup_dependencies();
+    }
+
+    setup_dependencies() {
+        this.dependency_map = {};
+        for (let t of this.tasks) {
+            for (let d of t.dependencies) {
+                this.dependency_map[d] = this.dependency_map[d] || [];
+                this.dependency_map[d].push(t.id);
+            }
+        }
+    }
+
+    refresh(tasks) {
+        this.setup_tasks(tasks);
+        this.change_view_mode();
+    }
+
+    change_view_mode(mode = this.options.view_mode) {
+        this.update_view_scale(mode);
+        this.setup_dates();
+        this.render();
+        // fire viewmode_change event
+        this.trigger_event('view_change', [mode]);
+    }
+
+    update_view_scale(view_mode) {
+        this.options.view_mode = view_mode;
+
+        if (view_mode === 'Day') {
+            this.options.step = 24;
+            this.options.column_width = 38;
+        } else if (view_mode === 'Half Day') {
+            this.options.step = 24 / 2;
+            this.options.column_width = 38;
+        } else if (view_mode === 'Quarter Day') {
+            this.options.step = 24 / 4;
+            this.options.column_width = 38;
+        } else if (view_mode === 'Week') {
+            this.options.step = 24 * 7;
+            this.options.column_width = 140;
+        } else if (view_mode === 'Month') {
+            this.options.step = 24 * 30;
+            this.options.column_width = 120;
+        } else if (view_mode === 'Year') {
+            this.options.step = 24 * 365;
+            this.options.column_width = 120;
+        }
+    }
+
+    setup_dates() {
+        this.setup_gantt_dates();
+        this.setup_date_values();
+    }
+
+    setup_gantt_dates() {
+        this.gantt_start = this.gantt_end = null;
+
+        for (let task of this.tasks) {
+            // set global start and end date
+            if (!this.gantt_start || task._start < this.gantt_start) {
+                this.gantt_start = task._start;
+            }
+            if (!this.gantt_end || task._end > this.gantt_end) {
+                this.gantt_end = task._end;
+            }
+        }
+
+        this.gantt_start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].start_of(this.gantt_start, 'day');
+        this.gantt_end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].start_of(this.gantt_end, 'day');
+
+        // add date padding on both sides
+        if (this.view_is(['Quarter Day', 'Half Day'])) {
+            this.gantt_start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_start, -7, 'day');
+            this.gantt_end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_end, 7, 'day');
+        } else if (this.view_is('Month')) {
+            this.gantt_start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].start_of(this.gantt_start, 'year');
+            this.gantt_end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_end, 1, 'year');
+        } else if (this.view_is('Year')) {
+            this.gantt_start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_start, -2, 'year');
+            this.gantt_end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_end, 2, 'year');
+        } else {
+            this.gantt_start = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_start, -1, 'month');
+            this.gantt_end = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(this.gantt_end, 1, 'month');
+        }
+    }
+
+    setup_date_values() {
+        this.dates = [];
+        let cur_date = null;
+
+        while (cur_date === null || cur_date < this.gantt_end) {
+            if (!cur_date) {
+                cur_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].clone(this.gantt_start);
+            } else {
+                if (this.view_is('Year')) {
+                    cur_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(cur_date, 1, 'year');
+                } else if (this.view_is('Month')) {
+                    cur_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(cur_date, 1, 'month');
+                } else {
+                    cur_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(
+                        cur_date,
+                        this.options.step,
+                        'hour'
+                    );
+                }
+            }
+            this.dates.push(cur_date);
+        }
+    }
+
+    bind_events() {
+        this.bind_grid_click();
+        this.bind_bar_events();
+    }
+
+    render() {
+        this.clear();
+        this.setup_layers();
+        this.make_grid();
+        this.make_dates();
+        this.make_bars();
+        this.make_arrows();
+        this.map_arrows_on_bars();
+        this.set_width();
+        this.set_scroll_position();
+    }
+
+    setup_layers() {
+        this.layers = {};
+        const layers = ['grid', 'date', 'arrow', 'progress', 'bar', 'details'];
+        // make group layers
+        for (let layer of layers) {
+            this.layers[layer] = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('g', {
+                class: layer,
+                append_to: this.$svg
+            });
+        }
+    }
+
+    make_grid() {
+        this.make_grid_background();
+        this.make_grid_rows();
+        this.make_grid_header();
+        this.make_grid_ticks();
+        this.make_grid_highlights();
+    }
+
+    make_grid_background() {
+        const grid_width = this.dates.length * this.options.column_width;
+        const grid_height =
+            this.options.header_height +
+            this.options.padding +
+            (this.options.bar_height + this.options.padding) *
+                this.tasks.length;
+
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+            x: 0,
+            y: 0,
+            width: grid_width,
+            height: grid_height,
+            class: 'grid-background',
+            append_to: this.layers.grid
+        });
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].attr(this.$svg, {
+            height: grid_height + this.options.padding + 100,
+            width: '100%'
+        });
+    }
+
+    make_grid_rows() {
+        const rows_layer = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('g', { append_to: this.layers.grid });
+        const lines_layer = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('g', { append_to: this.layers.grid });
+
+        const row_width = this.dates.length * this.options.column_width;
+        const row_height = this.options.bar_height + this.options.padding;
+
+        let row_y = this.options.header_height + this.options.padding / 2;
+
+        for (let task of this.tasks) {
+            Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+                x: 0,
+                y: row_y,
+                width: row_width,
+                height: row_height,
+                class: 'grid-row',
+                append_to: rows_layer
+            });
+
+            Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('line', {
+                x1: 0,
+                y1: row_y + row_height,
+                x2: row_width,
+                y2: row_y + row_height,
+                class: 'row-line',
+                append_to: lines_layer
+            });
+
+            row_y += this.options.bar_height + this.options.padding;
+        }
+    }
+
+    make_grid_header() {
+        const header_width = this.dates.length * this.options.column_width;
+        const header_height = this.options.header_height + 10;
+        Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+            x: 0,
+            y: 0,
+            width: header_width,
+            height: header_height,
+            class: 'grid-header',
+            append_to: this.layers.grid
+        });
+    }
+
+    make_grid_ticks() {
+        let tick_x = 0;
+        let tick_y = this.options.header_height + this.options.padding / 2;
+        let tick_height =
+            (this.options.bar_height + this.options.padding) *
+            this.tasks.length;
+
+        for (let date of this.dates) {
+            let tick_class = 'tick';
+            // thick tick for monday
+            if (this.view_is('Day') && date.getDate() === 1) {
+                tick_class += ' thick';
+            }
+            // thick tick for first week
+            if (
+                this.view_is('Week') &&
+                date.getDate() >= 1 &&
+                date.getDate() < 8
+            ) {
+                tick_class += ' thick';
+            }
+            // thick ticks for quarters
+            if (this.view_is('Month') && (date.getMonth() + 1) % 3 === 0) {
+                tick_class += ' thick';
+            }
+
+            Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('path', {
+                d: `M ${tick_x} ${tick_y} v ${tick_height}`,
+                class: tick_class,
+                append_to: this.layers.grid
+            });
+
+            if (this.view_is('Month')) {
+                tick_x +=
+                    _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].get_days_in_month(date) *
+                    this.options.column_width /
+                    30;
+            } else {
+                tick_x += this.options.column_width;
+            }
+        }
+    }
+
+    make_grid_highlights() {
+        // highlight today's date
+        if (this.view_is('Day')) {
+            const x =
+                _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].diff(_date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].today(), this.gantt_start, 'hour') /
+                this.options.step *
+                this.options.column_width;
+            const y = 0;
+
+            const width = this.options.column_width;
+            const height =
+                (this.options.bar_height + this.options.padding) *
+                    this.tasks.length +
+                this.options.header_height +
+                this.options.padding / 2;
+
+            Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('rect', {
+                x,
+                y,
+                width,
+                height,
+                class: 'today-highlight',
+                append_to: this.layers.grid
+            });
+        }
+    }
+
+    make_dates() {
+        for (let date of this.get_dates_to_draw()) {
+            Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('text', {
+                x: date.lower_x,
+                y: date.lower_y,
+                innerHTML: date.lower_text,
+                class: 'lower-text',
+                append_to: this.layers.date
+            });
+
+            if (date.upper_text) {
+                const $upper_text = Object(_svg_utils__WEBPACK_IMPORTED_MODULE_1__["createSVG"])('text', {
+                    x: date.upper_x,
+                    y: date.upper_y,
+                    innerHTML: date.upper_text,
+                    class: 'upper-text',
+                    append_to: this.layers.date
+                });
+
+                // remove out-of-bound dates
+                if (
+                    $upper_text.getBBox().x2 > this.layers.grid.getBBox().width
+                ) {
+                    $upper_text.remove();
+                }
+            }
+        }
+    }
+
+    get_dates_to_draw() {
+        let last_date = null;
+        const dates = this.dates.map((date, i) => {
+            const d = this.get_date_info(date, last_date, i);
+            last_date = date;
+            return d;
+        });
+        return dates;
+    }
+
+    get_date_info(date, last_date, i) {
+        if (!last_date) {
+            last_date = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].add(date, 1, 'year');
+        }
+        const date_text = {
+            'Quarter Day_lower': _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(
+                date,
+                'HH',
+                this.options.language
+            ),
+            'Half Day_lower': _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(
+                date,
+                'HH',
+                this.options.language
+            ),
+            Day_lower:
+                date.getDate() !== last_date.getDate()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'D', this.options.language)
+                    : '',
+            Week_lower:
+                date.getMonth() !== last_date.getMonth()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'D MMM', this.options.language)
+                    : _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'D', this.options.language),
+            Month_lower: _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'MMMM', this.options.language),
+            Year_lower: _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'YYYY', this.options.language),
+            'Quarter Day_upper':
+                date.getDate() !== last_date.getDate()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'D MMM', this.options.language)
+                    : '',
+            'Half Day_upper':
+                date.getDate() !== last_date.getDate()
+                    ? date.getMonth() !== last_date.getMonth()
+                      ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'D MMM', this.options.language)
+                      : _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'D', this.options.language)
+                    : '',
+            Day_upper:
+                date.getMonth() !== last_date.getMonth()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'MMMM', this.options.language)
+                    : '',
+            Week_upper:
+                date.getMonth() !== last_date.getMonth()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'MMMM', this.options.language)
+                    : '',
+            Month_upper:
+                date.getFullYear() !== last_date.getFullYear()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'YYYY', this.options.language)
+                    : '',
+            Year_upper:
+                date.getFullYear() !== last_date.getFullYear()
+                    ? _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].format(date, 'YYYY', this.options.language)
+                    : ''
+        };
+
+        const base_pos = {
+            x: i * this.options.column_width,
+            lower_y: this.options.header_height,
+            upper_y: this.options.header_height - 25
+        };
+
+        const x_pos = {
+            'Quarter Day_lower': this.options.column_width * 4 / 2,
+            'Quarter Day_upper': 0,
+            'Half Day_lower': this.options.column_width * 2 / 2,
+            'Half Day_upper': 0,
+            Day_lower: this.options.column_width / 2,
+            Day_upper: this.options.column_width * 30 / 2,
+            Week_lower: 0,
+            Week_upper: this.options.column_width * 4 / 2,
+            Month_lower: this.options.column_width / 2,
+            Month_upper: this.options.column_width * 12 / 2,
+            Year_lower: this.options.column_width / 2,
+            Year_upper: this.options.column_width * 30 / 2
+        };
+
+        return {
+            upper_text: date_text[`${this.options.view_mode}_upper`],
+            lower_text: date_text[`${this.options.view_mode}_lower`],
+            upper_x: base_pos.x + x_pos[`${this.options.view_mode}_upper`],
+            upper_y: base_pos.upper_y,
+            lower_x: base_pos.x + x_pos[`${this.options.view_mode}_lower`],
+            lower_y: base_pos.lower_y
+        };
+    }
+
+    make_bars() {
+        this.bars = this.tasks.map(task => {
+            const bar = new _bar__WEBPACK_IMPORTED_MODULE_2__["default"](this, task);
+            this.layers.bar.appendChild(bar.group);
+            return bar;
+        });
+    }
+
+    make_arrows() {
+        this.arrows = [];
+        for (let task of this.tasks) {
+            let arrows = [];
+            arrows = task.dependencies
+                .map(task_id => {
+                    const dependency = this.get_task(task_id);
+                    if (!dependency) return;
+                    const arrow = new _arrow__WEBPACK_IMPORTED_MODULE_3__["default"](
+                        this,
+                        this.bars[dependency._index], // from_task
+                        this.bars[task._index] // to_task
+                    );
+                    this.layers.arrow.appendChild(arrow.element);
+                    return arrow;
+                })
+                .filter(Boolean); // filter falsy values
+            this.arrows = this.arrows.concat(arrows);
+        }
+    }
+
+    map_arrows_on_bars() {
+        for (let bar of this.bars) {
+            bar.arrows = this.arrows.filter(arrow => {
+                return (
+                    arrow.from_task.task.id === bar.task.id ||
+                    arrow.to_task.task.id === bar.task.id
+                );
+            });
+        }
+    }
+
+    set_width() {
+        const cur_width = this.$svg.getBoundingClientRect().width;
+        const actual_width = this.$svg
+            .querySelector('.grid .grid-row')
+            .getAttribute('width');
+        if (cur_width < actual_width) {
+            this.$svg.setAttribute('width', actual_width);
+        }
+    }
+
+    set_scroll_position() {
+        const parent_element = this.$svg.parentElement;
+        if (!parent_element) return;
+
+        const hours_before_first_task = _date_utils__WEBPACK_IMPORTED_MODULE_0__["default"].diff(
+            this.get_oldest_starting_date(),
+            this.gantt_start,
+            'hour'
+        );
+
+        const scroll_pos =
+            hours_before_first_task /
+                this.options.step *
+                this.options.column_width -
+            this.options.column_width;
+
+        parent_element.scrollLeft = scroll_pos;
+    }
+
+    bind_grid_click() {
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(
+            this.$svg,
+            this.options.popup_trigger,
+            '.grid-row, .grid-header',
+            () => {
+                this.unselect_all();
+                this.hide_popup();
+            }
+        );
+    }
+
+    bind_bar_events() {
+        let is_dragging = false;
+        let x_on_start = 0;
+        let y_on_start = 0;
+        let is_resizing_left = false;
+        let is_resizing_right = false;
+        let parent_bar_id = null;
+        let bars = []; // instanceof Bar
+        this.bar_being_dragged = null;
+
+        function action_in_progress() {
+            return is_dragging || is_resizing_left || is_resizing_right;
+        }
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.$svg, 'mousedown', '.bar-wrapper, .handle', (e, element) => {
+            const bar_wrapper = _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].closest('.bar-wrapper', element);
+
+            if (element.classList.contains('left')) {
+                is_resizing_left = true;
+            } else if (element.classList.contains('right')) {
+                is_resizing_right = true;
+            } else if (element.classList.contains('bar-wrapper')) {
+                is_dragging = true;
+            }
+
+            bar_wrapper.classList.add('active');
+
+            x_on_start = e.offsetX;
+            y_on_start = e.offsetY;
+
+            parent_bar_id = bar_wrapper.getAttribute('data-id');
+            const ids = [
+                parent_bar_id,
+                ...this.get_all_dependent_tasks(parent_bar_id)
+            ];
+            bars = ids.map(id => this.get_bar(id));
+
+            this.bar_being_dragged = parent_bar_id;
+
+            bars.forEach(bar => {
+                const $bar = bar.$bar;
+                $bar.ox = $bar.getX();
+                $bar.oy = $bar.getY();
+                $bar.owidth = $bar.getWidth();
+                $bar.finaldx = 0;
+            });
+        });
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.$svg, 'mousemove', e => {
+            if (!action_in_progress()) return;
+            const dx = e.offsetX - x_on_start;
+            const dy = e.offsetY - y_on_start;
+
+            bars.forEach(bar => {
+                const $bar = bar.$bar;
+                $bar.finaldx = this.get_snap_position(dx);
+
+                if (is_resizing_left) {
+                    if (parent_bar_id === bar.task.id) {
+                        bar.update_bar_position({
+                            x: $bar.ox + $bar.finaldx,
+                            width: $bar.owidth - $bar.finaldx
+                        });
+                    } else {
+                        bar.update_bar_position({
+                            x: $bar.ox + $bar.finaldx
+                        });
+                    }
+                } else if (is_resizing_right) {
+                    if (parent_bar_id === bar.task.id) {
+                        bar.update_bar_position({
+                            width: $bar.owidth + $bar.finaldx
+                        });
+                    }
+                } else if (is_dragging) {
+                    bar.update_bar_position({ x: $bar.ox + $bar.finaldx });
+                }
+            });
+        });
+
+        document.addEventListener('mouseup', e => {
+            if (is_dragging || is_resizing_left || is_resizing_right) {
+                bars.forEach(bar => bar.group.classList.remove('active'));
+            }
+
+            is_dragging = false;
+            is_resizing_left = false;
+            is_resizing_right = false;
+        });
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.$svg, 'mouseup', e => {
+            this.bar_being_dragged = null;
+            bars.forEach(bar => {
+                const $bar = bar.$bar;
+                if (!$bar.finaldx) return;
+                bar.date_changed();
+                bar.set_action_completed();
+            });
+        });
+
+        this.bind_bar_progress();
+    }
+
+    bind_bar_progress() {
+        let x_on_start = 0;
+        let y_on_start = 0;
+        let is_resizing = null;
+        let bar = null;
+        let $bar_progress = null;
+        let $bar = null;
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.$svg, 'mousedown', '.handle.progress', (e, handle) => {
+            is_resizing = true;
+            x_on_start = e.offsetX;
+            y_on_start = e.offsetY;
+
+            const $bar_wrapper = _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].closest('.bar-wrapper', handle);
+            const id = $bar_wrapper.getAttribute('data-id');
+            bar = this.get_bar(id);
+
+            $bar_progress = bar.$bar_progress;
+            $bar = bar.$bar;
+
+            $bar_progress.finaldx = 0;
+            $bar_progress.owidth = $bar_progress.getWidth();
+            $bar_progress.min_dx = -$bar_progress.getWidth();
+            $bar_progress.max_dx = $bar.getWidth() - $bar_progress.getWidth();
+        });
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.$svg, 'mousemove', e => {
+            if (!is_resizing) return;
+            let dx = e.offsetX - x_on_start;
+            let dy = e.offsetY - y_on_start;
+
+            if (dx > $bar_progress.max_dx) {
+                dx = $bar_progress.max_dx;
+            }
+            if (dx < $bar_progress.min_dx) {
+                dx = $bar_progress.min_dx;
+            }
+
+            const $handle = bar.$handle_progress;
+            _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].attr($bar_progress, 'width', $bar_progress.owidth + dx);
+            _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].attr($handle, 'points', bar.get_progress_polygon_points());
+            $bar_progress.finaldx = dx;
+        });
+
+        _svg_utils__WEBPACK_IMPORTED_MODULE_1__["$"].on(this.$svg, 'mouseup', () => {
+            is_resizing = false;
+            if (!($bar_progress && $bar_progress.finaldx)) return;
+            bar.progress_changed();
+            bar.set_action_completed();
+        });
+    }
+
+    get_all_dependent_tasks(task_id) {
+        let out = [];
+        let to_process = [task_id];
+        while (to_process.length) {
+            const deps = to_process.reduce((acc, curr) => {
+                acc = acc.concat(this.dependency_map[curr]);
+                return acc;
+            }, []);
+
+            out = out.concat(deps);
+            to_process = deps.filter(d => !to_process.includes(d));
+        }
+
+        return out.filter(Boolean);
+    }
+
+    get_snap_position(dx) {
+        let odx = dx,
+            rem,
+            position;
+
+        if (this.view_is('Week')) {
+            rem = dx % (this.options.column_width / 7);
+            position =
+                odx -
+                rem +
+                (rem < this.options.column_width / 14
+                    ? 0
+                    : this.options.column_width / 7);
+        } else if (this.view_is('Month')) {
+            rem = dx % (this.options.column_width / 30);
+            position =
+                odx -
+                rem +
+                (rem < this.options.column_width / 60
+                    ? 0
+                    : this.options.column_width / 30);
+        } else {
+            rem = dx % this.options.column_width;
+            position =
+                odx -
+                rem +
+                (rem < this.options.column_width / 2
+                    ? 0
+                    : this.options.column_width);
+        }
+        return position;
+    }
+
+    unselect_all() {
+        [...this.$svg.querySelectorAll('.bar-wrapper')].forEach(el => {
+            el.classList.remove('active');
+        });
+    }
+
+    view_is(modes) {
+        if (typeof modes === 'string') {
+            return this.options.view_mode === modes;
+        }
+
+        if (Array.isArray(modes)) {
+            return modes.some(mode => this.options.view_mode === mode);
+        }
+
+        return false;
+    }
+
+    get_task(id) {
+        return this.tasks.find(task => {
+            return task.id === id;
+        });
+    }
+
+    get_bar(id) {
+        return this.bars.find(bar => {
+            return bar.task.id === id;
+        });
+    }
+
+    show_popup(options) {
+        if (!this.popup) {
+            this.popup = new _popup__WEBPACK_IMPORTED_MODULE_4__["default"](
+                this.popup_wrapper,
+                this.options.custom_popup_html
+            );
+        }
+        this.popup.show(options);
+    }
+
+    hide_popup() {
+        this.popup && this.popup.hide();
+    }
+
+    trigger_event(event, args) {
+        if (this.options['on_' + event]) {
+            this.options['on_' + event].apply(null, args);
+        }
+    }
+
+    /**
+     * Gets the oldest starting date from the list of tasks
+     *
+     * @returns Date
+     * @memberof Gantt
+     */
+    get_oldest_starting_date() {
+        return this.tasks
+            .map(task => task._start)
+            .reduce(
+                (prev_date, cur_date) =>
+                    cur_date <= prev_date ? cur_date : prev_date
+            );
+    }
+
+    /**
+     * Clear all elements from the parent svg element
+     *
+     * @memberof Gantt
+     */
+    clear() {
+        this.$svg.innerHTML = '';
+    }
+}
+
+function generate_id(task) {
+    return (
+        task.name +
+        '_' +
+        Math.random()
+            .toString(36)
+            .slice(2, 12)
+    );
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/popup.js":
+/*!************************************************!*\
+  !*** ./node_modules/frappe-gantt/src/popup.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Popup; });
+class Popup {
+    constructor(parent, custom_html) {
+        this.parent = parent;
+        this.custom_html = custom_html;
+        this.make();
+    }
+
+    make() {
+        this.parent.innerHTML = `
+            <div class="title"></div>
+            <div class="subtitle"></div>
+            <div class="pointer"></div>
+        `;
+
+        this.hide();
+
+        this.title = this.parent.querySelector('.title');
+        this.subtitle = this.parent.querySelector('.subtitle');
+        this.pointer = this.parent.querySelector('.pointer');
+    }
+
+    show(options) {
+        if (!options.target_element) {
+            throw new Error('target_element is required to show popup');
+        }
+        if (!options.position) {
+            options.position = 'left';
+        }
+        const target_element = options.target_element;
+
+        if (this.custom_html) {
+            let html = this.custom_html(options.task);
+            html += '<div class="pointer"></div>';
+            this.parent.innerHTML = html;
+            this.pointer = this.parent.querySelector('.pointer');
+        } else {
+            // set data
+            this.title.innerHTML = options.title;
+            this.subtitle.innerHTML = options.subtitle;
+            this.parent.style.width = this.parent.clientWidth + 'px';
+        }
+
+        // set position
+        let position_meta;
+        if (target_element instanceof HTMLElement) {
+            position_meta = target_element.getBoundingClientRect();
+        } else if (target_element instanceof SVGElement) {
+            position_meta = options.target_element.getBBox();
+        }
+
+        if (options.position === 'left') {
+            this.parent.style.left =
+                position_meta.x + (position_meta.width + 10) + 'px';
+            this.parent.style.top = position_meta.y + 'px';
+
+            this.pointer.style.transform = 'rotateZ(90deg)';
+            this.pointer.style.left = '-7px';
+            this.pointer.style.top = '2px';
+        }
+
+        // show
+        this.parent.style.opacity = 1;
+    }
+
+    hide() {
+        this.parent.style.opacity = 0;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/frappe-gantt/src/svg_utils.js":
+/*!****************************************************!*\
+  !*** ./node_modules/frappe-gantt/src/svg_utils.js ***!
+  \****************************************************/
+/*! exports provided: $, createSVG, animateSVG */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return $; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSVG", function() { return createSVG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animateSVG", function() { return animateSVG; });
+function $(expr, con) {
+    return typeof expr === 'string'
+        ? (con || document).querySelector(expr)
+        : expr || null;
+}
+
+function createSVG(tag, attrs) {
+    const elem = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (let attr in attrs) {
+        if (attr === 'append_to') {
+            const parent = attrs.append_to;
+            parent.appendChild(elem);
+        } else if (attr === 'innerHTML') {
+            elem.innerHTML = attrs.innerHTML;
+        } else {
+            elem.setAttribute(attr, attrs[attr]);
+        }
+    }
+    return elem;
+}
+
+function animateSVG(svgElement, attr, from, to) {
+    const animatedSvgElement = getAnimationElement(svgElement, attr, from, to);
+
+    if (animatedSvgElement === svgElement) {
+        // triggered 2nd time programmatically
+        // trigger artificial click event
+        const event = document.createEvent('HTMLEvents');
+        event.initEvent('click', true, true);
+        event.eventName = 'click';
+        animatedSvgElement.dispatchEvent(event);
+    }
+}
+
+function getAnimationElement(
+    svgElement,
+    attr,
+    from,
+    to,
+    dur = '0.4s',
+    begin = '0.1s'
+) {
+    const animEl = svgElement.querySelector('animate');
+    if (animEl) {
+        $.attr(animEl, {
+            attributeName: attr,
+            from,
+            to,
+            dur,
+            begin: 'click + ' + begin // artificial click
+        });
+        return svgElement;
+    }
+
+    const animateElement = createSVG('animate', {
+        attributeName: attr,
+        from,
+        to,
+        dur,
+        begin,
+        calcMode: 'spline',
+        values: from + ';' + to,
+        keyTimes: '0; 1',
+        keySplines: cubic_bezier('ease-out')
+    });
+    svgElement.appendChild(animateElement);
+
+    return svgElement;
+}
+
+function cubic_bezier(name) {
+    return {
+        ease: '.25 .1 .25 1',
+        linear: '0 0 1 1',
+        'ease-in': '.42 0 1 1',
+        'ease-out': '0 0 .58 1',
+        'ease-in-out': '.42 0 .58 1'
+    }[name];
+}
+
+$.on = (element, event, selector, callback) => {
+    if (!callback) {
+        callback = selector;
+        $.bind(element, event, callback);
+    } else {
+        $.delegate(element, event, selector, callback);
+    }
+};
+
+$.off = (element, event, handler) => {
+    element.removeEventListener(event, handler);
+};
+
+$.bind = (element, event, callback) => {
+    event.split(/\s+/).forEach(function(event) {
+        element.addEventListener(event, callback);
+    });
+};
+
+$.delegate = (element, event, selector, callback) => {
+    element.addEventListener(event, function(e) {
+        const delegatedTarget = e.target.closest(selector);
+        if (delegatedTarget) {
+            e.delegatedTarget = delegatedTarget;
+            callback.call(this, e, delegatedTarget);
+        }
+    });
+};
+
+$.closest = (selector, element) => {
+    if (!element) return null;
+
+    if (element.matches(selector)) {
+        return element;
+    }
+
+    return $.closest(selector, element.parentNode);
+};
+
+$.attr = (element, attr, value) => {
+    if (!value && typeof attr === 'string') {
+        return element.getAttribute(attr);
+    }
+
+    if (typeof attr === 'object') {
+        for (let key in attr) {
+            $.attr(element, key, attr[key]);
+        }
+        return;
+    }
+
+    element.setAttribute(attr, value);
+};
+
 
 /***/ }),
 
@@ -37072,6 +39256,515 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -37181,6 +39874,34 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
  */
 var r="undefined"!==typeof window&&"undefined"!==typeof document,o=["Edge","Trident","Firefox"],n=0,c=0;c<o.length;c+=1)if(r&&navigator.userAgent.indexOf(o[c])>=0){n=1;break}function i(e){var t=!1;return function(){t||(t=!0,window.Promise.resolve().then((function(){t=!1,e()})))}}function a(e){var t=!1;return function(){t||(t=!0,setTimeout((function(){t=!1,e()}),n))}}var s=r&&window.Promise,d=s?i:a;function u(e){var t={};return e&&"[object Function]"===t.toString.call(e)}function l(e,t){if(1!==e.nodeType)return[];var r=e.ownerDocument.defaultView,o=r.getComputedStyle(e,null);return t?o[t]:o}function f(e){return"HTML"===e.nodeName?e:e.parentNode||e.host}function v(e){if(!e)return document.body;switch(e.nodeName){case"HTML":case"BODY":return e.ownerDocument.body;case"#document":return e.body}var t=l(e),r=t.overflow,o=t.overflowX,n=t.overflowY;return/(auto|scroll|overlay)/.test(r+n+o)?e:v(f(e))}var b=r&&!(!window.MSInputMethodContext||!document.documentMode),h=r&&/MSIE 10/.test(navigator.userAgent);function p(e){return 11===e?b:10===e?h:b||h}function g(e){if(!e)return document.documentElement;var t=p(10)?document.body:null,r=e.offsetParent||null;while(r===t&&e.nextElementSibling)r=(e=e.nextElementSibling).offsetParent;var o=r&&r.nodeName;return o&&"BODY"!==o&&"HTML"!==o?-1!==["TH","TD","TABLE"].indexOf(r.nodeName)&&"static"===l(r,"position")?g(r):r:e?e.ownerDocument.documentElement:document.documentElement}function m(e){var t=e.nodeName;return"BODY"!==t&&("HTML"===t||g(e.firstElementChild)===e)}function y(e){return null!==e.parentNode?y(e.parentNode):e}function x(e,t){if(!e||!e.nodeType||!t||!t.nodeType)return document.documentElement;var r=e.compareDocumentPosition(t)&Node.DOCUMENT_POSITION_FOLLOWING,o=r?e:t,n=r?t:e,c=document.createRange();c.setStart(o,0),c.setEnd(n,0);var i=c.commonAncestorContainer;if(e!==i&&t!==i||o.contains(n))return m(i)?i:g(i);var a=y(e);return a.host?x(a.host,t):x(e,y(t).host)}function w(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"top",r="top"===t?"scrollTop":"scrollLeft",o=e.nodeName;if("BODY"===o||"HTML"===o){var n=e.ownerDocument.documentElement,c=e.ownerDocument.scrollingElement||n;return c[r]}return e[r]}function k(e,t){var r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],o=w(t,"top"),n=w(t,"left"),c=r?-1:1;return e.top+=o*c,e.bottom+=o*c,e.left+=n*c,e.right+=n*c,e}function j(e,t){var r="x"===t?"Left":"Top",o="Left"===r?"Right":"Bottom";return parseFloat(e["border"+r+"Width"],10)+parseFloat(e["border"+o+"Width"],10)}function O(e,t,r,o){return Math.max(t["offset"+e],t["scroll"+e],r["client"+e],r["offset"+e],r["scroll"+e],p(10)?parseInt(r["offset"+e])+parseInt(o["margin"+("Height"===e?"Top":"Left")])+parseInt(o["margin"+("Height"===e?"Bottom":"Right")]):0)}function D(e){var t=e.body,r=e.documentElement,o=p(10)&&getComputedStyle(r);return{height:O("Height",t,r,o),width:O("Width",t,r,o)}}var M=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},S=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),P=function(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e},_=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e};function E(e){return _({},e,{right:e.left+e.width,bottom:e.top+e.height})}function $(e){var t={};try{if(p(10)){t=e.getBoundingClientRect();var r=w(e,"top"),o=w(e,"left");t.top+=r,t.left+=o,t.bottom+=r,t.right+=o}else t=e.getBoundingClientRect()}catch(f){}var n={left:t.left,top:t.top,width:t.right-t.left,height:t.bottom-t.top},c="HTML"===e.nodeName?D(e.ownerDocument):{},i=c.width||e.clientWidth||n.right-n.left,a=c.height||e.clientHeight||n.bottom-n.top,s=e.offsetWidth-i,d=e.offsetHeight-a;if(s||d){var u=l(e);s-=j(u,"x"),d-=j(u,"y"),n.width-=s,n.height-=d}return E(n)}function C(e,t){var r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],o=p(10),n="HTML"===t.nodeName,c=$(e),i=$(t),a=v(e),s=l(t),d=parseFloat(s.borderTopWidth,10),u=parseFloat(s.borderLeftWidth,10);r&&n&&(i.top=Math.max(i.top,0),i.left=Math.max(i.left,0));var f=E({top:c.top-i.top-d,left:c.left-i.left-u,width:c.width,height:c.height});if(f.marginTop=0,f.marginLeft=0,!o&&n){var b=parseFloat(s.marginTop,10),h=parseFloat(s.marginLeft,10);f.top-=d-b,f.bottom-=d-b,f.left-=u-h,f.right-=u-h,f.marginTop=b,f.marginLeft=h}return(o&&!r?t.contains(a):t===a&&"BODY"!==a.nodeName)&&(f=k(f,t)),f}function I(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],r=e.ownerDocument.documentElement,o=C(e,r),n=Math.max(r.clientWidth,window.innerWidth||0),c=Math.max(r.clientHeight,window.innerHeight||0),i=t?0:w(r),a=t?0:w(r,"left"),s={top:i-o.top+o.marginTop,left:a-o.left+o.marginLeft,width:n,height:c};return E(s)}function Y(e){var t=e.nodeName;if("BODY"===t||"HTML"===t)return!1;if("fixed"===l(e,"position"))return!0;var r=f(e);return!!r&&Y(r)}function A(e){if(!e||!e.parentElement||p())return document.documentElement;var t=e.parentElement;while(t&&"none"===l(t,"transform"))t=t.parentElement;return t||document.documentElement}function T(e,t,r,o){var n=arguments.length>4&&void 0!==arguments[4]&&arguments[4],c={top:0,left:0},i=n?A(e):x(e,t);if("viewport"===o)c=I(i,n);else{var a=void 0;"scrollParent"===o?(a=v(f(t)),"BODY"===a.nodeName&&(a=e.ownerDocument.documentElement)):a="window"===o?e.ownerDocument.documentElement:o;var s=C(a,i,n);if("HTML"!==a.nodeName||Y(i))c=s;else{var d=D(e.ownerDocument),u=d.height,l=d.width;c.top+=s.top-s.marginTop,c.bottom=u+s.top,c.left+=s.left-s.marginLeft,c.right=l+s.left}}r=r||0;var b="number"===typeof r;return c.left+=b?r:r.left||0,c.top+=b?r:r.top||0,c.right-=b?r:r.right||0,c.bottom-=b?r:r.bottom||0,c}function L(e){var t=e.width,r=e.height;return t*r}function F(e,t,r,o,n){var c=arguments.length>5&&void 0!==arguments[5]?arguments[5]:0;if(-1===e.indexOf("auto"))return e;var i=T(r,o,c,n),a={top:{width:i.width,height:t.top-i.top},right:{width:i.right-t.right,height:i.height},bottom:{width:i.width,height:i.bottom-t.bottom},left:{width:t.left-i.left,height:i.height}},s=Object.keys(a).map((function(e){return _({key:e},a[e],{area:L(a[e])})})).sort((function(e,t){return t.area-e.area})),d=s.filter((function(e){var t=e.width,o=e.height;return t>=r.clientWidth&&o>=r.clientHeight})),u=d.length>0?d[0].key:s[0].key,l=e.split("-")[1];return u+(l?"-"+l:"")}function N(e,t,r){var o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:null,n=o?A(t):x(t,r);return C(r,n,o)}function z(e){var t=e.ownerDocument.defaultView,r=t.getComputedStyle(e),o=parseFloat(r.marginTop||0)+parseFloat(r.marginBottom||0),n=parseFloat(r.marginLeft||0)+parseFloat(r.marginRight||0),c={width:e.offsetWidth+n,height:e.offsetHeight+o};return c}function R(e){var t={left:"right",right:"left",bottom:"top",top:"bottom"};return e.replace(/left|right|bottom|top/g,(function(e){return t[e]}))}function V(e,t,r){r=r.split("-")[0];var o=z(e),n={width:o.width,height:o.height},c=-1!==["right","left"].indexOf(r),i=c?"top":"left",a=c?"left":"top",s=c?"height":"width",d=c?"width":"height";return n[i]=t[i]+t[s]/2-o[s]/2,n[a]=r===a?t[a]-o[d]:t[R(a)],n}function H(e,t){return Array.prototype.find?e.find(t):e.filter(t)[0]}function W(e,t,r){if(Array.prototype.findIndex)return e.findIndex((function(e){return e[t]===r}));var o=H(e,(function(e){return e[t]===r}));return e.indexOf(o)}function U(e,t,r){var o=void 0===r?e:e.slice(0,W(e,"name",r));return o.forEach((function(e){e["function"]&&console.warn("`modifier.function` is deprecated, use `modifier.fn`!");var r=e["function"]||e.fn;e.enabled&&u(r)&&(t.offsets.popper=E(t.offsets.popper),t.offsets.reference=E(t.offsets.reference),t=r(t,e))})),t}function B(){if(!this.state.isDestroyed){var e={instance:this,styles:{},arrowStyles:{},attributes:{},flipped:!1,offsets:{}};e.offsets.reference=N(this.state,this.popper,this.reference,this.options.positionFixed),e.placement=F(this.options.placement,e.offsets.reference,this.popper,this.reference,this.options.modifiers.flip.boundariesElement,this.options.modifiers.flip.padding),e.originalPlacement=e.placement,e.positionFixed=this.options.positionFixed,e.offsets.popper=V(this.popper,e.offsets.reference,e.placement),e.offsets.popper.position=this.options.positionFixed?"fixed":"absolute",e=U(this.modifiers,e),this.state.isCreated?this.options.onUpdate(e):(this.state.isCreated=!0,this.options.onCreate(e))}}function G(e,t){return e.some((function(e){var r=e.name,o=e.enabled;return o&&r===t}))}function q(e){for(var t=[!1,"ms","Webkit","Moz","O"],r=e.charAt(0).toUpperCase()+e.slice(1),o=0;o<t.length;o++){var n=t[o],c=n?""+n+r:e;if("undefined"!==typeof document.body.style[c])return c}return null}function K(){return this.state.isDestroyed=!0,G(this.modifiers,"applyStyle")&&(this.popper.removeAttribute("x-placement"),this.popper.style.position="",this.popper.style.top="",this.popper.style.left="",this.popper.style.right="",this.popper.style.bottom="",this.popper.style.willChange="",this.popper.style[q("transform")]=""),this.disableEventListeners(),this.options.removeOnDestroy&&this.popper.parentNode.removeChild(this.popper),this}function Z(e){var t=e.ownerDocument;return t?t.defaultView:window}function X(e,t,r,o){var n="BODY"===e.nodeName,c=n?e.ownerDocument.defaultView:e;c.addEventListener(t,r,{passive:!0}),n||X(v(c.parentNode),t,r,o),o.push(c)}function J(e,t,r,o){r.updateBound=o,Z(e).addEventListener("resize",r.updateBound,{passive:!0});var n=v(e);return X(n,"scroll",r.updateBound,r.scrollParents),r.scrollElement=n,r.eventsEnabled=!0,r}function Q(){this.state.eventsEnabled||(this.state=J(this.reference,this.options,this.state,this.scheduleUpdate))}function ee(e,t){return Z(e).removeEventListener("resize",t.updateBound),t.scrollParents.forEach((function(e){e.removeEventListener("scroll",t.updateBound)})),t.updateBound=null,t.scrollParents=[],t.scrollElement=null,t.eventsEnabled=!1,t}function te(){this.state.eventsEnabled&&(cancelAnimationFrame(this.scheduleUpdate),this.state=ee(this.reference,this.state))}function re(e){return""!==e&&!isNaN(parseFloat(e))&&isFinite(e)}function oe(e,t){Object.keys(t).forEach((function(r){var o="";-1!==["width","height","top","right","bottom","left"].indexOf(r)&&re(t[r])&&(o="px"),e.style[r]=t[r]+o}))}function ne(e,t){Object.keys(t).forEach((function(r){var o=t[r];!1!==o?e.setAttribute(r,t[r]):e.removeAttribute(r)}))}function ce(e){return oe(e.instance.popper,e.styles),ne(e.instance.popper,e.attributes),e.arrowElement&&Object.keys(e.arrowStyles).length&&oe(e.arrowElement,e.arrowStyles),e}function ie(e,t,r,o,n){var c=N(n,t,e,r.positionFixed),i=F(r.placement,c,t,e,r.modifiers.flip.boundariesElement,r.modifiers.flip.padding);return t.setAttribute("x-placement",i),oe(t,{position:r.positionFixed?"fixed":"absolute"}),r}function ae(e,t){var r=e.offsets,o=r.popper,n=r.reference,c=Math.round,i=Math.floor,a=function(e){return e},s=c(n.width),d=c(o.width),u=-1!==["left","right"].indexOf(e.placement),l=-1!==e.placement.indexOf("-"),f=s%2===d%2,v=s%2===1&&d%2===1,b=t?u||l||f?c:i:a,h=t?c:a;return{left:b(v&&!l&&t?o.left-1:o.left),top:h(o.top),bottom:h(o.bottom),right:b(o.right)}}var se=r&&/Firefox/i.test(navigator.userAgent);function de(e,t){var r=t.x,o=t.y,n=e.offsets.popper,c=H(e.instance.modifiers,(function(e){return"applyStyle"===e.name})).gpuAcceleration;void 0!==c&&console.warn("WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!");var i=void 0!==c?c:t.gpuAcceleration,a=g(e.instance.popper),s=$(a),d={position:n.position},u=ae(e,window.devicePixelRatio<2||!se),l="bottom"===r?"top":"bottom",f="right"===o?"left":"right",v=q("transform"),b=void 0,h=void 0;if(h="bottom"===l?"HTML"===a.nodeName?-a.clientHeight+u.bottom:-s.height+u.bottom:u.top,b="right"===f?"HTML"===a.nodeName?-a.clientWidth+u.right:-s.width+u.right:u.left,i&&v)d[v]="translate3d("+b+"px, "+h+"px, 0)",d[l]=0,d[f]=0,d.willChange="transform";else{var p="bottom"===l?-1:1,m="right"===f?-1:1;d[l]=h*p,d[f]=b*m,d.willChange=l+", "+f}var y={"x-placement":e.placement};return e.attributes=_({},y,e.attributes),e.styles=_({},d,e.styles),e.arrowStyles=_({},e.offsets.arrow,e.arrowStyles),e}function ue(e,t,r){var o=H(e,(function(e){var r=e.name;return r===t})),n=!!o&&e.some((function(e){return e.name===r&&e.enabled&&e.order<o.order}));if(!n){var c="`"+t+"`",i="`"+r+"`";console.warn(i+" modifier is required by "+c+" modifier in order to work, be sure to include it before "+c+"!")}return n}function le(e,t){var r;if(!ue(e.instance.modifiers,"arrow","keepTogether"))return e;var o=t.element;if("string"===typeof o){if(o=e.instance.popper.querySelector(o),!o)return e}else if(!e.instance.popper.contains(o))return console.warn("WARNING: `arrow.element` must be child of its popper element!"),e;var n=e.placement.split("-")[0],c=e.offsets,i=c.popper,a=c.reference,s=-1!==["left","right"].indexOf(n),d=s?"height":"width",u=s?"Top":"Left",f=u.toLowerCase(),v=s?"left":"top",b=s?"bottom":"right",h=z(o)[d];a[b]-h<i[f]&&(e.offsets.popper[f]-=i[f]-(a[b]-h)),a[f]+h>i[b]&&(e.offsets.popper[f]+=a[f]+h-i[b]),e.offsets.popper=E(e.offsets.popper);var p=a[f]+a[d]/2-h/2,g=l(e.instance.popper),m=parseFloat(g["margin"+u],10),y=parseFloat(g["border"+u+"Width"],10),x=p-e.offsets.popper[f]-m-y;return x=Math.max(Math.min(i[d]-h,x),0),e.arrowElement=o,e.offsets.arrow=(r={},P(r,f,Math.round(x)),P(r,v,""),r),e}function fe(e){return"end"===e?"start":"start"===e?"end":e}var ve=["auto-start","auto","auto-end","top-start","top","top-end","right-start","right","right-end","bottom-end","bottom","bottom-start","left-end","left","left-start"],be=ve.slice(3);function he(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],r=be.indexOf(e),o=be.slice(r+1).concat(be.slice(0,r));return t?o.reverse():o}var pe={FLIP:"flip",CLOCKWISE:"clockwise",COUNTERCLOCKWISE:"counterclockwise"};function ge(e,t){if(G(e.instance.modifiers,"inner"))return e;if(e.flipped&&e.placement===e.originalPlacement)return e;var r=T(e.instance.popper,e.instance.reference,t.padding,t.boundariesElement,e.positionFixed),o=e.placement.split("-")[0],n=R(o),c=e.placement.split("-")[1]||"",i=[];switch(t.behavior){case pe.FLIP:i=[o,n];break;case pe.CLOCKWISE:i=he(o);break;case pe.COUNTERCLOCKWISE:i=he(o,!0);break;default:i=t.behavior}return i.forEach((function(a,s){if(o!==a||i.length===s+1)return e;o=e.placement.split("-")[0],n=R(o);var d=e.offsets.popper,u=e.offsets.reference,l=Math.floor,f="left"===o&&l(d.right)>l(u.left)||"right"===o&&l(d.left)<l(u.right)||"top"===o&&l(d.bottom)>l(u.top)||"bottom"===o&&l(d.top)<l(u.bottom),v=l(d.left)<l(r.left),b=l(d.right)>l(r.right),h=l(d.top)<l(r.top),p=l(d.bottom)>l(r.bottom),g="left"===o&&v||"right"===o&&b||"top"===o&&h||"bottom"===o&&p,m=-1!==["top","bottom"].indexOf(o),y=!!t.flipVariations&&(m&&"start"===c&&v||m&&"end"===c&&b||!m&&"start"===c&&h||!m&&"end"===c&&p);(f||g||y)&&(e.flipped=!0,(f||g)&&(o=i[s+1]),y&&(c=fe(c)),e.placement=o+(c?"-"+c:""),e.offsets.popper=_({},e.offsets.popper,V(e.instance.popper,e.offsets.reference,e.placement)),e=U(e.instance.modifiers,e,"flip"))})),e}function me(e){var t=e.offsets,r=t.popper,o=t.reference,n=e.placement.split("-")[0],c=Math.floor,i=-1!==["top","bottom"].indexOf(n),a=i?"right":"bottom",s=i?"left":"top",d=i?"width":"height";return r[a]<c(o[s])&&(e.offsets.popper[s]=c(o[s])-r[d]),r[s]>c(o[a])&&(e.offsets.popper[s]=c(o[a])),e}function ye(e,t,r,o){var n=e.match(/((?:\-|\+)?\d*\.?\d*)(.*)/),c=+n[1],i=n[2];if(!c)return e;if(0===i.indexOf("%")){var a=void 0;switch(i){case"%p":a=r;break;case"%":case"%r":default:a=o}var s=E(a);return s[t]/100*c}if("vh"===i||"vw"===i){var d=void 0;return d="vh"===i?Math.max(document.documentElement.clientHeight,window.innerHeight||0):Math.max(document.documentElement.clientWidth,window.innerWidth||0),d/100*c}return c}function xe(e,t,r,o){var n=[0,0],c=-1!==["right","left"].indexOf(o),i=e.split(/(\+|\-)/).map((function(e){return e.trim()})),a=i.indexOf(H(i,(function(e){return-1!==e.search(/,|\s/)})));i[a]&&-1===i[a].indexOf(",")&&console.warn("Offsets separated by white space(s) are deprecated, use a comma (,) instead.");var s=/\s*,\s*|\s+/,d=-1!==a?[i.slice(0,a).concat([i[a].split(s)[0]]),[i[a].split(s)[1]].concat(i.slice(a+1))]:[i];return d=d.map((function(e,o){var n=(1===o?!c:c)?"height":"width",i=!1;return e.reduce((function(e,t){return""===e[e.length-1]&&-1!==["+","-"].indexOf(t)?(e[e.length-1]=t,i=!0,e):i?(e[e.length-1]+=t,i=!1,e):e.concat(t)}),[]).map((function(e){return ye(e,n,t,r)}))})),d.forEach((function(e,t){e.forEach((function(r,o){re(r)&&(n[t]+=r*("-"===e[o-1]?-1:1))}))})),n}function we(e,t){var r=t.offset,o=e.placement,n=e.offsets,c=n.popper,i=n.reference,a=o.split("-")[0],s=void 0;return s=re(+r)?[+r,0]:xe(r,c,i,a),"left"===a?(c.top+=s[0],c.left-=s[1]):"right"===a?(c.top+=s[0],c.left+=s[1]):"top"===a?(c.left+=s[0],c.top-=s[1]):"bottom"===a&&(c.left+=s[0],c.top+=s[1]),e.popper=c,e}function ke(e,t){var r=t.boundariesElement||g(e.instance.popper);e.instance.reference===r&&(r=g(r));var o=q("transform"),n=e.instance.popper.style,c=n.top,i=n.left,a=n[o];n.top="",n.left="",n[o]="";var s=T(e.instance.popper,e.instance.reference,t.padding,r,e.positionFixed);n.top=c,n.left=i,n[o]=a,t.boundaries=s;var d=t.priority,u=e.offsets.popper,l={primary:function(e){var r=u[e];return u[e]<s[e]&&!t.escapeWithReference&&(r=Math.max(u[e],s[e])),P({},e,r)},secondary:function(e){var r="right"===e?"left":"top",o=u[r];return u[e]>s[e]&&!t.escapeWithReference&&(o=Math.min(u[r],s[e]-("right"===e?u.width:u.height))),P({},r,o)}};return d.forEach((function(e){var t=-1!==["left","top"].indexOf(e)?"primary":"secondary";u=_({},u,l[t](e))})),e.offsets.popper=u,e}function je(e){var t=e.placement,r=t.split("-")[0],o=t.split("-")[1];if(o){var n=e.offsets,c=n.reference,i=n.popper,a=-1!==["bottom","top"].indexOf(r),s=a?"left":"top",d=a?"width":"height",u={start:P({},s,c[s]),end:P({},s,c[s]+c[d]-i[d])};e.offsets.popper=_({},i,u[o])}return e}function Oe(e){if(!ue(e.instance.modifiers,"hide","preventOverflow"))return e;var t=e.offsets.reference,r=H(e.instance.modifiers,(function(e){return"preventOverflow"===e.name})).boundaries;if(t.bottom<r.top||t.left>r.right||t.top>r.bottom||t.right<r.left){if(!0===e.hide)return e;e.hide=!0,e.attributes["x-out-of-boundaries"]=""}else{if(!1===e.hide)return e;e.hide=!1,e.attributes["x-out-of-boundaries"]=!1}return e}function De(e){var t=e.placement,r=t.split("-")[0],o=e.offsets,n=o.popper,c=o.reference,i=-1!==["left","right"].indexOf(r),a=-1===["top","left"].indexOf(r);return n[i?"left":"top"]=c[r]-(a?n[i?"width":"height"]:0),e.placement=R(t),e.offsets.popper=E(n),e}var Me={shift:{order:100,enabled:!0,fn:je},offset:{order:200,enabled:!0,fn:we,offset:0},preventOverflow:{order:300,enabled:!0,fn:ke,priority:["left","right","top","bottom"],padding:5,boundariesElement:"scrollParent"},keepTogether:{order:400,enabled:!0,fn:me},arrow:{order:500,enabled:!0,fn:le,element:"[x-arrow]"},flip:{order:600,enabled:!0,fn:ge,behavior:"flip",padding:5,boundariesElement:"viewport"},inner:{order:700,enabled:!1,fn:De},hide:{order:800,enabled:!0,fn:Oe},computeStyle:{order:850,enabled:!0,fn:de,gpuAcceleration:!0,x:"bottom",y:"right"},applyStyle:{order:900,enabled:!0,fn:ce,onLoad:ie,gpuAcceleration:void 0}},Se={placement:"bottom",positionFixed:!1,eventsEnabled:!0,removeOnDestroy:!1,onCreate:function(){},onUpdate:function(){},modifiers:Me},Pe=function(){function e(t,r){var o=this,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};M(this,e),this.scheduleUpdate=function(){return requestAnimationFrame(o.update)},this.update=d(this.update.bind(this)),this.options=_({},e.Defaults,n),this.state={isDestroyed:!1,isCreated:!1,scrollParents:[]},this.reference=t&&t.jquery?t[0]:t,this.popper=r&&r.jquery?r[0]:r,this.options.modifiers={},Object.keys(_({},e.Defaults.modifiers,n.modifiers)).forEach((function(t){o.options.modifiers[t]=_({},e.Defaults.modifiers[t]||{},n.modifiers?n.modifiers[t]:{})})),this.modifiers=Object.keys(this.options.modifiers).map((function(e){return _({name:e},o.options.modifiers[e])})).sort((function(e,t){return e.order-t.order})),this.modifiers.forEach((function(e){e.enabled&&u(e.onLoad)&&e.onLoad(o.reference,o.popper,o.options,e,o.state)})),this.update();var c=this.options.eventsEnabled;c&&this.enableEventListeners(),this.state.eventsEnabled=c}return S(e,[{key:"update",value:function(){return B.call(this)}},{key:"destroy",value:function(){return K.call(this)}},{key:"enableEventListeners",value:function(){return Q.call(this)}},{key:"disableEventListeners",value:function(){return te.call(this)}}]),e}();Pe.Utils=("undefined"!==typeof window?window:e).PopperUtils,Pe.placements=ve,Pe.Defaults=Se,t["a"]=Pe}).call(this,r("c8ba"))},f15d:function(e,t,r){"use strict";var o=r("768b"),n=(r("ac6a"),r("9404"));const c={ar:{dow:7,L:"D/‏M/‏YYYY"},bg:{dow:2,L:"D.MM.YYYY"},ca:{dow:2,L:"DD/MM/YYYY"},"zh-CN":{dow:2,L:"YYYY/MM/DD"},"zh-TW":{dow:1,L:"YYYY/MM/DD"},hr:{dow:2,L:"DD.MM.YYYY"},cs:{dow:2,L:"DD.MM.YYYY"},da:{dow:2,L:"DD.MM.YYYY"},nl:{dow:2,L:"DD.MM.YYYY"},"en-US":{dow:1,L:"MM/DD/YYYY"},"en-AU":{dow:2,L:"DD/MM/YYYY"},"en-CA":{dow:1,L:"YYYY-MM-DD"},"en-GB":{dow:2,L:"DD/MM/YYYY"},"en-IE":{dow:2,L:"DD-MM-YYYY"},"en-NZ":{dow:2,L:"DD/MM/YYYY"},eo:{dow:2,L:"YYYY-MM-DD"},fi:{dow:2,L:"Do MMMM[ta] YYYY"},fr:{dow:2,L:"DD/MM/YYYY"},"fr-CA":{dow:1,L:"YYYY-MM-DD"},"fr-CH":{dow:2,L:"DD.MM.YYYY"},de:{dow:2,L:"DD.MM.YYYY"},id:{dow:2,L:"DD/MM/YYYY"},it:{dow:2,L:"DD/MM/YYYY"},ja:{dow:1,L:"YYYY年M月D日"},ko:{dow:1,L:"YYYY.MM.DD"},mk:{dow:2,L:"D.MM.YYYY"},pl:{dow:2,L:"DD.MM.YYYY"},pt:{dow:2,L:"DD/MM/YYYY"},ro:{dow:2,L:"DD.MM.YYYY"},ru:{dow:2,L:"DD.MM.YYYY"},sk:{dow:2,L:"DD.MM.YYYY"},es:{dow:1,L:"DD/MM/YYYY"},sv:{dow:2,L:"YYYY-MM-DD"},th:{dow:1,L:"DD/MM/YYYY"},tr:{dow:2,L:"DD.MM.YYYY"},uk:{dow:2,L:"DD.MM.YYYY"}};c.en=c["en-US"],c.zh=c["zh-CN"],Object(n["u"])(c).forEach((function(e){let t=Object(o["a"])(e,2),r=t[0],n=t[1],i=n.dow,a=n.L;c[r]={id:r,firstDayOfWeek:i,masks:{L:a}}})),t["a"]=c},f3c1:function(e,t){var r=800,o=16,n=Date.now;function c(e){var t=0,c=0;return function(){var i=n(),a=o-(i-c);if(c=i,a>0){if(++t>=r)return arguments[0]}else t=0;return e.apply(void 0,arguments)}}e.exports=c},f410:function(e,t,r){r("1af6"),e.exports=r("584a").Array.isArray},f498:function(e,t,r){t=e.exports=r("2350")(!1),t.push([e.i,".vc-reset,.vc-reset *{line-height:1.5;box-sizing:border-box}.vc-reset:focus,.vc-reset :focus{outline:none}.vc-reset [role=button],.vc-reset button{cursor:pointer}.vc-border,.vc-border-2,.vc-border-3{border-style:solid}.vc-appearance-none{-webkit-appearance:none;-moz-appearance:none;appearance:none}.vc-bg-fixed{background-attachment:fixed}.vc-bg-local{background-attachment:local}.vc-bg-scroll{background-attachment:scroll}.vc-bg-transparent{background-color:initial}.vc-bg-black{background-color:#000}.vc-bg-white{background-color:#fff}.vc-bg-gray-100{background-color:#f7fafc}.vc-bg-gray-200{background-color:#edf2f7}.vc-bg-gray-300{background-color:#e2e8f0}.vc-bg-gray-400{background-color:#cbd5e0}.vc-bg-gray-500{background-color:#a0aec0}.vc-bg-gray-600{background-color:#718096}.vc-bg-gray-700{background-color:#4a5568}.vc-bg-gray-800{background-color:#2d3748}.vc-bg-gray-900{background-color:#1a202c}.vc-bg-red-100{background-color:#fff5f5}.vc-bg-red-200{background-color:#fed7d7}.vc-bg-red-300{background-color:#feb2b2}.vc-bg-red-400{background-color:#fc8181}.vc-bg-red-500{background-color:#f56565}.vc-bg-red-600{background-color:#e53e3e}.vc-bg-red-700{background-color:#c53030}.vc-bg-red-800{background-color:#9b2c2c}.vc-bg-red-900{background-color:#742a2a}.vc-bg-orange-100{background-color:#fffaf0}.vc-bg-orange-200{background-color:#feebc8}.vc-bg-orange-300{background-color:#fbd38d}.vc-bg-orange-400{background-color:#f6ad55}.vc-bg-orange-500{background-color:#ed8936}.vc-bg-orange-600{background-color:#dd6b20}.vc-bg-orange-700{background-color:#c05621}.vc-bg-orange-800{background-color:#9c4221}.vc-bg-orange-900{background-color:#7b341e}.vc-bg-yellow-100{background-color:ivory}.vc-bg-yellow-200{background-color:#fefcbf}.vc-bg-yellow-300{background-color:#faf089}.vc-bg-yellow-400{background-color:#f6e05e}.vc-bg-yellow-500{background-color:#ecc94b}.vc-bg-yellow-600{background-color:#d69e2e}.vc-bg-yellow-700{background-color:#b7791f}.vc-bg-yellow-800{background-color:#975a16}.vc-bg-yellow-900{background-color:#744210}.vc-bg-green-100{background-color:#f0fff4}.vc-bg-green-200{background-color:#c6f6d5}.vc-bg-green-300{background-color:#9ae6b4}.vc-bg-green-400{background-color:#68d391}.vc-bg-green-500{background-color:#48bb78}.vc-bg-green-600{background-color:#38a169}.vc-bg-green-700{background-color:#2f855a}.vc-bg-green-800{background-color:#276749}.vc-bg-green-900{background-color:#22543d}.vc-bg-teal-100{background-color:#e6fffa}.vc-bg-teal-200{background-color:#b2f5ea}.vc-bg-teal-300{background-color:#81e6d9}.vc-bg-teal-400{background-color:#4fd1c5}.vc-bg-teal-500{background-color:#38b2ac}.vc-bg-teal-600{background-color:#319795}.vc-bg-teal-700{background-color:#2c7a7b}.vc-bg-teal-800{background-color:#285e61}.vc-bg-teal-900{background-color:#234e52}.vc-bg-blue-100{background-color:#ebf8ff}.vc-bg-blue-200{background-color:#bee3f8}.vc-bg-blue-300{background-color:#90cdf4}.vc-bg-blue-400{background-color:#63b3ed}.vc-bg-blue-500{background-color:#4299e1}.vc-bg-blue-600{background-color:#3182ce}.vc-bg-blue-700{background-color:#2b6cb0}.vc-bg-blue-800{background-color:#2c5282}.vc-bg-blue-900{background-color:#2a4365}.vc-bg-indigo-100{background-color:#ebf4ff}.vc-bg-indigo-200{background-color:#c3dafe}.vc-bg-indigo-300{background-color:#a3bffa}.vc-bg-indigo-400{background-color:#7f9cf5}.vc-bg-indigo-500{background-color:#667eea}.vc-bg-indigo-600{background-color:#5a67d8}.vc-bg-indigo-700{background-color:#4c51bf}.vc-bg-indigo-800{background-color:#434190}.vc-bg-indigo-900{background-color:#3c366b}.vc-bg-purple-100{background-color:#faf5ff}.vc-bg-purple-200{background-color:#e9d8fd}.vc-bg-purple-300{background-color:#d6bcfa}.vc-bg-purple-400{background-color:#b794f4}.vc-bg-purple-500{background-color:#9f7aea}.vc-bg-purple-600{background-color:#805ad5}.vc-bg-purple-700{background-color:#6b46c1}.vc-bg-purple-800{background-color:#553c9a}.vc-bg-purple-900{background-color:#44337a}.vc-bg-pink-100{background-color:#fff5f7}.vc-bg-pink-200{background-color:#fed7e2}.vc-bg-pink-300{background-color:#fbb6ce}.vc-bg-pink-400{background-color:#f687b3}.vc-bg-pink-500{background-color:#ed64a6}.vc-bg-pink-600{background-color:#d53f8c}.vc-bg-pink-700{background-color:#b83280}.vc-bg-pink-800{background-color:#97266d}.vc-bg-pink-900{background-color:#702459}.hover\\:vc-bg-transparent:hover{background-color:initial}.hover\\:vc-bg-black:hover{background-color:#000}.hover\\:vc-bg-white:hover{background-color:#fff}.hover\\:vc-bg-gray-100:hover{background-color:#f7fafc}.hover\\:vc-bg-gray-200:hover{background-color:#edf2f7}.hover\\:vc-bg-gray-300:hover{background-color:#e2e8f0}.hover\\:vc-bg-gray-400:hover{background-color:#cbd5e0}.hover\\:vc-bg-gray-500:hover{background-color:#a0aec0}.hover\\:vc-bg-gray-600:hover{background-color:#718096}.hover\\:vc-bg-gray-700:hover{background-color:#4a5568}.hover\\:vc-bg-gray-800:hover{background-color:#2d3748}.hover\\:vc-bg-gray-900:hover{background-color:#1a202c}.hover\\:vc-bg-red-100:hover{background-color:#fff5f5}.hover\\:vc-bg-red-200:hover{background-color:#fed7d7}.hover\\:vc-bg-red-300:hover{background-color:#feb2b2}.hover\\:vc-bg-red-400:hover{background-color:#fc8181}.hover\\:vc-bg-red-500:hover{background-color:#f56565}.hover\\:vc-bg-red-600:hover{background-color:#e53e3e}.hover\\:vc-bg-red-700:hover{background-color:#c53030}.hover\\:vc-bg-red-800:hover{background-color:#9b2c2c}.hover\\:vc-bg-red-900:hover{background-color:#742a2a}.hover\\:vc-bg-orange-100:hover{background-color:#fffaf0}.hover\\:vc-bg-orange-200:hover{background-color:#feebc8}.hover\\:vc-bg-orange-300:hover{background-color:#fbd38d}.hover\\:vc-bg-orange-400:hover{background-color:#f6ad55}.hover\\:vc-bg-orange-500:hover{background-color:#ed8936}.hover\\:vc-bg-orange-600:hover{background-color:#dd6b20}.hover\\:vc-bg-orange-700:hover{background-color:#c05621}.hover\\:vc-bg-orange-800:hover{background-color:#9c4221}.hover\\:vc-bg-orange-900:hover{background-color:#7b341e}.hover\\:vc-bg-yellow-100:hover{background-color:ivory}.hover\\:vc-bg-yellow-200:hover{background-color:#fefcbf}.hover\\:vc-bg-yellow-300:hover{background-color:#faf089}.hover\\:vc-bg-yellow-400:hover{background-color:#f6e05e}.hover\\:vc-bg-yellow-500:hover{background-color:#ecc94b}.hover\\:vc-bg-yellow-600:hover{background-color:#d69e2e}.hover\\:vc-bg-yellow-700:hover{background-color:#b7791f}.hover\\:vc-bg-yellow-800:hover{background-color:#975a16}.hover\\:vc-bg-yellow-900:hover{background-color:#744210}.hover\\:vc-bg-green-100:hover{background-color:#f0fff4}.hover\\:vc-bg-green-200:hover{background-color:#c6f6d5}.hover\\:vc-bg-green-300:hover{background-color:#9ae6b4}.hover\\:vc-bg-green-400:hover{background-color:#68d391}.hover\\:vc-bg-green-500:hover{background-color:#48bb78}.hover\\:vc-bg-green-600:hover{background-color:#38a169}.hover\\:vc-bg-green-700:hover{background-color:#2f855a}.hover\\:vc-bg-green-800:hover{background-color:#276749}.hover\\:vc-bg-green-900:hover{background-color:#22543d}.hover\\:vc-bg-teal-100:hover{background-color:#e6fffa}.hover\\:vc-bg-teal-200:hover{background-color:#b2f5ea}.hover\\:vc-bg-teal-300:hover{background-color:#81e6d9}.hover\\:vc-bg-teal-400:hover{background-color:#4fd1c5}.hover\\:vc-bg-teal-500:hover{background-color:#38b2ac}.hover\\:vc-bg-teal-600:hover{background-color:#319795}.hover\\:vc-bg-teal-700:hover{background-color:#2c7a7b}.hover\\:vc-bg-teal-800:hover{background-color:#285e61}.hover\\:vc-bg-teal-900:hover{background-color:#234e52}.hover\\:vc-bg-blue-100:hover{background-color:#ebf8ff}.hover\\:vc-bg-blue-200:hover{background-color:#bee3f8}.hover\\:vc-bg-blue-300:hover{background-color:#90cdf4}.hover\\:vc-bg-blue-400:hover{background-color:#63b3ed}.hover\\:vc-bg-blue-500:hover{background-color:#4299e1}.hover\\:vc-bg-blue-600:hover{background-color:#3182ce}.hover\\:vc-bg-blue-700:hover{background-color:#2b6cb0}.hover\\:vc-bg-blue-800:hover{background-color:#2c5282}.hover\\:vc-bg-blue-900:hover{background-color:#2a4365}.hover\\:vc-bg-indigo-100:hover{background-color:#ebf4ff}.hover\\:vc-bg-indigo-200:hover{background-color:#c3dafe}.hover\\:vc-bg-indigo-300:hover{background-color:#a3bffa}.hover\\:vc-bg-indigo-400:hover{background-color:#7f9cf5}.hover\\:vc-bg-indigo-500:hover{background-color:#667eea}.hover\\:vc-bg-indigo-600:hover{background-color:#5a67d8}.hover\\:vc-bg-indigo-700:hover{background-color:#4c51bf}.hover\\:vc-bg-indigo-800:hover{background-color:#434190}.hover\\:vc-bg-indigo-900:hover{background-color:#3c366b}.hover\\:vc-bg-purple-100:hover{background-color:#faf5ff}.hover\\:vc-bg-purple-200:hover{background-color:#e9d8fd}.hover\\:vc-bg-purple-300:hover{background-color:#d6bcfa}.hover\\:vc-bg-purple-400:hover{background-color:#b794f4}.hover\\:vc-bg-purple-500:hover{background-color:#9f7aea}.hover\\:vc-bg-purple-600:hover{background-color:#805ad5}.hover\\:vc-bg-purple-700:hover{background-color:#6b46c1}.hover\\:vc-bg-purple-800:hover{background-color:#553c9a}.hover\\:vc-bg-purple-900:hover{background-color:#44337a}.hover\\:vc-bg-pink-100:hover{background-color:#fff5f7}.hover\\:vc-bg-pink-200:hover{background-color:#fed7e2}.hover\\:vc-bg-pink-300:hover{background-color:#fbb6ce}.hover\\:vc-bg-pink-400:hover{background-color:#f687b3}.hover\\:vc-bg-pink-500:hover{background-color:#ed64a6}.hover\\:vc-bg-pink-600:hover{background-color:#d53f8c}.hover\\:vc-bg-pink-700:hover{background-color:#b83280}.hover\\:vc-bg-pink-800:hover{background-color:#97266d}.hover\\:vc-bg-pink-900:hover{background-color:#702459}.vc-bg-bottom{background-position:bottom}.vc-bg-center{background-position:50%}.vc-bg-left{background-position:0}.vc-bg-left-bottom{background-position:0 100%}.vc-bg-left-top{background-position:0 0}.vc-bg-right{background-position:100%}.vc-bg-right-bottom{background-position:100% 100%}.vc-bg-right-top{background-position:100% 0}.vc-bg-top{background-position:top}.vc-bg-repeat{background-repeat:repeat}.vc-bg-no-repeat{background-repeat:no-repeat}.vc-bg-repeat-x{background-repeat:repeat-x}.vc-bg-repeat-y{background-repeat:repeat-y}.vc-bg-repeat-round{background-repeat:round}.vc-bg-repeat-space{background-repeat:space}.vc-bg-auto{background-size:auto}.vc-bg-cover{background-size:cover}.vc-bg-contain{background-size:contain}.vc-border-collapse{border-collapse:collapse}.vc-border-separate{border-collapse:initial}.vc-border-transparent{border-color:transparent}.vc-border-black{border-color:#000}.vc-border-white{border-color:#fff}.vc-border-gray-100{border-color:#f7fafc}.vc-border-gray-200{border-color:#edf2f7}.vc-border-gray-300{border-color:#e2e8f0}.vc-border-gray-400{border-color:#cbd5e0}.vc-border-gray-500{border-color:#a0aec0}.vc-border-gray-600{border-color:#718096}.vc-border-gray-700{border-color:#4a5568}.vc-border-gray-800{border-color:#2d3748}.vc-border-gray-900{border-color:#1a202c}.vc-border-red-100{border-color:#fff5f5}.vc-border-red-200{border-color:#fed7d7}.vc-border-red-300{border-color:#feb2b2}.vc-border-red-400{border-color:#fc8181}.vc-border-red-500{border-color:#f56565}.vc-border-red-600{border-color:#e53e3e}.vc-border-red-700{border-color:#c53030}.vc-border-red-800{border-color:#9b2c2c}.vc-border-red-900{border-color:#742a2a}.vc-border-orange-100{border-color:#fffaf0}.vc-border-orange-200{border-color:#feebc8}.vc-border-orange-300{border-color:#fbd38d}.vc-border-orange-400{border-color:#f6ad55}.vc-border-orange-500{border-color:#ed8936}.vc-border-orange-600{border-color:#dd6b20}.vc-border-orange-700{border-color:#c05621}.vc-border-orange-800{border-color:#9c4221}.vc-border-orange-900{border-color:#7b341e}.vc-border-yellow-100{border-color:ivory}.vc-border-yellow-200{border-color:#fefcbf}.vc-border-yellow-300{border-color:#faf089}.vc-border-yellow-400{border-color:#f6e05e}.vc-border-yellow-500{border-color:#ecc94b}.vc-border-yellow-600{border-color:#d69e2e}.vc-border-yellow-700{border-color:#b7791f}.vc-border-yellow-800{border-color:#975a16}.vc-border-yellow-900{border-color:#744210}.vc-border-green-100{border-color:#f0fff4}.vc-border-green-200{border-color:#c6f6d5}.vc-border-green-300{border-color:#9ae6b4}.vc-border-green-400{border-color:#68d391}.vc-border-green-500{border-color:#48bb78}.vc-border-green-600{border-color:#38a169}.vc-border-green-700{border-color:#2f855a}.vc-border-green-800{border-color:#276749}.vc-border-green-900{border-color:#22543d}.vc-border-teal-100{border-color:#e6fffa}.vc-border-teal-200{border-color:#b2f5ea}.vc-border-teal-300{border-color:#81e6d9}.vc-border-teal-400{border-color:#4fd1c5}.vc-border-teal-500{border-color:#38b2ac}.vc-border-teal-600{border-color:#319795}.vc-border-teal-700{border-color:#2c7a7b}.vc-border-teal-800{border-color:#285e61}.vc-border-teal-900{border-color:#234e52}.vc-border-blue-100{border-color:#ebf8ff}.vc-border-blue-200{border-color:#bee3f8}.vc-border-blue-300{border-color:#90cdf4}.vc-border-blue-400{border-color:#63b3ed}.vc-border-blue-500{border-color:#4299e1}.vc-border-blue-600{border-color:#3182ce}.vc-border-blue-700{border-color:#2b6cb0}.vc-border-blue-800{border-color:#2c5282}.vc-border-blue-900{border-color:#2a4365}.vc-border-indigo-100{border-color:#ebf4ff}.vc-border-indigo-200{border-color:#c3dafe}.vc-border-indigo-300{border-color:#a3bffa}.vc-border-indigo-400{border-color:#7f9cf5}.vc-border-indigo-500{border-color:#667eea}.vc-border-indigo-600{border-color:#5a67d8}.vc-border-indigo-700{border-color:#4c51bf}.vc-border-indigo-800{border-color:#434190}.vc-border-indigo-900{border-color:#3c366b}.vc-border-purple-100{border-color:#faf5ff}.vc-border-purple-200{border-color:#e9d8fd}.vc-border-purple-300{border-color:#d6bcfa}.vc-border-purple-400{border-color:#b794f4}.vc-border-purple-500{border-color:#9f7aea}.vc-border-purple-600{border-color:#805ad5}.vc-border-purple-700{border-color:#6b46c1}.vc-border-purple-800{border-color:#553c9a}.vc-border-purple-900{border-color:#44337a}.vc-border-pink-100{border-color:#fff5f7}.vc-border-pink-200{border-color:#fed7e2}.vc-border-pink-300{border-color:#fbb6ce}.vc-border-pink-400{border-color:#f687b3}.vc-border-pink-500{border-color:#ed64a6}.vc-border-pink-600{border-color:#d53f8c}.vc-border-pink-700{border-color:#b83280}.vc-border-pink-800{border-color:#97266d}.vc-border-pink-900{border-color:#702459}.hover\\:vc-border-transparent:hover{border-color:transparent}.hover\\:vc-border-black:hover{border-color:#000}.hover\\:vc-border-white:hover{border-color:#fff}.hover\\:vc-border-gray-100:hover{border-color:#f7fafc}.hover\\:vc-border-gray-200:hover{border-color:#edf2f7}.hover\\:vc-border-gray-300:hover{border-color:#e2e8f0}.hover\\:vc-border-gray-400:hover{border-color:#cbd5e0}.hover\\:vc-border-gray-500:hover{border-color:#a0aec0}.hover\\:vc-border-gray-600:hover{border-color:#718096}.hover\\:vc-border-gray-700:hover{border-color:#4a5568}.hover\\:vc-border-gray-800:hover{border-color:#2d3748}.hover\\:vc-border-gray-900:hover{border-color:#1a202c}.hover\\:vc-border-red-100:hover{border-color:#fff5f5}.hover\\:vc-border-red-200:hover{border-color:#fed7d7}.hover\\:vc-border-red-300:hover{border-color:#feb2b2}.hover\\:vc-border-red-400:hover{border-color:#fc8181}.hover\\:vc-border-red-500:hover{border-color:#f56565}.hover\\:vc-border-red-600:hover{border-color:#e53e3e}.hover\\:vc-border-red-700:hover{border-color:#c53030}.hover\\:vc-border-red-800:hover{border-color:#9b2c2c}.hover\\:vc-border-red-900:hover{border-color:#742a2a}.hover\\:vc-border-orange-100:hover{border-color:#fffaf0}.hover\\:vc-border-orange-200:hover{border-color:#feebc8}.hover\\:vc-border-orange-300:hover{border-color:#fbd38d}.hover\\:vc-border-orange-400:hover{border-color:#f6ad55}.hover\\:vc-border-orange-500:hover{border-color:#ed8936}.hover\\:vc-border-orange-600:hover{border-color:#dd6b20}.hover\\:vc-border-orange-700:hover{border-color:#c05621}.hover\\:vc-border-orange-800:hover{border-color:#9c4221}.hover\\:vc-border-orange-900:hover{border-color:#7b341e}.hover\\:vc-border-yellow-100:hover{border-color:ivory}.hover\\:vc-border-yellow-200:hover{border-color:#fefcbf}.hover\\:vc-border-yellow-300:hover{border-color:#faf089}.hover\\:vc-border-yellow-400:hover{border-color:#f6e05e}.hover\\:vc-border-yellow-500:hover{border-color:#ecc94b}.hover\\:vc-border-yellow-600:hover{border-color:#d69e2e}.hover\\:vc-border-yellow-700:hover{border-color:#b7791f}.hover\\:vc-border-yellow-800:hover{border-color:#975a16}.hover\\:vc-border-yellow-900:hover{border-color:#744210}.hover\\:vc-border-green-100:hover{border-color:#f0fff4}.hover\\:vc-border-green-200:hover{border-color:#c6f6d5}.hover\\:vc-border-green-300:hover{border-color:#9ae6b4}.hover\\:vc-border-green-400:hover{border-color:#68d391}.hover\\:vc-border-green-500:hover{border-color:#48bb78}.hover\\:vc-border-green-600:hover{border-color:#38a169}.hover\\:vc-border-green-700:hover{border-color:#2f855a}.hover\\:vc-border-green-800:hover{border-color:#276749}.hover\\:vc-border-green-900:hover{border-color:#22543d}.hover\\:vc-border-teal-100:hover{border-color:#e6fffa}.hover\\:vc-border-teal-200:hover{border-color:#b2f5ea}.hover\\:vc-border-teal-300:hover{border-color:#81e6d9}.hover\\:vc-border-teal-400:hover{border-color:#4fd1c5}.hover\\:vc-border-teal-500:hover{border-color:#38b2ac}.hover\\:vc-border-teal-600:hover{border-color:#319795}.hover\\:vc-border-teal-700:hover{border-color:#2c7a7b}.hover\\:vc-border-teal-800:hover{border-color:#285e61}.hover\\:vc-border-teal-900:hover{border-color:#234e52}.hover\\:vc-border-blue-100:hover{border-color:#ebf8ff}.hover\\:vc-border-blue-200:hover{border-color:#bee3f8}.hover\\:vc-border-blue-300:hover{border-color:#90cdf4}.hover\\:vc-border-blue-400:hover{border-color:#63b3ed}.hover\\:vc-border-blue-500:hover{border-color:#4299e1}.hover\\:vc-border-blue-600:hover{border-color:#3182ce}.hover\\:vc-border-blue-700:hover{border-color:#2b6cb0}.hover\\:vc-border-blue-800:hover{border-color:#2c5282}.hover\\:vc-border-blue-900:hover{border-color:#2a4365}.hover\\:vc-border-indigo-100:hover{border-color:#ebf4ff}.hover\\:vc-border-indigo-200:hover{border-color:#c3dafe}.hover\\:vc-border-indigo-300:hover{border-color:#a3bffa}.hover\\:vc-border-indigo-400:hover{border-color:#7f9cf5}.hover\\:vc-border-indigo-500:hover{border-color:#667eea}.hover\\:vc-border-indigo-600:hover{border-color:#5a67d8}.hover\\:vc-border-indigo-700:hover{border-color:#4c51bf}.hover\\:vc-border-indigo-800:hover{border-color:#434190}.hover\\:vc-border-indigo-900:hover{border-color:#3c366b}.hover\\:vc-border-purple-100:hover{border-color:#faf5ff}.hover\\:vc-border-purple-200:hover{border-color:#e9d8fd}.hover\\:vc-border-purple-300:hover{border-color:#d6bcfa}.hover\\:vc-border-purple-400:hover{border-color:#b794f4}.hover\\:vc-border-purple-500:hover{border-color:#9f7aea}.hover\\:vc-border-purple-600:hover{border-color:#805ad5}.hover\\:vc-border-purple-700:hover{border-color:#6b46c1}.hover\\:vc-border-purple-800:hover{border-color:#553c9a}.hover\\:vc-border-purple-900:hover{border-color:#44337a}.hover\\:vc-border-pink-100:hover{border-color:#fff5f7}.hover\\:vc-border-pink-200:hover{border-color:#fed7e2}.hover\\:vc-border-pink-300:hover{border-color:#fbb6ce}.hover\\:vc-border-pink-400:hover{border-color:#f687b3}.hover\\:vc-border-pink-500:hover{border-color:#ed64a6}.hover\\:vc-border-pink-600:hover{border-color:#d53f8c}.hover\\:vc-border-pink-700:hover{border-color:#b83280}.hover\\:vc-border-pink-800:hover{border-color:#97266d}.hover\\:vc-border-pink-900:hover{border-color:#702459}.focus\\:vc-border-transparent:focus{border-color:transparent}.focus\\:vc-border-black:focus{border-color:#000}.focus\\:vc-border-white:focus{border-color:#fff}.focus\\:vc-border-gray-100:focus{border-color:#f7fafc}.focus\\:vc-border-gray-200:focus{border-color:#edf2f7}.focus\\:vc-border-gray-300:focus{border-color:#e2e8f0}.focus\\:vc-border-gray-400:focus{border-color:#cbd5e0}.focus\\:vc-border-gray-500:focus{border-color:#a0aec0}.focus\\:vc-border-gray-600:focus{border-color:#718096}.focus\\:vc-border-gray-700:focus{border-color:#4a5568}.focus\\:vc-border-gray-800:focus{border-color:#2d3748}.focus\\:vc-border-gray-900:focus{border-color:#1a202c}.focus\\:vc-border-red-100:focus{border-color:#fff5f5}.focus\\:vc-border-red-200:focus{border-color:#fed7d7}.focus\\:vc-border-red-300:focus{border-color:#feb2b2}.focus\\:vc-border-red-400:focus{border-color:#fc8181}.focus\\:vc-border-red-500:focus{border-color:#f56565}.focus\\:vc-border-red-600:focus{border-color:#e53e3e}.focus\\:vc-border-red-700:focus{border-color:#c53030}.focus\\:vc-border-red-800:focus{border-color:#9b2c2c}.focus\\:vc-border-red-900:focus{border-color:#742a2a}.focus\\:vc-border-orange-100:focus{border-color:#fffaf0}.focus\\:vc-border-orange-200:focus{border-color:#feebc8}.focus\\:vc-border-orange-300:focus{border-color:#fbd38d}.focus\\:vc-border-orange-400:focus{border-color:#f6ad55}.focus\\:vc-border-orange-500:focus{border-color:#ed8936}.focus\\:vc-border-orange-600:focus{border-color:#dd6b20}.focus\\:vc-border-orange-700:focus{border-color:#c05621}.focus\\:vc-border-orange-800:focus{border-color:#9c4221}.focus\\:vc-border-orange-900:focus{border-color:#7b341e}.focus\\:vc-border-yellow-100:focus{border-color:ivory}.focus\\:vc-border-yellow-200:focus{border-color:#fefcbf}.focus\\:vc-border-yellow-300:focus{border-color:#faf089}.focus\\:vc-border-yellow-400:focus{border-color:#f6e05e}.focus\\:vc-border-yellow-500:focus{border-color:#ecc94b}.focus\\:vc-border-yellow-600:focus{border-color:#d69e2e}.focus\\:vc-border-yellow-700:focus{border-color:#b7791f}.focus\\:vc-border-yellow-800:focus{border-color:#975a16}.focus\\:vc-border-yellow-900:focus{border-color:#744210}.focus\\:vc-border-green-100:focus{border-color:#f0fff4}.focus\\:vc-border-green-200:focus{border-color:#c6f6d5}.focus\\:vc-border-green-300:focus{border-color:#9ae6b4}.focus\\:vc-border-green-400:focus{border-color:#68d391}.focus\\:vc-border-green-500:focus{border-color:#48bb78}.focus\\:vc-border-green-600:focus{border-color:#38a169}.focus\\:vc-border-green-700:focus{border-color:#2f855a}.focus\\:vc-border-green-800:focus{border-color:#276749}.focus\\:vc-border-green-900:focus{border-color:#22543d}.focus\\:vc-border-teal-100:focus{border-color:#e6fffa}.focus\\:vc-border-teal-200:focus{border-color:#b2f5ea}.focus\\:vc-border-teal-300:focus{border-color:#81e6d9}.focus\\:vc-border-teal-400:focus{border-color:#4fd1c5}.focus\\:vc-border-teal-500:focus{border-color:#38b2ac}.focus\\:vc-border-teal-600:focus{border-color:#319795}.focus\\:vc-border-teal-700:focus{border-color:#2c7a7b}.focus\\:vc-border-teal-800:focus{border-color:#285e61}.focus\\:vc-border-teal-900:focus{border-color:#234e52}.focus\\:vc-border-blue-100:focus{border-color:#ebf8ff}.focus\\:vc-border-blue-200:focus{border-color:#bee3f8}.focus\\:vc-border-blue-300:focus{border-color:#90cdf4}.focus\\:vc-border-blue-400:focus{border-color:#63b3ed}.focus\\:vc-border-blue-500:focus{border-color:#4299e1}.focus\\:vc-border-blue-600:focus{border-color:#3182ce}.focus\\:vc-border-blue-700:focus{border-color:#2b6cb0}.focus\\:vc-border-blue-800:focus{border-color:#2c5282}.focus\\:vc-border-blue-900:focus{border-color:#2a4365}.focus\\:vc-border-indigo-100:focus{border-color:#ebf4ff}.focus\\:vc-border-indigo-200:focus{border-color:#c3dafe}.focus\\:vc-border-indigo-300:focus{border-color:#a3bffa}.focus\\:vc-border-indigo-400:focus{border-color:#7f9cf5}.focus\\:vc-border-indigo-500:focus{border-color:#667eea}.focus\\:vc-border-indigo-600:focus{border-color:#5a67d8}.focus\\:vc-border-indigo-700:focus{border-color:#4c51bf}.focus\\:vc-border-indigo-800:focus{border-color:#434190}.focus\\:vc-border-indigo-900:focus{border-color:#3c366b}.focus\\:vc-border-purple-100:focus{border-color:#faf5ff}.focus\\:vc-border-purple-200:focus{border-color:#e9d8fd}.focus\\:vc-border-purple-300:focus{border-color:#d6bcfa}.focus\\:vc-border-purple-400:focus{border-color:#b794f4}.focus\\:vc-border-purple-500:focus{border-color:#9f7aea}.focus\\:vc-border-purple-600:focus{border-color:#805ad5}.focus\\:vc-border-purple-700:focus{border-color:#6b46c1}.focus\\:vc-border-purple-800:focus{border-color:#553c9a}.focus\\:vc-border-purple-900:focus{border-color:#44337a}.focus\\:vc-border-pink-100:focus{border-color:#fff5f7}.focus\\:vc-border-pink-200:focus{border-color:#fed7e2}.focus\\:vc-border-pink-300:focus{border-color:#fbb6ce}.focus\\:vc-border-pink-400:focus{border-color:#f687b3}.focus\\:vc-border-pink-500:focus{border-color:#ed64a6}.focus\\:vc-border-pink-600:focus{border-color:#d53f8c}.focus\\:vc-border-pink-700:focus{border-color:#b83280}.focus\\:vc-border-pink-800:focus{border-color:#97266d}.focus\\:vc-border-pink-900:focus{border-color:#702459}.vc-rounded-none{border-radius:0}.vc-rounded-sm{border-radius:18px}.vc-rounded{border-radius:4px}.vc-rounded-lg{border-radius:8px}.vc-rounded-full{border-radius:9999px}.vc-rounded-t-none{border-top-left-radius:0;border-top-right-radius:0}.vc-rounded-r-none{border-top-right-radius:0;border-bottom-right-radius:0}.vc-rounded-b-none{border-bottom-right-radius:0;border-bottom-left-radius:0}.vc-rounded-l-none{border-top-left-radius:0;border-bottom-left-radius:0}.vc-rounded-t-sm{border-top-left-radius:18px;border-top-right-radius:18px}.vc-rounded-r-sm{border-top-right-radius:18px;border-bottom-right-radius:18px}.vc-rounded-b-sm{border-bottom-right-radius:18px;border-bottom-left-radius:18px}.vc-rounded-l-sm{border-top-left-radius:18px;border-bottom-left-radius:18px}.vc-rounded-t{border-top-left-radius:4px;border-top-right-radius:4px}.vc-rounded-r{border-top-right-radius:4px}.vc-rounded-b,.vc-rounded-r{border-bottom-right-radius:4px}.vc-rounded-b,.vc-rounded-l{border-bottom-left-radius:4px}.vc-rounded-l{border-top-left-radius:4px}.vc-rounded-t-lg{border-top-left-radius:8px;border-top-right-radius:8px}.vc-rounded-r-lg{border-top-right-radius:8px;border-bottom-right-radius:8px}.vc-rounded-b-lg{border-bottom-right-radius:8px;border-bottom-left-radius:8px}.vc-rounded-l-lg{border-top-left-radius:8px;border-bottom-left-radius:8px}.vc-rounded-t-full{border-top-left-radius:9999px;border-top-right-radius:9999px}.vc-rounded-r-full{border-top-right-radius:9999px;border-bottom-right-radius:9999px}.vc-rounded-b-full{border-bottom-right-radius:9999px;border-bottom-left-radius:9999px}.vc-rounded-l-full{border-top-left-radius:9999px;border-bottom-left-radius:9999px}.vc-rounded-tl-none{border-top-left-radius:0}.vc-rounded-tr-none{border-top-right-radius:0}.vc-rounded-br-none{border-bottom-right-radius:0}.vc-rounded-bl-none{border-bottom-left-radius:0}.vc-rounded-tl-sm{border-top-left-radius:18px}.vc-rounded-tr-sm{border-top-right-radius:18px}.vc-rounded-br-sm{border-bottom-right-radius:18px}.vc-rounded-bl-sm{border-bottom-left-radius:18px}.vc-rounded-tl{border-top-left-radius:4px}.vc-rounded-tr{border-top-right-radius:4px}.vc-rounded-br{border-bottom-right-radius:4px}.vc-rounded-bl{border-bottom-left-radius:4px}.vc-rounded-tl-lg{border-top-left-radius:8px}.vc-rounded-tr-lg{border-top-right-radius:8px}.vc-rounded-br-lg{border-bottom-right-radius:8px}.vc-rounded-bl-lg{border-bottom-left-radius:8px}.vc-rounded-tl-full{border-top-left-radius:9999px}.vc-rounded-tr-full{border-top-right-radius:9999px}.vc-rounded-br-full{border-bottom-right-radius:9999px}.vc-rounded-bl-full{border-bottom-left-radius:9999px}.vc-border-solid{border-style:solid}.vc-border-dashed{border-style:dashed}.vc-border-dotted{border-style:dotted}.vc-border-double{border-style:double}.vc-border-none{border-style:none}.vc-border-0{border-width:0}.vc-border-2{border-width:2px}.vc-border-4{border-width:4px}.vc-border-8{border-width:8px}.vc-border{border-width:1px}.vc-border-t-0{border-top-width:0}.vc-border-r-0{border-right-width:0}.vc-border-b-0{border-bottom-width:0}.vc-border-l-0{border-left-width:0}.vc-border-t-2{border-top-width:2px}.vc-border-r-2{border-right-width:2px}.vc-border-b-2{border-bottom-width:2px}.vc-border-l-2{border-left-width:2px}.vc-border-t-4{border-top-width:4px}.vc-border-r-4{border-right-width:4px}.vc-border-b-4{border-bottom-width:4px}.vc-border-l-4{border-left-width:4px}.vc-border-t-8{border-top-width:8px}.vc-border-r-8{border-right-width:8px}.vc-border-b-8{border-bottom-width:8px}.vc-border-l-8{border-left-width:8px}.vc-border-t{border-top-width:1px}.vc-border-r{border-right-width:1px}.vc-border-b{border-bottom-width:1px}.vc-border-l{border-left-width:1px}.vc-cursor-pointer{cursor:pointer}.vc-cursor-not-allowed{cursor:not-allowed}.vc-flex{display:flex}.vc-items-center{align-items:center}.vc-justify-center{justify-content:center}.vc-font-medium{font-weight:500}.vc-font-semibold{font-weight:600}.focus\\:vc-font-bold:focus,.vc-font-bold{font-weight:700}.vc-h-full{height:100%}.vc-leading-tight{line-height:1.25}.vc-leading-snug{line-height:1.375}.vc-mr-auto{margin-right:auto}.vc-ml-auto{margin-left:auto}.vc-min-w-full{min-width:100%}.vc-opacity-0{opacity:0}.vc-opacity-25{opacity:.25}.vc-opacity-75{opacity:.75}.hover\\:vc-opacity-50:hover{opacity:.5}.hover\\:vc-opacity-75:hover{opacity:.75}.focus\\:vc-outline-none:focus{outline:0}.vc-overflow-hidden{overflow:hidden}.vc-p-1{padding:4px}.vc-py-1{padding-top:4px;padding-bottom:4px}.vc-py-2{padding-top:8px;padding-bottom:8px}.vc-px-2{padding-left:8px;padding-right:8px}.vc-px-3{padding-left:12px;padding-right:12px}.vc-pointer-events-none{pointer-events:none}.vc-pointer-events-auto{pointer-events:auto}.vc-relative{position:relative}.vc-shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.hover\\:vc-shadow-inner:hover{box-shadow:inset 0 2px 4px 0 rgba(0,0,0,.06)}.focus\\:vc-shadow:focus{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.vc-text-left{text-align:left}.vc-text-center{text-align:center}.vc-text-right{text-align:right}.vc-text-justify{text-align:justify}.vc-text-transparent{color:transparent}.vc-text-black{color:#000}.vc-text-white{color:#fff}.vc-text-gray-100{color:#f7fafc}.vc-text-gray-200{color:#edf2f7}.vc-text-gray-300{color:#e2e8f0}.vc-text-gray-400{color:#cbd5e0}.vc-text-gray-500{color:#a0aec0}.vc-text-gray-600{color:#718096}.vc-text-gray-700{color:#4a5568}.vc-text-gray-800{color:#2d3748}.vc-text-gray-900{color:#1a202c}.vc-text-red-100{color:#fff5f5}.vc-text-red-200{color:#fed7d7}.vc-text-red-300{color:#feb2b2}.vc-text-red-400{color:#fc8181}.vc-text-red-500{color:#f56565}.vc-text-red-600{color:#e53e3e}.vc-text-red-700{color:#c53030}.vc-text-red-800{color:#9b2c2c}.vc-text-red-900{color:#742a2a}.vc-text-orange-100{color:#fffaf0}.vc-text-orange-200{color:#feebc8}.vc-text-orange-300{color:#fbd38d}.vc-text-orange-400{color:#f6ad55}.vc-text-orange-500{color:#ed8936}.vc-text-orange-600{color:#dd6b20}.vc-text-orange-700{color:#c05621}.vc-text-orange-800{color:#9c4221}.vc-text-orange-900{color:#7b341e}.vc-text-yellow-100{color:ivory}.vc-text-yellow-200{color:#fefcbf}.vc-text-yellow-300{color:#faf089}.vc-text-yellow-400{color:#f6e05e}.vc-text-yellow-500{color:#ecc94b}.vc-text-yellow-600{color:#d69e2e}.vc-text-yellow-700{color:#b7791f}.vc-text-yellow-800{color:#975a16}.vc-text-yellow-900{color:#744210}.vc-text-green-100{color:#f0fff4}.vc-text-green-200{color:#c6f6d5}.vc-text-green-300{color:#9ae6b4}.vc-text-green-400{color:#68d391}.vc-text-green-500{color:#48bb78}.vc-text-green-600{color:#38a169}.vc-text-green-700{color:#2f855a}.vc-text-green-800{color:#276749}.vc-text-green-900{color:#22543d}.vc-text-teal-100{color:#e6fffa}.vc-text-teal-200{color:#b2f5ea}.vc-text-teal-300{color:#81e6d9}.vc-text-teal-400{color:#4fd1c5}.vc-text-teal-500{color:#38b2ac}.vc-text-teal-600{color:#319795}.vc-text-teal-700{color:#2c7a7b}.vc-text-teal-800{color:#285e61}.vc-text-teal-900{color:#234e52}.vc-text-blue-100{color:#ebf8ff}.vc-text-blue-200{color:#bee3f8}.vc-text-blue-300{color:#90cdf4}.vc-text-blue-400{color:#63b3ed}.vc-text-blue-500{color:#4299e1}.vc-text-blue-600{color:#3182ce}.vc-text-blue-700{color:#2b6cb0}.vc-text-blue-800{color:#2c5282}.vc-text-blue-900{color:#2a4365}.vc-text-indigo-100{color:#ebf4ff}.vc-text-indigo-200{color:#c3dafe}.vc-text-indigo-300{color:#a3bffa}.vc-text-indigo-400{color:#7f9cf5}.vc-text-indigo-500{color:#667eea}.vc-text-indigo-600{color:#5a67d8}.vc-text-indigo-700{color:#4c51bf}.vc-text-indigo-800{color:#434190}.vc-text-indigo-900{color:#3c366b}.vc-text-purple-100{color:#faf5ff}.vc-text-purple-200{color:#e9d8fd}.vc-text-purple-300{color:#d6bcfa}.vc-text-purple-400{color:#b794f4}.vc-text-purple-500{color:#9f7aea}.vc-text-purple-600{color:#805ad5}.vc-text-purple-700{color:#6b46c1}.vc-text-purple-800{color:#553c9a}.vc-text-purple-900{color:#44337a}.vc-text-pink-100{color:#fff5f7}.vc-text-pink-200{color:#fed7e2}.vc-text-pink-300{color:#fbb6ce}.vc-text-pink-400{color:#f687b3}.vc-text-pink-500{color:#ed64a6}.vc-text-pink-600{color:#d53f8c}.vc-text-pink-700{color:#b83280}.vc-text-pink-800{color:#97266d}.vc-text-pink-900{color:#702459}.hover\\:vc-text-transparent:hover{color:transparent}.hover\\:vc-text-black:hover{color:#000}.hover\\:vc-text-white:hover{color:#fff}.hover\\:vc-text-gray-100:hover{color:#f7fafc}.hover\\:vc-text-gray-200:hover{color:#edf2f7}.hover\\:vc-text-gray-300:hover{color:#e2e8f0}.hover\\:vc-text-gray-400:hover{color:#cbd5e0}.hover\\:vc-text-gray-500:hover{color:#a0aec0}.hover\\:vc-text-gray-600:hover{color:#718096}.hover\\:vc-text-gray-700:hover{color:#4a5568}.hover\\:vc-text-gray-800:hover{color:#2d3748}.hover\\:vc-text-gray-900:hover{color:#1a202c}.hover\\:vc-text-red-100:hover{color:#fff5f5}.hover\\:vc-text-red-200:hover{color:#fed7d7}.hover\\:vc-text-red-300:hover{color:#feb2b2}.hover\\:vc-text-red-400:hover{color:#fc8181}.hover\\:vc-text-red-500:hover{color:#f56565}.hover\\:vc-text-red-600:hover{color:#e53e3e}.hover\\:vc-text-red-700:hover{color:#c53030}.hover\\:vc-text-red-800:hover{color:#9b2c2c}.hover\\:vc-text-red-900:hover{color:#742a2a}.hover\\:vc-text-orange-100:hover{color:#fffaf0}.hover\\:vc-text-orange-200:hover{color:#feebc8}.hover\\:vc-text-orange-300:hover{color:#fbd38d}.hover\\:vc-text-orange-400:hover{color:#f6ad55}.hover\\:vc-text-orange-500:hover{color:#ed8936}.hover\\:vc-text-orange-600:hover{color:#dd6b20}.hover\\:vc-text-orange-700:hover{color:#c05621}.hover\\:vc-text-orange-800:hover{color:#9c4221}.hover\\:vc-text-orange-900:hover{color:#7b341e}.hover\\:vc-text-yellow-100:hover{color:ivory}.hover\\:vc-text-yellow-200:hover{color:#fefcbf}.hover\\:vc-text-yellow-300:hover{color:#faf089}.hover\\:vc-text-yellow-400:hover{color:#f6e05e}.hover\\:vc-text-yellow-500:hover{color:#ecc94b}.hover\\:vc-text-yellow-600:hover{color:#d69e2e}.hover\\:vc-text-yellow-700:hover{color:#b7791f}.hover\\:vc-text-yellow-800:hover{color:#975a16}.hover\\:vc-text-yellow-900:hover{color:#744210}.hover\\:vc-text-green-100:hover{color:#f0fff4}.hover\\:vc-text-green-200:hover{color:#c6f6d5}.hover\\:vc-text-green-300:hover{color:#9ae6b4}.hover\\:vc-text-green-400:hover{color:#68d391}.hover\\:vc-text-green-500:hover{color:#48bb78}.hover\\:vc-text-green-600:hover{color:#38a169}.hover\\:vc-text-green-700:hover{color:#2f855a}.hover\\:vc-text-green-800:hover{color:#276749}.hover\\:vc-text-green-900:hover{color:#22543d}.hover\\:vc-text-teal-100:hover{color:#e6fffa}.hover\\:vc-text-teal-200:hover{color:#b2f5ea}.hover\\:vc-text-teal-300:hover{color:#81e6d9}.hover\\:vc-text-teal-400:hover{color:#4fd1c5}.hover\\:vc-text-teal-500:hover{color:#38b2ac}.hover\\:vc-text-teal-600:hover{color:#319795}.hover\\:vc-text-teal-700:hover{color:#2c7a7b}.hover\\:vc-text-teal-800:hover{color:#285e61}.hover\\:vc-text-teal-900:hover{color:#234e52}.hover\\:vc-text-blue-100:hover{color:#ebf8ff}.hover\\:vc-text-blue-200:hover{color:#bee3f8}.hover\\:vc-text-blue-300:hover{color:#90cdf4}.hover\\:vc-text-blue-400:hover{color:#63b3ed}.hover\\:vc-text-blue-500:hover{color:#4299e1}.hover\\:vc-text-blue-600:hover{color:#3182ce}.hover\\:vc-text-blue-700:hover{color:#2b6cb0}.hover\\:vc-text-blue-800:hover{color:#2c5282}.hover\\:vc-text-blue-900:hover{color:#2a4365}.hover\\:vc-text-indigo-100:hover{color:#ebf4ff}.hover\\:vc-text-indigo-200:hover{color:#c3dafe}.hover\\:vc-text-indigo-300:hover{color:#a3bffa}.hover\\:vc-text-indigo-400:hover{color:#7f9cf5}.hover\\:vc-text-indigo-500:hover{color:#667eea}.hover\\:vc-text-indigo-600:hover{color:#5a67d8}.hover\\:vc-text-indigo-700:hover{color:#4c51bf}.hover\\:vc-text-indigo-800:hover{color:#434190}.hover\\:vc-text-indigo-900:hover{color:#3c366b}.hover\\:vc-text-purple-100:hover{color:#faf5ff}.hover\\:vc-text-purple-200:hover{color:#e9d8fd}.hover\\:vc-text-purple-300:hover{color:#d6bcfa}.hover\\:vc-text-purple-400:hover{color:#b794f4}.hover\\:vc-text-purple-500:hover{color:#9f7aea}.hover\\:vc-text-purple-600:hover{color:#805ad5}.hover\\:vc-text-purple-700:hover{color:#6b46c1}.hover\\:vc-text-purple-800:hover{color:#553c9a}.hover\\:vc-text-purple-900:hover{color:#44337a}.hover\\:vc-text-pink-100:hover{color:#fff5f7}.hover\\:vc-text-pink-200:hover{color:#fed7e2}.hover\\:vc-text-pink-300:hover{color:#fbb6ce}.hover\\:vc-text-pink-400:hover{color:#f687b3}.hover\\:vc-text-pink-500:hover{color:#ed64a6}.hover\\:vc-text-pink-600:hover{color:#d53f8c}.hover\\:vc-text-pink-700:hover{color:#b83280}.hover\\:vc-text-pink-800:hover{color:#97266d}.hover\\:vc-text-pink-900:hover{color:#702459}.vc-text-xs{font-size:12px}.vc-text-sm{font-size:14px}.vc-text-base{font-size:16px}.vc-text-lg{font-size:18px}.vc-text-xl{font-size:20px}.vc-text-2xl{font-size:24px}.vc-select-none{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.vc-w-12{width:48px}.vc-w-full{width:100%}@media (min-width:640px){.sm\\:vc-bg-fixed{background-attachment:fixed}.sm\\:vc-bg-local{background-attachment:local}.sm\\:vc-bg-scroll{background-attachment:scroll}.sm\\:vc-bg-bottom{background-position:bottom}.sm\\:vc-bg-center{background-position:50%}.sm\\:vc-bg-left{background-position:0}.sm\\:vc-bg-left-bottom{background-position:0 100%}.sm\\:vc-bg-left-top{background-position:0 0}.sm\\:vc-bg-right{background-position:100%}.sm\\:vc-bg-right-bottom{background-position:100% 100%}.sm\\:vc-bg-right-top{background-position:100% 0}.sm\\:vc-bg-top{background-position:top}.sm\\:vc-bg-repeat{background-repeat:repeat}.sm\\:vc-bg-no-repeat{background-repeat:no-repeat}.sm\\:vc-bg-repeat-x{background-repeat:repeat-x}.sm\\:vc-bg-repeat-y{background-repeat:repeat-y}.sm\\:vc-bg-repeat-round{background-repeat:round}.sm\\:vc-bg-repeat-space{background-repeat:space}.sm\\:vc-bg-auto{background-size:auto}.sm\\:vc-bg-cover{background-size:cover}.sm\\:vc-bg-contain{background-size:contain}.sm\\:vc-border-collapse{border-collapse:collapse}.sm\\:vc-border-separate{border-collapse:initial}.sm\\:vc-border-solid{border-style:solid}.sm\\:vc-border-dashed{border-style:dashed}.sm\\:vc-border-dotted{border-style:dotted}.sm\\:vc-border-double{border-style:double}.sm\\:vc-border-none{border-style:none}.sm\\:vc-border-0{border-width:0}.sm\\:vc-border-2{border-width:2px}.sm\\:vc-border-4{border-width:4px}.sm\\:vc-border-8{border-width:8px}.sm\\:vc-border{border-width:1px}.sm\\:vc-border-t-0{border-top-width:0}.sm\\:vc-border-r-0{border-right-width:0}.sm\\:vc-border-b-0{border-bottom-width:0}.sm\\:vc-border-l-0{border-left-width:0}.sm\\:vc-border-t-2{border-top-width:2px}.sm\\:vc-border-r-2{border-right-width:2px}.sm\\:vc-border-b-2{border-bottom-width:2px}.sm\\:vc-border-l-2{border-left-width:2px}.sm\\:vc-border-t-4{border-top-width:4px}.sm\\:vc-border-r-4{border-right-width:4px}.sm\\:vc-border-b-4{border-bottom-width:4px}.sm\\:vc-border-l-4{border-left-width:4px}.sm\\:vc-border-t-8{border-top-width:8px}.sm\\:vc-border-r-8{border-right-width:8px}.sm\\:vc-border-b-8{border-bottom-width:8px}.sm\\:vc-border-l-8{border-left-width:8px}.sm\\:vc-border-t{border-top-width:1px}.sm\\:vc-border-r{border-right-width:1px}.sm\\:vc-border-b{border-bottom-width:1px}.sm\\:vc-border-l{border-left-width:1px}.sm\\:vc-text-left{text-align:left}.sm\\:vc-text-center{text-align:center}.sm\\:vc-text-right{text-align:right}.sm\\:vc-text-justify{text-align:justify}.sm\\:vc-text-xs{font-size:12px}.sm\\:vc-text-sm{font-size:14px}.sm\\:vc-text-base{font-size:16px}.sm\\:vc-text-lg{font-size:18px}.sm\\:vc-text-xl{font-size:20px}.sm\\:vc-text-2xl{font-size:24px}}@media (min-width:768px){.md\\:vc-bg-fixed{background-attachment:fixed}.md\\:vc-bg-local{background-attachment:local}.md\\:vc-bg-scroll{background-attachment:scroll}.md\\:vc-bg-bottom{background-position:bottom}.md\\:vc-bg-center{background-position:50%}.md\\:vc-bg-left{background-position:0}.md\\:vc-bg-left-bottom{background-position:0 100%}.md\\:vc-bg-left-top{background-position:0 0}.md\\:vc-bg-right{background-position:100%}.md\\:vc-bg-right-bottom{background-position:100% 100%}.md\\:vc-bg-right-top{background-position:100% 0}.md\\:vc-bg-top{background-position:top}.md\\:vc-bg-repeat{background-repeat:repeat}.md\\:vc-bg-no-repeat{background-repeat:no-repeat}.md\\:vc-bg-repeat-x{background-repeat:repeat-x}.md\\:vc-bg-repeat-y{background-repeat:repeat-y}.md\\:vc-bg-repeat-round{background-repeat:round}.md\\:vc-bg-repeat-space{background-repeat:space}.md\\:vc-bg-auto{background-size:auto}.md\\:vc-bg-cover{background-size:cover}.md\\:vc-bg-contain{background-size:contain}.md\\:vc-border-collapse{border-collapse:collapse}.md\\:vc-border-separate{border-collapse:initial}.md\\:vc-border-solid{border-style:solid}.md\\:vc-border-dashed{border-style:dashed}.md\\:vc-border-dotted{border-style:dotted}.md\\:vc-border-double{border-style:double}.md\\:vc-border-none{border-style:none}.md\\:vc-border-0{border-width:0}.md\\:vc-border-2{border-width:2px}.md\\:vc-border-4{border-width:4px}.md\\:vc-border-8{border-width:8px}.md\\:vc-border{border-width:1px}.md\\:vc-border-t-0{border-top-width:0}.md\\:vc-border-r-0{border-right-width:0}.md\\:vc-border-b-0{border-bottom-width:0}.md\\:vc-border-l-0{border-left-width:0}.md\\:vc-border-t-2{border-top-width:2px}.md\\:vc-border-r-2{border-right-width:2px}.md\\:vc-border-b-2{border-bottom-width:2px}.md\\:vc-border-l-2{border-left-width:2px}.md\\:vc-border-t-4{border-top-width:4px}.md\\:vc-border-r-4{border-right-width:4px}.md\\:vc-border-b-4{border-bottom-width:4px}.md\\:vc-border-l-4{border-left-width:4px}.md\\:vc-border-t-8{border-top-width:8px}.md\\:vc-border-r-8{border-right-width:8px}.md\\:vc-border-b-8{border-bottom-width:8px}.md\\:vc-border-l-8{border-left-width:8px}.md\\:vc-border-t{border-top-width:1px}.md\\:vc-border-r{border-right-width:1px}.md\\:vc-border-b{border-bottom-width:1px}.md\\:vc-border-l{border-left-width:1px}.md\\:vc-text-left{text-align:left}.md\\:vc-text-center{text-align:center}.md\\:vc-text-right{text-align:right}.md\\:vc-text-justify{text-align:justify}.md\\:vc-text-xs{font-size:12px}.md\\:vc-text-sm{font-size:14px}.md\\:vc-text-base{font-size:16px}.md\\:vc-text-lg{font-size:18px}.md\\:vc-text-xl{font-size:20px}.md\\:vc-text-2xl{font-size:24px}}@media (min-width:1024px){.lg\\:vc-bg-fixed{background-attachment:fixed}.lg\\:vc-bg-local{background-attachment:local}.lg\\:vc-bg-scroll{background-attachment:scroll}.lg\\:vc-bg-bottom{background-position:bottom}.lg\\:vc-bg-center{background-position:50%}.lg\\:vc-bg-left{background-position:0}.lg\\:vc-bg-left-bottom{background-position:0 100%}.lg\\:vc-bg-left-top{background-position:0 0}.lg\\:vc-bg-right{background-position:100%}.lg\\:vc-bg-right-bottom{background-position:100% 100%}.lg\\:vc-bg-right-top{background-position:100% 0}.lg\\:vc-bg-top{background-position:top}.lg\\:vc-bg-repeat{background-repeat:repeat}.lg\\:vc-bg-no-repeat{background-repeat:no-repeat}.lg\\:vc-bg-repeat-x{background-repeat:repeat-x}.lg\\:vc-bg-repeat-y{background-repeat:repeat-y}.lg\\:vc-bg-repeat-round{background-repeat:round}.lg\\:vc-bg-repeat-space{background-repeat:space}.lg\\:vc-bg-auto{background-size:auto}.lg\\:vc-bg-cover{background-size:cover}.lg\\:vc-bg-contain{background-size:contain}.lg\\:vc-border-collapse{border-collapse:collapse}.lg\\:vc-border-separate{border-collapse:initial}.lg\\:vc-border-solid{border-style:solid}.lg\\:vc-border-dashed{border-style:dashed}.lg\\:vc-border-dotted{border-style:dotted}.lg\\:vc-border-double{border-style:double}.lg\\:vc-border-none{border-style:none}.lg\\:vc-border-0{border-width:0}.lg\\:vc-border-2{border-width:2px}.lg\\:vc-border-4{border-width:4px}.lg\\:vc-border-8{border-width:8px}.lg\\:vc-border{border-width:1px}.lg\\:vc-border-t-0{border-top-width:0}.lg\\:vc-border-r-0{border-right-width:0}.lg\\:vc-border-b-0{border-bottom-width:0}.lg\\:vc-border-l-0{border-left-width:0}.lg\\:vc-border-t-2{border-top-width:2px}.lg\\:vc-border-r-2{border-right-width:2px}.lg\\:vc-border-b-2{border-bottom-width:2px}.lg\\:vc-border-l-2{border-left-width:2px}.lg\\:vc-border-t-4{border-top-width:4px}.lg\\:vc-border-r-4{border-right-width:4px}.lg\\:vc-border-b-4{border-bottom-width:4px}.lg\\:vc-border-l-4{border-left-width:4px}.lg\\:vc-border-t-8{border-top-width:8px}.lg\\:vc-border-r-8{border-right-width:8px}.lg\\:vc-border-b-8{border-bottom-width:8px}.lg\\:vc-border-l-8{border-left-width:8px}.lg\\:vc-border-t{border-top-width:1px}.lg\\:vc-border-r{border-right-width:1px}.lg\\:vc-border-b{border-bottom-width:1px}.lg\\:vc-border-l{border-left-width:1px}.lg\\:vc-text-left{text-align:left}.lg\\:vc-text-center{text-align:center}.lg\\:vc-text-right{text-align:right}.lg\\:vc-text-justify{text-align:justify}.lg\\:vc-text-xs{font-size:12px}.lg\\:vc-text-sm{font-size:14px}.lg\\:vc-text-base{font-size:16px}.lg\\:vc-text-lg{font-size:18px}.lg\\:vc-text-xl{font-size:20px}.lg\\:vc-text-2xl{font-size:24px}}@media (min-width:1280px){.xl\\:vc-bg-fixed{background-attachment:fixed}.xl\\:vc-bg-local{background-attachment:local}.xl\\:vc-bg-scroll{background-attachment:scroll}.xl\\:vc-bg-bottom{background-position:bottom}.xl\\:vc-bg-center{background-position:50%}.xl\\:vc-bg-left{background-position:0}.xl\\:vc-bg-left-bottom{background-position:0 100%}.xl\\:vc-bg-left-top{background-position:0 0}.xl\\:vc-bg-right{background-position:100%}.xl\\:vc-bg-right-bottom{background-position:100% 100%}.xl\\:vc-bg-right-top{background-position:100% 0}.xl\\:vc-bg-top{background-position:top}.xl\\:vc-bg-repeat{background-repeat:repeat}.xl\\:vc-bg-no-repeat{background-repeat:no-repeat}.xl\\:vc-bg-repeat-x{background-repeat:repeat-x}.xl\\:vc-bg-repeat-y{background-repeat:repeat-y}.xl\\:vc-bg-repeat-round{background-repeat:round}.xl\\:vc-bg-repeat-space{background-repeat:space}.xl\\:vc-bg-auto{background-size:auto}.xl\\:vc-bg-cover{background-size:cover}.xl\\:vc-bg-contain{background-size:contain}.xl\\:vc-border-collapse{border-collapse:collapse}.xl\\:vc-border-separate{border-collapse:initial}.xl\\:vc-border-solid{border-style:solid}.xl\\:vc-border-dashed{border-style:dashed}.xl\\:vc-border-dotted{border-style:dotted}.xl\\:vc-border-double{border-style:double}.xl\\:vc-border-none{border-style:none}.xl\\:vc-border-0{border-width:0}.xl\\:vc-border-2{border-width:2px}.xl\\:vc-border-4{border-width:4px}.xl\\:vc-border-8{border-width:8px}.xl\\:vc-border{border-width:1px}.xl\\:vc-border-t-0{border-top-width:0}.xl\\:vc-border-r-0{border-right-width:0}.xl\\:vc-border-b-0{border-bottom-width:0}.xl\\:vc-border-l-0{border-left-width:0}.xl\\:vc-border-t-2{border-top-width:2px}.xl\\:vc-border-r-2{border-right-width:2px}.xl\\:vc-border-b-2{border-bottom-width:2px}.xl\\:vc-border-l-2{border-left-width:2px}.xl\\:vc-border-t-4{border-top-width:4px}.xl\\:vc-border-r-4{border-right-width:4px}.xl\\:vc-border-b-4{border-bottom-width:4px}.xl\\:vc-border-l-4{border-left-width:4px}.xl\\:vc-border-t-8{border-top-width:8px}.xl\\:vc-border-r-8{border-right-width:8px}.xl\\:vc-border-b-8{border-bottom-width:8px}.xl\\:vc-border-l-8{border-left-width:8px}.xl\\:vc-border-t{border-top-width:1px}.xl\\:vc-border-r{border-right-width:1px}.xl\\:vc-border-b{border-bottom-width:1px}.xl\\:vc-border-l{border-left-width:1px}.xl\\:vc-text-left{text-align:left}.xl\\:vc-text-center{text-align:center}.xl\\:vc-text-right{text-align:right}.xl\\:vc-text-justify{text-align:justify}.xl\\:vc-text-xs{font-size:12px}.xl\\:vc-text-sm{font-size:14px}.xl\\:vc-text-base{font-size:16px}.xl\\:vc-text-lg{font-size:18px}.xl\\:vc-text-xl{font-size:20px}.xl\\:vc-text-2xl{font-size:24px}}",""])},f4d6:function(e,t,r){var o=r("ffd6"),n=1/0;function c(e){if("string"==typeof e||o(e))return e;var t=e+"";return"0"==t&&1/e==-n?"-0":t}e.exports=c},f4d9:function(e,t){var r="\\ud800-\\udfff",o="\\u0300-\\u036f",n="\\ufe20-\\ufe2f",c="\\u20d0-\\u20ff",i=o+n+c,a="\\u2700-\\u27bf",s="a-z\\xdf-\\xf6\\xf8-\\xff",d="\\xac\\xb1\\xd7\\xf7",u="\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",l="\\u2000-\\u206f",f=" \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",v="A-Z\\xc0-\\xd6\\xd8-\\xde",b="\\ufe0e\\ufe0f",h=d+u+l+f,p="['’]",g="["+h+"]",m="["+i+"]",y="\\d+",x="["+a+"]",w="["+s+"]",k="[^"+r+h+y+a+s+v+"]",j="\\ud83c[\\udffb-\\udfff]",O="(?:"+m+"|"+j+")",D="[^"+r+"]",M="(?:\\ud83c[\\udde6-\\uddff]){2}",S="[\\ud800-\\udbff][\\udc00-\\udfff]",P="["+v+"]",_="\\u200d",E="(?:"+w+"|"+k+")",$="(?:"+P+"|"+k+")",C="(?:"+p+"(?:d|ll|m|re|s|t|ve))?",I="(?:"+p+"(?:D|LL|M|RE|S|T|VE))?",Y=O+"?",A="["+b+"]?",T="(?:"+_+"(?:"+[D,M,S].join("|")+")"+A+Y+")*",L="\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",F="\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",N=A+Y+T,z="(?:"+[x,M,S].join("|")+")"+N,R=RegExp([P+"?"+w+"+"+C+"(?="+[g,P,"$"].join("|")+")",$+"+"+I+"(?="+[g,P+E,"$"].join("|")+")",P+"?"+E+"+"+C,P+"+"+I,F,L,y,z].join("|"),"g");function V(e){return e.match(R)||[]}e.exports=V},f542:function(e,t,r){var o=r("ec47"),n=r("ec69"),c=o(n);e.exports=c},f608:function(e,t,r){var o=r("6747"),n=r("ffd6"),c=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,i=/^\w*$/;function a(e,t){if(o(e))return!1;var r=typeof e;return!("number"!=r&&"symbol"!=r&&"boolean"!=r&&null!=e&&!n(e))||(i.test(e)||!c.test(e)||null!=t&&e in Object(t))}e.exports=a},f658:function(e,t,r){t=e.exports=r("2350")(!1),t.push([e.i,".vc-day[data-v-47ef1cd6]{position:relative;min-height:var(--day-min-height);width:100%;height:100%;z-index:1}.vc-day-layer[data-v-47ef1cd6]{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none}.vc-day-box-center-center[data-v-47ef1cd6]{display:flex;justify-content:center;align-items:center;height:100%;transform-origin:50% 50%}.vc-day-box-left-center[data-v-47ef1cd6]{display:flex;justify-content:flex-start;align-items:center;height:100%;transform-origin:0 50%}.vc-day-box-right-center[data-v-47ef1cd6]{display:flex;justify-content:flex-end;align-items:center;height:100%;transform-origin:100% 50%}.vc-day-box-center-bottom[data-v-47ef1cd6]{display:flex;justify-content:center;align-items:flex-end}.vc-day-content[data-v-47ef1cd6]{display:flex;justify-content:center;align-items:center;width:var(--day-content-width);height:var(--day-content-height);margin:var(--day-content-margin);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.vc-day-content[data-v-47ef1cd6]:hover{background-color:var(--day-content-bg-color-hover)}.vc-day-content:hover.vc-is-dark[data-v-47ef1cd6]{background-color:var(--day-content-dark-bg-color-hover)}.vc-day-content[data-v-47ef1cd6]:focus{background-color:var(--day-content-bg-color-focus)}.vc-day-content:focus.vc-is-dark[data-v-47ef1cd6]{background-color:var(--day-content-dark-bg-color-focus)}.vc-highlights[data-v-47ef1cd6]{overflow:hidden;pointer-events:none;z-index:-1}.vc-highlight[data-v-47ef1cd6]{width:var(--highlight-height);height:var(--highlight-height)}.vc-highlight.vc-highlight-base-start[data-v-47ef1cd6]{width:50%!important;border-radius:0!important;border-right-width:0!important}.vc-highlight.vc-highlight-base-end[data-v-47ef1cd6]{width:50%!important;border-radius:0!important;border-left-width:0!important}.vc-highlight.vc-highlight-base-middle[data-v-47ef1cd6]{width:100%;border-radius:0!important;border-left-width:0!important;border-right-width:0!important;margin:0 -1px}.vc-dots[data-v-47ef1cd6]{display:flex;justify-content:center;align-items:center}.vc-dot[data-v-47ef1cd6]{width:var(--dot-diameter);height:var(--dot-diameter);border-radius:var(--dot-border-radius);transition:all var(--day-content-transition-time)}.vc-dot[data-v-47ef1cd6]:not(:last-child){margin-right:var(--dot-spacing)}.vc-bars[data-v-47ef1cd6]{display:flex;justify-content:flex-start;align-items:center;width:var(--bars-width)}.vc-bar[data-v-47ef1cd6]{flex-grow:1;height:var(--bar-height);transition:all var(--day-content-transition-time)}",""])},f678:function(e,t,r){var o=r("8384"),n=r("b4b0");function c(e,t,r){return void 0===r&&(r=t,t=void 0),void 0!==r&&(r=n(r),r=r===r?r:0),void 0!==t&&(t=n(t),t=t===t?t:0),o(n(e),t,r)}e.exports=c},f772:function(e,t){e.exports=function(e){return"object"===typeof e?null!==e:"function"===typeof e}},f7f1:function(e,t,r){"use strict";r.d(t,"a",(function(){return c}));var o=r("fe1f"),n=r("fd3a");function c(e,t){if(arguments.length<2)throw new TypeError("2 arguments required, but only "+arguments.length+" present");var r=Object(n["a"])(e),c=Object(o["a"])(t);return r.setDate(r.getDate()+c),r}},f8af:function(e,t,r){var o=r("2474");function n(e){var t=new e.constructor(e.byteLength);return new o(t).set(new o(e)),t}e.exports=n},f909:function(e,t,r){var o=r("7e64"),n=r("b760"),c=r("72af"),i=r("4f50"),a=r("1a8c"),s=r("9934"),d=r("8adb");function u(e,t,r,l,f){e!==t&&c(t,(function(c,s){if(a(c))f||(f=new o),i(e,t,s,r,u,l,f);else{var v=l?l(d(e,s),c,s+"",e,t,f):void 0;void 0===v&&(v=c),n(e,s,v)}}),s)}e.exports=u},f9ce:function(e,t,r){var o=r("ef5d"),n=r("e3f8"),c=r("f608"),i=r("f4d6");function a(e){return c(e)?o(i(e)):n(e)}e.exports=a},fa21:function(e,t,r){var o=r("7530"),n=r("2dcb"),c=r("eac5");function i(e){return"function"!=typeof e.constructor||c(e)?{}:o(n(e))}e.exports=i},fa5b:function(e,t,r){e.exports=r("5537")("native-function-to-string",Function.toString)},fab2:function(e,t,r){var o=r("7726").document;e.exports=o&&o.documentElement},fb15:function(e,t,r){"use strict";var o;(r.r(t),"undefined"!==typeof window)&&((o=window.document.currentScript)&&(o=o.src.match(/(.+\/)[^\/]+\.js(\?.*)?$/))&&(r.p=o[1]));var n=r("34e9");r.d(t,"setupCalendar",(function(){return n["d"]})),r.d(t,"Calendar",(function(){return n["a"]})),r.d(t,"DatePicker",(function(){return n["b"]}));t["default"]=n["c"]},fba5:function(e,t,r){var o=r("cb5a");function n(e){return o(this.__data__,e)>-1}e.exports=n},fd3a:function(e,t,r){"use strict";function o(e){if(arguments.length<1)throw new TypeError("1 argument required, but only "+arguments.length+" present");var t=Object.prototype.toString.call(e);return e instanceof Date||"object"===typeof e&&"[object Date]"===t?new Date(e.getTime()):"number"===typeof e||"[object Number]"===t?new Date(e):("string"!==typeof e&&"[object String]"!==t||"undefined"===typeof console||(console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule"),console.warn((new Error).stack)),new Date(NaN))}r.d(t,"a",(function(){return o}))},fde4:function(e,t,r){r("bf90");var o=r("584a").Object;e.exports=function(e,t){return o.getOwnPropertyDescriptor(e,t)}},fe1f:function(e,t,r){"use strict";function o(e){if(null===e||!0===e||!1===e)return NaN;var t=Number(e);return isNaN(t)?t:t<0?Math.ceil(t):Math.floor(t)}r.d(t,"a",(function(){return o}))},ffd6:function(e,t,r){var o=r("3729"),n=r("1310"),c="[object Symbol]";function i(e){return"symbol"==typeof e||n(e)&&o(e)==c}e.exports=i}})}));
 //# sourceMappingURL=v-calendar.umd.min.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GanttChart.vue?vue&type=template&id=18736b95&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GanttChart.vue?vue&type=template&id=18736b95& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "app" } }, [
+    _c("p", [_vm._v("Gantt Chart")]),
+    _vm._v(" "),
+    _c("svg", { attrs: { id: "gantt" } })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -49382,6 +52103,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // 追加
 
 Vue.component('single-calendar', __webpack_require__(/*! ./components/SingleCalendar.vue */ "./resources/js/components/SingleCalendar.vue")["default"]);
+Vue.component('gantt-chart', __webpack_require__(/*! ./components/GanttChart.vue */ "./resources/js/components/GanttChart.vue")["default"]);
 var app = new Vue({
   el: '#app'
 });
@@ -49417,6 +52139,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/GanttChart.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/GanttChart.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GanttChart_vue_vue_type_template_id_18736b95___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GanttChart.vue?vue&type=template&id=18736b95& */ "./resources/js/components/GanttChart.vue?vue&type=template&id=18736b95&");
+/* harmony import */ var _GanttChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GanttChart.vue?vue&type=script&lang=js& */ "./resources/js/components/GanttChart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GanttChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GanttChart_vue_vue_type_template_id_18736b95___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GanttChart_vue_vue_type_template_id_18736b95___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GanttChart.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GanttChart.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/GanttChart.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GanttChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GanttChart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GanttChart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GanttChart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GanttChart.vue?vue&type=template&id=18736b95&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/GanttChart.vue?vue&type=template&id=18736b95& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GanttChart_vue_vue_type_template_id_18736b95___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GanttChart.vue?vue&type=template&id=18736b95& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GanttChart.vue?vue&type=template&id=18736b95&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GanttChart_vue_vue_type_template_id_18736b95___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GanttChart_vue_vue_type_template_id_18736b95___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

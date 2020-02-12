@@ -1,6 +1,6 @@
 @extends('project/layout')
 @section('content')
-<div class="container ops-main">
+<div class="container ops-main" id="app">
 <div class="row">
   <div class="col-md-12">
     <h3 class="ops-title">ようこそ{{ $user->google_name }}さん</h3>
@@ -41,5 +41,34 @@
       @endforeach
     </table>
   </div>
+  <gantt-chart></gantt-chart>
+<script src=" {{ mix('js/app.js') }} "></script>
 </div>
+<!-- <svg id="gantt"></svg>
+<script>
+var tasks = [
+                {
+                    id: 'Task 1',
+                    name: 'Redesign website',
+                    start: '2016-12-28',
+                    end: '2016-12-31',
+                    progress: 20,
+                },
+                {
+                    id: 'Task 2',
+                    name: 'Redesign website',
+                    start: '2016-12-28',
+                    end: '2016-12-31',
+                    progress: 20,
+                },
+                {
+                    id: 'Task 3',
+                    name: 'Redesign website',
+                    start: '2016-12-28',
+                    end: '2016-12-31',
+                    progress: 20,
+                },
+            ]
+var gantt = new Gantt('#gantt', tasks);
+</script> -->
 @endsection
