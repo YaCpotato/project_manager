@@ -1922,41 +1922,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tasks: [{
-        id: 'Task 1',
-        name: 'Redesign website',
-        start: '2016-12-28',
-        end: '2016-12-31',
-        progress: 20
-      }, {
-        id: 'Task 2',
-        name: 'Redesign website',
-        start: '2016-12-28',
-        end: '2016-12-31',
-        progress: 20
-      }, {
-        id: 'Task 3',
-        name: 'Redesign website',
-        start: '2016-12-28',
-        end: '2016-12-31',
-        progress: 20
-      }],
+      tasks: [],
       gantt: {}
     };
   },
   mounted: function mounted() {
-    // axios.get('/api/tasks').then((res)=>{
-    //             for(let i=0;i<res.data.length;i++){
-    //                 this.tasks.push({
-    //                     id:res.data[i].id,
-    //                     name:red.data[i].name,
-    //                     created_at:res.data[i].created_at,
-    //                     deadline:red.data[i].deadline,
-    //                     completed_at:red.data[i].completed_at,
-    //                 })
-    //             }
-    //         })
-    //             .catch(error => console.log(error))
+    var _this = this;
+
+    axios.get('/api/task').then(function (res) {
+      for (var i = 0; i < res.data.length; i++) {
+        _this.tasks.push({
+          id: res.data[i].id,
+          name: red.data[i].name,
+          start: res.data[i].created_at,
+          end: red.data[i].deadline,
+          completed_at: red.data[i].completed_at,
+          progress: 20
+        });
+      }
+    })["catch"](function (error) {
+      return console.log(error);
+    });
     this.gantt = new frappe_gantt__WEBPACK_IMPORTED_MODULE_1__["default"]('#gantt', this.tasks);
   }
 });
