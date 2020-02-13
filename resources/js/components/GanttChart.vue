@@ -9,6 +9,9 @@ import moment from 'moment'
 import Gantt from 'frappe-gantt'
 
 export default {
+    props:{
+        project_id:Number
+    },
     data(){
         return{
             tasks:[],
@@ -17,13 +20,14 @@ export default {
     },
     mounted:function(){
         axios.get('/api/task').then((res)=>{
-                    for(let i=0;i<res.data.length;i++){
+            console.log(res.data)
+                    for(let i=0;i<res.data.tasks.length;i++){
                         this.tasks.push({
-                            id:res.data[i].id,
-                            name:red.data[i].name,
-                            start:res.data[i].created_at,
-                            end:red.data[i].deadline,
-                            completed_at:red.data[i].completed_at,
+                            id:res.data[i].tasks.id,
+                            name:res.data[i].name,
+                            start:moment(res.data[i].tasks.created_at).format('YYYY-MM-DD'),
+                            end:moment(res.data[i].tasks.deadline).format('YYYY-MM-DD'),
+                            completed_at:res.data[i].tasks.completed_at,
                             progress:20
                         })
                     }

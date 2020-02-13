@@ -1920,6 +1920,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    project_id: Number
+  },
   data: function data() {
     return {
       tasks: [],
@@ -1930,13 +1933,15 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/api/task').then(function (res) {
-      for (var i = 0; i < res.data.length; i++) {
+      console.log(res.data);
+
+      for (var i = 0; i < res.data.tasks.length; i++) {
         _this.tasks.push({
-          id: res.data[i].id,
-          name: red.data[i].name,
-          start: res.data[i].created_at,
-          end: red.data[i].deadline,
-          completed_at: red.data[i].completed_at,
+          id: res.data[i].tasks.id,
+          name: res.data[i].name,
+          start: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].tasks.created_at).format('YYYY-MM-DD'),
+          end: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].tasks.deadline).format('YYYY-MM-DD'),
+          completed_at: res.data[i].tasks.completed_at,
           progress: 20
         });
       }

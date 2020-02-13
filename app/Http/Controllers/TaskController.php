@@ -22,6 +22,7 @@ class TaskController extends Controller
     public function getAllTask()
     {
         $tasks = Task::all();
+        exit(var_dump($tasks));
         return $tasks;
     }
     /**
