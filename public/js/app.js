@@ -1921,33 +1921,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    project_id: Number
+    project_id: String
   },
   data: function data() {
     return {
-      tasks: [],
+      tasks: [{
+        id: 'Task 1',
+        name: 'Redesign website',
+        start: '2016-12-28',
+        end: '2016-12-31',
+        progress: 20
+      }, {
+        id: 'Task 2',
+        name: 'Redesign website',
+        start: '2016-12-28',
+        end: '2016-12-31',
+        progress: 20
+      }, {
+        id: 'Task 3',
+        name: 'Redesign website',
+        start: '2016-12-28',
+        end: '2016-12-31',
+        progress: 20
+      }],
       gantt: {}
     };
   },
   mounted: function mounted() {
-    var _this = this;
-
-    axios.get('/api/task/' + this.project_id).then(function (res) {
-      for (var i = 0; i < res.data.length; i++) {
-        _this.tasks.push({
-          id: toString(res.data[i].id),
-          name: res.data[i].name,
-          start: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].created_at).format('YYYY-MM-DD'),
-          end: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].deadline).format('YYYY-MM-DD'),
-          completed_at: res.data[i].completed_at,
-          progress: 20
-        });
-      }
-
-      console.log(_this.tasks);
-    })["catch"](function (error) {
-      return console.log(error);
-    });
+    // axios.get('/api/task/'+this.project_id).then((res)=>{
+    //             for(let i=0;i<res.data.length;i++){
+    //                 this.tasks.push({
+    //                     id:res.data[i].name,
+    //                     name:res.data[i].name,
+    //                     start:moment(res.data[i].created_at).format('YYYY-MM-DD'),
+    //                     end:moment(res.data[i].deadline).format('YYYY-MM-DD'),
+    //                     completed_at:res.data[i].completed_at,
+    //                     progress:20
+    //                 })
+    //             }
+    //             console.log(this.tasks)
+    //         })
+    //             .catch(error => console.log(error))
     this.gantt = new frappe_gantt__WEBPACK_IMPORTED_MODULE_1__["default"]('#gantt', this.tasks);
   }
 });
