@@ -1959,7 +1959,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.periodCalc();
+    this.periodCalc('daily');
   },
   methods: {
     getTask: function getTask() {
@@ -2075,6 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     periodCalc: function periodCalc(type) {
+      //動作確認OK
       var startDate = new Date(this.startDate);
       var endDate = new Date(this.endDate);
       var calendarInfo = {};
@@ -2125,7 +2126,7 @@ __webpack_require__.r(__webpack_exports__);
         $('#third').children().remove();
         var yearlength = 0;
         var j = 0;
-        var holidays = [0, 0, 0, 0, 0, 1, 1];
+        var holidays = [1, 1, 0, 0, 0, 0, 0];
 
         for (var year in calendarInfo) {
           $('#first').append('<td id=y' + year + ' class="ganttcal">' + year + '</td>');
