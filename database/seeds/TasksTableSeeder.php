@@ -19,23 +19,23 @@ class TasksTableSeeder extends Seeder
                 [
                     'name' => 'Task-1',
                     'project_id' => 0,
-                    'deadline' => '2019-02-15'
+                    'deadline' => '2020-02-15'
                 ],
                 [
                     'name' => 'Task-2',
                     'project_id' => 1,
-                    'deadline' => '2019-02-17'
+                    'deadline' => '2020-02-17'
                 ],
                 [
                     'name' => 'Task-3',
                     'project_id' => 1,
-                    'deadline' => '2019-02-15'
+                    'deadline' => '2020-02-15'
             
                 ],
                 [
                     'name' => 'Task-4',
                     'project_id' => 2,
-                    'deadline' => '2019-02-19'
+                    'deadline' => '2020-02-19'
             
                 ],
              ];

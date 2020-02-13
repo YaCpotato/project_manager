@@ -19,10 +19,12 @@ class TaskController extends Controller
         return view('task/index', compact('tasks'));
     }
 
-    public function getAllTask()
+    public function getTask($project_id)
     {
-        $tasks = Task::all();
-        exit(var_dump($tasks));
+        $data = Task::query();
+        $data->where('project_id',$project_id)
+             ->select('id','name','created_at','deadline','completed_at');
+        $tasks = $data->get();
         return $tasks;
     }
     /**

@@ -24,7 +24,7 @@ Route::get('/auth/callback/google', 'OAuthLoginController@authGoogleCallback');
 
 Route::prefix('api')->group(function() {
     Route::get('/events','GoogleCalendarController@getEvents');
-    Route::get('/task','TaskController@getAllTask');
+    Route::get('/task/{project_id}','TaskController@getTask');
 });
 Route::resource('project', 'ProjectController');
 Route::resource('task', 'TaskController');

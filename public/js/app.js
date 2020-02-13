@@ -1932,19 +1932,19 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('/api/task').then(function (res) {
-      console.log(res.data);
-
-      for (var i = 0; i < res.data.tasks.length; i++) {
+    axios.get('/api/task/' + this.project_id).then(function (res) {
+      for (var i = 0; i < res.data.length; i++) {
         _this.tasks.push({
-          id: res.data[i].tasks.id,
+          id: toString(res.data[i].id),
           name: res.data[i].name,
-          start: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].tasks.created_at).format('YYYY-MM-DD'),
-          end: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].tasks.deadline).format('YYYY-MM-DD'),
-          completed_at: res.data[i].tasks.completed_at,
+          start: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].created_at).format('YYYY-MM-DD'),
+          end: moment__WEBPACK_IMPORTED_MODULE_0___default()(res.data[i].deadline).format('YYYY-MM-DD'),
+          completed_at: res.data[i].completed_at,
           progress: 20
         });
       }
+
+      console.log(_this.tasks);
     })["catch"](function (error) {
       return console.log(error);
     });
