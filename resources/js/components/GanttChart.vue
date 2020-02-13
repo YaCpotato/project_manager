@@ -10,33 +10,33 @@ import Gantt from 'frappe-gantt'
 
 export default {
     props:{
-        project_id:String
+        tasks:Array
     },
     data(){
         return{
-            tasks:[
-                {
-                    id: 'Task 1',
-                    name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
-                    progress: 20,
-                },
-                {
-                    id: 'Task 2',
-                    name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
-                    progress: 20,
-                },
-                {
-                    id: 'Task 3',
-                    name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
-                    progress: 20,
-                },
-            ],
+            // tasks:[
+            //     {
+            //         id: 'Task 1',
+            //         name: 'Redesign website',
+            //         start: '2016-12-28',
+            //         end: '2016-12-31',
+            //         progress: 20,
+            //     },
+            //     {
+            //         id: 'Task 2',
+            //         name: 'Redesign website',
+            //         start: '2016-12-28',
+            //         end: '2016-12-31',
+            //         progress: 20,
+            //     },
+            //     {
+            //         id: 'Task 3',
+            //         name: 'Redesign website',
+            //         start: '2016-12-28',
+            //         end: '2016-12-31',
+            //         progress: 20,
+            //     },
+            // ],
             gantt:{}
         }
     },

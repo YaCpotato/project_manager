@@ -41,7 +41,6 @@
       @endforeach
     </table>
   </div>
-  <gantt-chart project_id=1></gantt-chart>
 <script src=" {{ mix('js/app.js') }} "></script>
 </div>
 <!-- <svg id="gantt"></svg>
