@@ -41,7 +41,7 @@
       @endforeach
     </table>
   </div>
-  <script></script>
+  <gantt-chart></gantt-chart>
 <script src=" {{ mix('js/app.js') }} "></script>
 </div>
 @endsection
