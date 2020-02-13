@@ -22,10 +22,10 @@ export default {
         axios.get('/api/task/'+this.project_id).then((res)=>{
                     for(let i=0;i<res.data.length;i++){
                         this.tasks.push({
-                            id:toString(res.data[i].id),
+                            id:res.data[i].id,
                             name:res.data[i].name,
-                            start:moment(res.data[i].created_at).format('YYYY-MM-DD'),
-                            end:moment(res.data[i].deadline).format('YYYY-MM-DD'),
+                            start:new Date(res.data[i].created_at),
+                            end:new Date(res.data[i].deadline),
                             completed_at:res.data[i].completed_at,
                             progress:20
                         })
