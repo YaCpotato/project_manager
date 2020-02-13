@@ -55,6 +55,5 @@
       @endforeach
     </table>
   </div>
-  <gantt-chart :tasks="{{ $tasks }}"></gantt-chart>
 </div>
 @endsection

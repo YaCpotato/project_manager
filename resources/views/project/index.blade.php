@@ -41,33 +41,7 @@
       @endforeach
     </table>
   </div>
+  <script></script>
 <script src=" {{ mix('js/app.js') }} "></script>
 </div>
-<!-- <svg id="gantt"></svg>
-<script>
-var tasks = [
-                {
-                    id: 'Task 1',
-                    name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
-                    progress: 20,
-                },
-                {
-                    id: 'Task 2',
-                    name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
-                    progress: 20,
-                },
-                {
-                    id: 'Task 3',
-                    name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
-                    progress: 20,
-                },
-            ]
-var gantt = new Gantt('#gantt', tasks);
-</script> -->
 @endsection
