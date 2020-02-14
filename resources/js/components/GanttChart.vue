@@ -45,13 +45,10 @@ export default {
     },
     mounted:function(){
         this.getTask()
-        this.defineStartLimit('daily')
-        this.periodCalc('daily')
-        this.drawchart()
     },
     methods:{
-        getTask:function(){
-            axios.get('/api/task/'+this.project_id).then((res)=>{
+        async getTask(){
+            await axios.get('/api/task/'+this.project_id).then((res)=>{
                         for(let i=0;i<res.data.length;i++){
                             this.tasks.push({
                                 id:res.data[i].name,
@@ -63,7 +60,9 @@ export default {
                         }
                     })
                         .catch(error => console.log(error))
-                        console.log(this.tasks)
+        this.defineStartLimit('daily')
+        this.periodCalc('daily')
+        this.drawchart()
     },
         //開始日と終了日から、どこからどこまでカレンダーを描画するのかを決める。
         //日表示ー＞2ヶ月先 OR 終了日がそれ以降ならそこまで
@@ -91,7 +90,7 @@ export default {
                     .attr("x", 0)
                     .attr("y", 0)
                     .attr("width", $('#chart-area').width())
-                    .attr("height", ($('.tRow').height()) * this.tasks.length);
+                    .attr("height", ($('.trow').height()) * this.tasks.length);
              
             for(var task in this.tasks){
               svg.append("rect")
@@ -99,7 +98,7 @@ export default {
               .attr("y", $('.tRow').height() * task)
               .attr("id",'chart-bg-number-'+task)
               .attr("width", $('#chart-area').width())
-              .attr("height", $('.tRow').height())
+              .attr("height", $('.trow').height())
               .attr("fill",'red')
               .attr("fill-opacity",'0.5')
             }
