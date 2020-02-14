@@ -1949,10 +1949,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -1972,13 +1968,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.getTask();
+    this.setUp();
   },
   methods: {
-    getTask: function getTask() {
+    setUp: function setUp() {
       var _this = this;
 
-      return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getTask$(_context) {
+      return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.async(function setUp$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -2034,21 +2030,24 @@ __webpack_require__.r(__webpack_exports__);
 
       this.startDate = start;
       this.endDate = end;
-      console.log(this.startDate, this.endDate);
     },
     drawchart: function drawchart() {
-      var svg = d3__WEBPACK_IMPORTED_MODULE_2__["select"]('#chart-area').append("svg").attr("x", 0).attr("y", 0).attr("width", jquery__WEBPACK_IMPORTED_MODULE_3___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.trow').height() * this.tasks.length);
+      console.log(this.tasks); //svg描画領域
+
+      var svg = d3__WEBPACK_IMPORTED_MODULE_2__["select"]('#chart-area').append("svg").attr("x", 0).attr("y", 0).attr("width", jquery__WEBPACK_IMPORTED_MODULE_3___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.trow').outerHeight() * this.tasks.length); //描画バックグラウンド
 
       for (var task in this.tasks) {
-        svg.append("rect").attr("x", 0).attr("y", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.tRow').height() * task).attr("id", 'chart-bg-number-' + task).attr("width", jquery__WEBPACK_IMPORTED_MODULE_3___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.trow').height()).attr("fill", 'red').attr("fill-opacity", '0.5');
+        svg.append("rect").attr("x", 0).attr("y", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.tRow').outerHeight() * task).attr("id", 'chart-bg-number-' + task).attr("width", jquery__WEBPACK_IMPORTED_MODULE_3___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.trow').outerHeight()).attr("fill", 'red').attr("fill-opacity", '0.5');
       }
 
       for (var i = 0; i < this.tasks.length; i++) {
         var startDateID = "#y" + moment__WEBPACK_IMPORTED_MODULE_1___default()(this.tasks[i].start).format("YYYY") + "m" + moment__WEBPACK_IMPORTED_MODULE_1___default()(this.tasks[i].start).format("M") + "d" + moment__WEBPACK_IMPORTED_MODULE_1___default()(this.tasks[i].start).format("D");
+        var days = moment__WEBPACK_IMPORTED_MODULE_1___default()(this.tasks[i].end).diff(this.tasks[i].start, 'days');
+        console.log(days);
         var startX = jquery__WEBPACK_IMPORTED_MODULE_3___default()(startDateID).position().left;
         svg.append("rect").attr("x", startX) //startX
-        .attr("y", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.tRow').height() * i) //$(startDateID).width()
-        .attr("width", 20 * 1).attr("height", 20).attr("fill", 'black').attr("id", "task-number-" + i);
+        .attr("y", jquery__WEBPACK_IMPORTED_MODULE_3___default()('.tRow').outerHeight() * i) //$(startDateID).width()
+        .attr("width", 49 * days).attr("height", 40).attr("fill", 'black').attr("id", "task-number-" + i);
       } // this.autoScheduleFilter()
       // this.drawDepend(svg)
 
@@ -2145,7 +2144,6 @@ __webpack_require__.r(__webpack_exports__);
         jquery__WEBPACK_IMPORTED_MODULE_3___default()('#third').children().remove();
         var yearlength = 0;
         var j = 0;
-        var holidays = [1, 1, 0, 0, 0, 0, 0];
 
         for (var year in calendarInfo) {
           jquery__WEBPACK_IMPORTED_MODULE_3___default()('#first').append('<td id=y' + year + ' class="ganttcal tRow">' + year + '</td>');
@@ -2155,17 +2153,6 @@ __webpack_require__.r(__webpack_exports__);
 
             for (var i = 0; i < calendarInfo[year][month].length; i++) {
               jquery__WEBPACK_IMPORTED_MODULE_3___default()('#third').append('<td id=y' + year + 'm' + month + 'd' + calendarInfo[year][month][i].day + ' class="ganttcal">' + calendarInfo[year][month][i].day + '</td>');
-
-              if (holidays[i % 7] == 1) {
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#y' + year + 'm' + month + 'd' + calendarInfo[year][month][i].day).addClass("holiday");
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#y' + year + 'm' + month + 'd' + calendarInfo[year][month][i].day).css("background-color", "red");
-              }
-
-              if (j == 6) {
-                j = 0;
-              }
-
-              j++;
               yearlength++;
             }
 
@@ -78217,25 +78204,25 @@ var staticRenderFns = [
     return _c("div", { attrs: { id: "app" } }, [
       _c("p", [_vm._v("Gantt Chart")]),
       _vm._v(" "),
-      _c("table", { attrs: { border: "1", id: "task_chart" } }, [
-        _c(
-          "th",
-          { staticClass: "uk-table uk-table-striped", attrs: { id: "date" } },
-          [
-            _c("table", { attrs: { border: "1" } }, [
-              _c("tr", { attrs: { id: "first" } }),
-              _vm._v(" "),
-              _c("tr", { attrs: { id: "second" } }),
-              _vm._v(" "),
-              _c("tr", { attrs: { id: "third" } }),
-              _vm._v(" "),
-              _c("tr", { attrs: { id: "mile" } }),
-              _vm._v(" "),
-              _c("tr", { attrs: { id: "chart_border" } })
-            ])
-          ]
-        )
-      ]),
+      _c(
+        "table",
+        {
+          staticClass: "table",
+          staticStyle: { "border-collapse": "collapse" },
+          attrs: { border: "1", id: "task_chart" }
+        },
+        [
+          _c("tr", { attrs: { id: "first" } }),
+          _vm._v(" "),
+          _c("tr", { attrs: { id: "second" } }),
+          _vm._v(" "),
+          _c("tr", { attrs: { id: "third" } }),
+          _vm._v(" "),
+          _c("tr", { attrs: { id: "mile" } }),
+          _vm._v(" "),
+          _c("tr", { attrs: { id: "chart_border" } })
+        ]
+      ),
       _vm._v(" "),
       _c("div", { attrs: { id: "chart-area" } })
     ])

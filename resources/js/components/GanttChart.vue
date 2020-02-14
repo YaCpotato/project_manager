@@ -1,9 +1,7 @@
 <template>
 <div id="app">
     <p>Gantt Chart</p>
-        <table border="1" id="task_chart">
-                <th id="date" class="uk-table uk-table-striped">
-                    <table border="1">
+        <table border="1" id="task_chart" class="table" style="border-collapse:collapse;">
                         <tr id="first">
 
                         </tr>
@@ -18,8 +16,6 @@
                         </tr>
                         <tr id="chart_border"></tr>
                     </table>
-                </th>
-            </table>
             <div id="chart-area"></div>
     </div>
     </template>
@@ -44,10 +40,10 @@ export default {
         }
     },
     mounted:function(){
-        this.getTask()
+        this.setUp()
     },
     methods:{
-        async getTask(){
+        async setUp(){
             await axios.get('/api/task/'+this.project_id).then((res)=>{
                         for(let i=0;i<res.data.length;i++){
                             this.tasks.push({
@@ -83,35 +79,38 @@ export default {
             }
             this.startDate = start
             this.endDate = end
-            console.log(this.startDate,this.endDate)
           },
           drawchart:function(){
+            console.log(this.tasks)
+            //svg描画領域
             var svg = d3.select('#chart-area').append("svg")
                     .attr("x", 0)
                     .attr("y", 0)
                     .attr("width", $('#chart-area').width())
-                    .attr("height", ($('.trow').height()) * this.tasks.length);
-             
+                    .attr("height", ($('.trow').outerHeight()) * this.tasks.length);
+            //描画バックグラウンド
             for(var task in this.tasks){
               svg.append("rect")
               .attr("x", 0)
-              .attr("y", $('.tRow').height() * task)
+              .attr("y", $('.tRow').outerHeight() * task)
               .attr("id",'chart-bg-number-'+task)
               .attr("width", $('#chart-area').width())
-              .attr("height", $('.trow').height())
+              .attr("height", $('.trow').outerHeight())
               .attr("fill",'red')
               .attr("fill-opacity",'0.5')
             }
                 for(var i=0;i<this.tasks.length;i++){
                   
                   var startDateID = "#y"+moment(this.tasks[i].start).format("YYYY")+"m"+moment(this.tasks[i].start).format("M")+"d"+moment(this.tasks[i].start).format("D")
+                  var days = moment(this.tasks[i].end).diff(this.tasks[i].start, 'days')
+                  console.log(days)
                      var startX = $(startDateID).position().left
                   
                     svg.append("rect")
                     .attr("x", startX)//startX
-                    .attr("y", ($('.tRow').height()) * i)//$(startDateID).width()
-                    .attr("width", 20 * 1)
-                    .attr("height", 20)
+                    .attr("y", ($('.tRow').outerHeight()) * i)//$(startDateID).width()
+                    .attr("width", 49 * days)
+                    .attr("height", 40)
                     .attr("fill",'black')
                   .attr("id","task-number-"+i)
                     }
@@ -209,7 +208,6 @@ export default {
                     $('#third').children().remove()
                     var yearlength = 0
                     var j=0
-                    var holidays = [1,1,0,0,0,0,0]
                     for (var year in calendarInfo) {
                         $('#first').append('<td id=y'+year+' class="ganttcal tRow">'+year+'</td>')
                         for (var month in calendarInfo[year]){
@@ -217,14 +215,6 @@ export default {
                             ////日付描画
                             for(var i = 0; i < calendarInfo[year][month].length; i++) {
                                 $('#third').append('<td id=y'+year+'m'+month+'d'+calendarInfo[year][month][i].day+' class="ganttcal">'+ calendarInfo[year][month][i].day +'</td>')
-                                if(holidays[i%7]==1) {
-                                      $('#y'+year+'m'+month+'d'+calendarInfo[year][month][i].day).addClass("holiday")
-                                      $('#y'+year+'m'+month+'d'+calendarInfo[year][month][i].day).css("background-color","red")
-                                   }
-                                if(j==6){
-                                  j=0
-                                }
-                              j++
                                  yearlength++
                             }
                             $('#y'+year+'m'+month).attr("colSpan",calendarInfo[year][month].length)
@@ -319,5 +309,6 @@ export default {
         }
     }
 </script>
-<style lang="stylus">
+<style>
+
 </style>
