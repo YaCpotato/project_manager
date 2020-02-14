@@ -54,8 +54,16 @@ class ProjectController extends Controller
     {
         $project = Project::find($id);
         $data = Task::query();
-        $data->where('project_id',$id);
-        $tasks = $data->get();
+        $data->where('project_id',$id)->get();
+        $tasks = [];
+        foreach ($data as $key => $task) {
+            $tasks[] = [
+                'id' => $task['id'],
+                'name' => $task['name'],
+                'start' => $task['created_at'],
+                'end' => $task['deadline'],
+            ];
+        }
         return view('project/detail', compact('project','tasks'));
     }
 

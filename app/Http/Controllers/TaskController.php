@@ -19,6 +19,14 @@ class TaskController extends Controller
         return view('task/index', compact('tasks'));
     }
 
+    public function getTask($project_id)
+    {
+        $data = Task::query();
+        $data->where('project_id',$project_id)
+             ->select('id','name','created_at','deadline','completed_at');
+        $tasks = $data->get();
+        return $tasks;
+    }
     /**
      * Show the form for creating a new resource.
      *

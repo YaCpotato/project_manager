@@ -1,6 +1,6 @@
 @extends('project/layout')
 @section('content')
-<div class="container ops-main">
+<div class="container ops-main" id="app">
 <div class="row">
   <div class="col-md-12">
     <h3 class="ops-title">ようこそ{{ $user->google_name }}さん</h3>
@@ -41,5 +41,7 @@
       @endforeach
     </table>
   </div>
+  <gantt-chart></gantt-chart>
+<script src=" {{ mix('js/app.js') }} "></script>
 </div>
 @endsection
