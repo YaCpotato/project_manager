@@ -1960,6 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.periodCalc('daily');
+    this.drawchart();
   },
   methods: {
     getTask: function getTask() {
@@ -2005,34 +2006,22 @@ __webpack_require__.r(__webpack_exports__);
       this.startDate = start;
       this.endDate = end;
     },
-    drawchart: function drawchart() {// var svg = d3.select('#task_chart').append("svg")
-      //         .attr("x", 0)
-      //         .attr("y", 0)
-      //         .attr("width", $('#task_chart').width())
-      //         .attr("height", ($('.tRow').height()) * this.Task.length);
-      // for(var task in this.Task){
-      //   svg.append("rect")
-      //   .attr("x", 0)
-      //   .attr("y", $('.tRow').height() * task)
-      //   .attr("id",'chart-bg-number-'+task)
-      //   .attr("width", $('#task_chart').width())
-      //   .attr("height", $('.tRow').height())
-      //   .attr("fill",'red')
-      //   .attr("fill-opacity",'0.5')
-      // }
-      //     for(var i=0;i<this.Task.length;i++){
-      //       var startDateID = "#y"+moment(this.Task[i].StartDate).format("YYYY")+"m"+moment(this.Task[i].StartDate).format("M")+"d"+moment(this.Task[i].StartDate).format("D")
-      //          var startX = $(startDateID).position().left
-      //         svg.append("rect")
-      //         .attr("x", startX)//startX
-      //         .attr("y", ($('.tRow').height()) * i)//$(startDateID).width()
-      //         .attr("width", 20 * (this.Task[i].days + 1))
-      //         .attr("height", 20)
-      //         .attr("fill",'black')
-      //       .attr("id","task-number-"+i)
-      //         }
-      // this.autoScheduleFilter()
+    drawchart: function drawchart() {
+      var svg = d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#task_chart').append("svg").attr("x", 0).attr("y", 0).attr("width", $('#task_chart').width()).attr("height", $('.tRow').height() * this.tasks.length);
+
+      for (var task in this.tasks) {
+        svg.append("rect").attr("x", 0).attr("y", $('.tRow').height() * task).attr("id", 'chart-bg-number-' + task).attr("width", $('#task_chart').width()).attr("height", $('.tRow').height()).attr("fill", 'red').attr("fill-opacity", '0.5');
+      }
+
+      for (var i = 0; i < this.tasks.length; i++) {
+        var startDateID = "#y" + moment__WEBPACK_IMPORTED_MODULE_0___default()(this.tasks[i].start).format("YYYY") + "m" + moment__WEBPACK_IMPORTED_MODULE_0___default()(this.tasks[i].start).format("M") + "d" + moment__WEBPACK_IMPORTED_MODULE_0___default()(this.tasks[i].start).format("D");
+        var startX = $(startDateID).position().left;
+        svg.append("rect").attr("x", startX) //startX
+        .attr("y", $('.tRow').height() * i) //$(startDateID).width()
+        .attr("width", 20 * 1).attr("height", 20).attr("fill", 'black').attr("id", "task-number-" + i);
+      } // this.autoScheduleFilter()
       // this.drawDepend(svg)
+
     },
     drawDepend: function drawDepend(svg) {// for(var i=0;i<this.Task.length;i++){
       //   if(this.Task[i].Dependencies.length > 0){

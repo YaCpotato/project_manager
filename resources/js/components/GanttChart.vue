@@ -51,6 +51,7 @@ export default {
     },
     mounted:function(){
         this.periodCalc('daily')
+        this.drawchart()
     },
     methods:{
         getTask:function(){
@@ -88,35 +89,35 @@ export default {
             this.endDate = end
           },
           drawchart:function(){
-            // var svg = d3.select('#task_chart').append("svg")
-            //         .attr("x", 0)
-            //         .attr("y", 0)
-            //         .attr("width", $('#task_chart').width())
-            //         .attr("height", ($('.tRow').height()) * this.Task.length);
+            var svg = d3.select('#task_chart').append("svg")
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", $('#task_chart').width())
+                    .attr("height", ($('.tRow').height()) * this.tasks.length);
              
-            // for(var task in this.Task){
-            //   svg.append("rect")
-            //   .attr("x", 0)
-            //   .attr("y", $('.tRow').height() * task)
-            //   .attr("id",'chart-bg-number-'+task)
-            //   .attr("width", $('#task_chart').width())
-            //   .attr("height", $('.tRow').height())
-            //   .attr("fill",'red')
-            //   .attr("fill-opacity",'0.5')
-            // }
-            //     for(var i=0;i<this.Task.length;i++){
+            for(var task in this.tasks){
+              svg.append("rect")
+              .attr("x", 0)
+              .attr("y", $('.tRow').height() * task)
+              .attr("id",'chart-bg-number-'+task)
+              .attr("width", $('#task_chart').width())
+              .attr("height", $('.tRow').height())
+              .attr("fill",'red')
+              .attr("fill-opacity",'0.5')
+            }
+                for(var i=0;i<this.tasks.length;i++){
                   
-            //       var startDateID = "#y"+moment(this.Task[i].StartDate).format("YYYY")+"m"+moment(this.Task[i].StartDate).format("M")+"d"+moment(this.Task[i].StartDate).format("D")
-            //          var startX = $(startDateID).position().left
+                  var startDateID = "#y"+moment(this.tasks[i].start).format("YYYY")+"m"+moment(this.tasks[i].start).format("M")+"d"+moment(this.tasks[i].start).format("D")
+                     var startX = $(startDateID).position().left
                   
-            //         svg.append("rect")
-            //         .attr("x", startX)//startX
-            //         .attr("y", ($('.tRow').height()) * i)//$(startDateID).width()
-            //         .attr("width", 20 * (this.Task[i].days + 1))
-            //         .attr("height", 20)
-            //         .attr("fill",'black')
-            //       .attr("id","task-number-"+i)
-            //         }
+                    svg.append("rect")
+                    .attr("x", startX)//startX
+                    .attr("y", ($('.tRow').height()) * i)//$(startDateID).width()
+                    .attr("width", 20 * 1)
+                    .attr("height", 20)
+                    .attr("fill",'black')
+                  .attr("id","task-number-"+i)
+                    }
             // this.autoScheduleFilter()
             // this.drawDepend(svg)
             },

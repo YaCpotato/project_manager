@@ -51,7 +51,7 @@ class RegisterController extends Controller
     return Validator::make($data, [
         'name' => 'required|string|max:255',
         // メールアドレスのユニークをclientテーブルに変更
-        'email' => 'required|string|email|max:255|unique:clents',
+        'email' => 'required|string|email|max:255|unique:clients',
         'password' => 'required|string|min:6|confirmed',
     ]);
     }   
