@@ -37,20 +37,15 @@ export default {
         },
     data(){
         return{
-            tasks:[
-                {
-                    id: 'Task 1',
-                    name: 'Redesign website',
-                    start: '2020-02-14',
-                    end: '2020-02-17',
-                    progress: 20,
-                }
-            ],
-            startDate:'2020/02/01',
-            endDate:'2020/03/14'
+            project_id:1,
+            tasks:[],
+            startDate:'',
+            endDate:''
         }
     },
     mounted:function(){
+        this.getTask()
+        this.defineStartLimit('daily')
         this.periodCalc('daily')
         this.drawchart()
     },
@@ -68,6 +63,7 @@ export default {
                         }
                     })
                         .catch(error => console.log(error))
+                        console.log(this.tasks)
     },
         //開始日と終了日から、どこからどこまでカレンダーを描画するのかを決める。
         //日表示ー＞2ヶ月先 OR 終了日がそれ以降ならそこまで
@@ -88,6 +84,7 @@ export default {
             }
             this.startDate = start
             this.endDate = end
+            console.log(this.startDate,this.endDate)
           },
           drawchart:function(){
             var svg = d3.select('#chart-area').append("svg")

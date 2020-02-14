@@ -1950,18 +1950,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      tasks: [{
-        id: 'Task 1',
-        name: 'Redesign website',
-        start: '2020-02-14',
-        end: '2020-02-17',
-        progress: 20
-      }],
+      project_id: 1,
+      tasks: [],
       startDate: '2020/02/01',
       endDate: '2020/03/14'
     };
   },
   mounted: function mounted() {
+    this.getTask();
+    this.defineStartLimit('daily');
     this.periodCalc('daily');
     this.drawchart();
   },
@@ -1982,6 +1979,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error);
       });
+      console.log(this.tasks);
     },
     //開始日と終了日から、どこからどこまでカレンダーを描画するのかを決める。
     //日表示ー＞2ヶ月先 OR 終了日がそれ以降ならそこまで
@@ -2008,6 +2006,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.startDate = start;
       this.endDate = end;
+      console.log(this.startDate, this.endDate);
     },
     drawchart: function drawchart() {
       var svg = d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#chart-area').append("svg").attr("x", 0).attr("y", 0).attr("width", jquery__WEBPACK_IMPORTED_MODULE_2___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height() * this.tasks.length);
