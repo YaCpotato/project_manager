@@ -26,6 +26,7 @@
 <script>
 import moment from 'moment'
 import * as d3 from "d3"
+import $ from 'jquery'
 
 export default {
     created:function(){
@@ -40,8 +41,8 @@ export default {
                 {
                     id: 'Task 1',
                     name: 'Redesign website',
-                    start: '2016-12-28',
-                    end: '2016-12-31',
+                    start: '2020-02-14',
+                    end: '2020-02-17',
                     progress: 20,
                 }
             ],
@@ -214,7 +215,7 @@ export default {
                     var j=0
                     var holidays = [1,1,0,0,0,0,0]
                     for (var year in calendarInfo) {
-                        $('#first').append('<td id=y'+year+' class="ganttcal">'+year+'</td>')
+                        $('#first').append('<td id=y'+year+' class="ganttcal tRow">'+year+'</td>')
                         for (var month in calendarInfo[year]){
                             $('#second').append('<td id=y'+year+'m'+month+' class="ganttcal">'+ month +'</td>')
                             ////日付描画
