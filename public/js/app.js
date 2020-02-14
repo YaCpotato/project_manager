@@ -2010,10 +2010,10 @@ __webpack_require__.r(__webpack_exports__);
       this.endDate = end;
     },
     drawchart: function drawchart() {
-      var svg = d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#task_chart').append("svg").attr("x", 0).attr("y", 0).attr("width", jquery__WEBPACK_IMPORTED_MODULE_2___default()('#task_chart').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height() * this.tasks.length);
+      var svg = d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#chart-area').append("svg").attr("x", 0).attr("y", 0).attr("width", jquery__WEBPACK_IMPORTED_MODULE_2___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height() * this.tasks.length);
 
       for (var task in this.tasks) {
-        svg.append("rect").attr("x", 0).attr("y", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height() * task).attr("id", 'chart-bg-number-' + task).attr("width", jquery__WEBPACK_IMPORTED_MODULE_2___default()('#task_chart').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height()).attr("fill", 'red').attr("fill-opacity", '0.5');
+        svg.append("rect").attr("x", 0).attr("y", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height() * task).attr("id", 'chart-bg-number-' + task).attr("width", jquery__WEBPACK_IMPORTED_MODULE_2___default()('#chart-area').width()).attr("height", jquery__WEBPACK_IMPORTED_MODULE_2___default()('.tRow').height()).attr("fill", 'red').attr("fill-opacity", '0.5');
       }
 
       for (var i = 0; i < this.tasks.length; i++) {
@@ -77471,7 +77471,9 @@ var staticRenderFns = [
             ])
           ]
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "chart-area" } })
     ])
   }
 ]

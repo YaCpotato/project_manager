@@ -19,8 +19,8 @@
                         <tr id="chart_border"></tr>
                     </table>
                 </th>
-              
             </table>
+            <div id="chart-area"></div>
     </div>
     </template>
 <script>
@@ -90,10 +90,10 @@ export default {
             this.endDate = end
           },
           drawchart:function(){
-            var svg = d3.select('#task_chart').append("svg")
+            var svg = d3.select('#chart-area').append("svg")
                     .attr("x", 0)
                     .attr("y", 0)
-                    .attr("width", $('#task_chart').width())
+                    .attr("width", $('#chart-area').width())
                     .attr("height", ($('.tRow').height()) * this.tasks.length);
              
             for(var task in this.tasks){
@@ -101,7 +101,7 @@ export default {
               .attr("x", 0)
               .attr("y", $('.tRow').height() * task)
               .attr("id",'chart-bg-number-'+task)
-              .attr("width", $('#task_chart').width())
+              .attr("width", $('#chart-area').width())
               .attr("height", $('.tRow').height())
               .attr("fill",'red')
               .attr("fill-opacity",'0.5')
